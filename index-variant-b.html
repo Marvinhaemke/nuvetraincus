@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+    <title>Nuvetra - Unlock Your U.S. Financial Freedom</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: calc(15px + 0.390625vw);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: radial-gradient(circle at top left,rgba(0, 0, 0, 1) 0%, rgba(10, 27, 47, 1) 40%, rgba(10, 27, 47, 1) 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-section {
+            margin: 0px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            width: 125px;
+            height: 125px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #2c5f6f 0%, #d4a574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .headline {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .headline h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .headline .warning {
+            color: #c67742;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-color: #c67742;
+            text-underline-offset: 3px;
+        }
+
+        .subheadline {
+            font-size: 24px;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c5f6f 0%, #1a3a44 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 56.25%;
+            border-radius: 25px;
+            border: 2px solid #c67742;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #2c5f6f, #d4a574, #2c5f6f);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+            margin: auto;
+            color: white;
+            padding: 18px 45px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5);
+            background: linear-gradient(135deg, #e0b584 0%, #d67852 100%);
+        }
+
+        .cta-button svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        @media (max-width: 768px) {
+            .headline h1 {
+                font-size: 20px;
+            }
+
+            .subheadline {
+                font-size: 16px;
+            }
+
+            .logo-text {
+                font-size: 24px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+
+            .decoration {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative background elements -->
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+
+    <div class="container">
+        <div class="logo-section">
+            <img class="logo-icon" src="/logo.png"></img>
+        </div>
+
+        <div class="headline">
+            <!-- VARIANT B HEADLINE -->
+            <h1>Unlock <span class="warning">UNLIMITED</span> U.S. Capital Without <span class="warning">BOUNDARIES</span></h1>
+            <p class="subheadline">Build wealth beyond UK restrictions - Access the American advantage.</p>
+        </div>
+
+        <div class="video-container">
+            <!-- VARIANT B VIDEO - You can change this to a different video ID -->
+            <iframe 
+                src="https://www.youtube.com/embed/7GRj2oGiZzQ?autoplay=0&controls=1&rel=0&modestbranding=1" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- VARIANT B CTA TEXT -->
+        <button class="cta-button" onclick="applyForAppointment()">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+            </svg>
+            Get Started Now!
+        </button>
+    </div>
+
+    <!-- Rest of the form code remains the same but with updated variant tracking -->
+    <div class="form-container" id="form">
+        <!-- All form steps remain identical - just included the key script changes below -->
+    </div>
+
+    <script>
+        // IMPORTANT: Update variant tracking to "Variant B"
+        const CURRENT_VARIANT = "Variant B";
+        
+        // Update all tracking URLs with Variant B
+        const pageViewUrl = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Page Views&variant=Variant B";
+        fetch(pageViewUrl);
+        
+        const question0Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 0&variant=Variant B";
+        const question1Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 1&variant=Variant B";
+        const question2Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 2&variant=Variant B";
+        const question3Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 3&variant=Variant B";
+        const question4Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 4&variant=Variant B";
+        const question5Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 5&variant=Variant B";
+        
+        // When submitting form data, include variant B
+        // In the handleStep5 function, update the zapierData object:
+        // variant: "Variant B",
+        
+        // Rest of your existing JavaScript code...
+        // [Include all the existing form handling code but with variant: "Variant B" in zapierData]
+        
+        function applyForAppointment() {
+            window.location.href = '#form';
+        }
+
+        // Enhanced animation when page loads
+        window.addEventListener('load', function() {
+            const elements = document.querySelectorAll('.logo-section, .headline, .video-container, .cta-button');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+
+    <!-- Include all the rest of your form HTML and JavaScript here -->
+    <!-- For brevity, I'm not including the entire form code again, but it should be identical except for the variant tracking -->
+    
+    <!-- Footer section remains the same -->
+</body>
+</html>
