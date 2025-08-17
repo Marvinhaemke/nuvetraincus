@@ -5,16 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
-    <title>Nuvetra - Unlock Your U.S. Financial Freedom</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/cookie-banner/silktide-consent-manager.css">
+<script src="/cookie-banner/silktide-consent-manager.js"></script>
+<script>
+silktideCookieBannerManager.updateCookieBannerConfig({
+  background: {
+    showBackground: false
+  },
+  cookieIcon: {
+    position: "bottomLeft"
+  },
+  cookieTypes: [
+    {
+      id: "necessary",
+      name: "Necessary",
+      description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Necessary here');
+      }
+    },
+    {
+      id: "analytical",
+      name: "Analytical",
+      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+      required: false,
+      onAccept: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+        });
+        dataLayer.push({
+          'event': 'consent_accepted_analytical',
+        });
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied',
+        });
+      }
+    }
+  ],
+  text: {
+    banner: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://nuvetra-inc.com/privacy\" target=\"_blank\">Cookie Policy.</a></p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
+    }
+  },
+  position: {
+    banner: "bottomCenter"
+  }
+});
+</script>
+    <title>Nuvetra - Change the System</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
         * {
@@ -33,6 +95,7 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            position: relative !important;
         }
 
         .container {
@@ -104,16 +167,20 @@
 
         .video-container {
             width: 100%;
+            /*max-width: 900px;*/
             height: 100%;
             background: linear-gradient(135deg, #2c5f6f 0%, #1a3a44 100%);
             border-radius: 20px;
             overflow: hidden;
+           
             margin-bottom: 40px;
             position: relative;
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            
             border-radius: 25px;
-            border: 2px solid #c67742;
-            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+    border: 2px solid #c67742;
+    /* background: #FFF; */
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
         }
 
         .video-container::before {
@@ -190,6 +257,34 @@
             height: 22px;
         }
 
+        /* Decorative elements 
+        .decoration {
+            position: fixed;
+            pointer-events: none;
+            opacity: 0.03;
+        }
+
+        .decoration-1 {
+            top: 10%;
+            right: 5%;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #2c5f6f, #d4a574);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: rotate(15deg);
+        }
+
+        .decoration-2 {
+            bottom: 10%;
+            left: 5%;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #d4a574, #2c5f6f);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: rotate(-30deg);
+        }
+        */
+
         @media (max-width: 768px) {
             .headline h1 {
                 font-size: 20px;
@@ -221,17 +316,18 @@
 
     <div class="container">
         <div class="logo-section">
+            
             <img class="logo-icon" src="/logo.png"></img>
+           
         </div>
 
         <div class="headline">
-            <!-- VARIANT B HEADLINE -->
-            <h1>Unlock <span class="warning">UNLIMITED</span> U.S. Capital Without <span class="warning">BOUNDARIES</span></h1>
-            <p class="subheadline">Build wealth beyond UK restrictions - Access the American advantage.</p>
+            <h1>"When you change the <span class="warning">SYSTEM,</span> you change the <span class="warning">GAME</span>"</h1>
+            <p class="subheadline">The U.S. system opens up opportunities, not limits.</p>
         </div>
 
         <div class="video-container">
-            <!-- VARIANT B VIDEO - You can change this to a different video ID -->
+            <!-- Replace VIDEO_ID with your actual YouTube video ID -->
             <iframe 
                 src="https://www.youtube.com/embed/7GRj2oGiZzQ?autoplay=0&controls=1&rel=0&modestbranding=1" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -239,43 +335,1409 @@
             </iframe>
         </div>
 
-        <!-- VARIANT B CTA TEXT -->
         <button class="cta-button" onclick="applyForAppointment()">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
             </svg>
-            Get Started Now!
+            Apply For A Call!
         </button>
     </div>
 
-    <!-- Rest of the form code remains the same but with updated variant tracking -->
     <div class="form-container" id="form">
-        <!-- All form steps remain identical - just included the key script changes below -->
+
+  
+  <!-- STEP 0: Qualification Message -->
+  <div id="step0" class="step active fade-in-step">
+    <div style="text-align: center !important;" class="step-inner">
+      <h2>Welcome to Our Exclusive Program</h2>
+      <div class="qualification-message">
+        <p>We've helped over 1,000 international business owners achieve their desires through bold action and strategic global systems.</p>
+        
+        <p>This application is for <strong>wealthy individuals and serious entrepreneurs</strong> with at least <strong>$50,000 in available capital</strong>.</p>
+        
+        <p>Our service is tailored for those ready to take action, leverage international systems, and fully commit to their success.</p>
+        
+        <p>If you are serious and ready to make a change, we encourage you to fill out the application. If this doesn't apply to you, please refrain from completing it.</p>
+        
+        <div class="important-notice">
+          <p><strong>Important:</strong> Your call is reserved exclusively for you. Missed appointments or failure to cancel in advance will result in no further calls being offered. We ask that you respect our time as we do yours.</p>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary cta-button" onclick="handleStep0()">Ready To Go! <img src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg" class="arrow-icon" alt=""></button>
     </div>
+    
+  </div>
+
+  <!-- STEP 1: Capital Available -->
+  <div id="step1" class="step">
+    <div class="step-inner">
+  <h2>1. What are your main reasons for accessing the U.S. financial system?</h2>
+  <p class="subtitle">Select all that apply.</p>
+  
+  <div class="options-grid">
+    <label>
+      <input type="checkbox" name="reason" value="Investing in the U.S." onclick="checkOtherReasonField()">
+      <span class="custom-checkbox"></span>
+      <p>Investing in the U.S.</p>
+    </label>
+    <label>
+      <input type="checkbox" name="reason" value="Growing your business internationally" onclick="checkOtherReasonField()">
+      <span class="custom-checkbox"></span>
+      <p>Growing your business internationally</p>
+    </label>
+    <label>
+      <input type="checkbox" name="reason" value="Building a secondary credit profile" onclick="checkOtherReasonField()">
+      <span class="custom-checkbox"></span>
+      <p>Building a secondary credit profile</p>
+    </label>
+    <label>
+      <input type="checkbox" name="reason" value="Protecting wealth outside of the UK" onclick="checkOtherReasonField()">
+      <span class="custom-checkbox"></span>
+      <p>Protecting wealth outside of the UK</p>
+    </label>
+    <label>
+      <input type="checkbox" name="reason" value="Accessing outside capital within 12 months" onclick="checkOtherReasonField()">
+      <span class="custom-checkbox"></span>
+      <p>Accessing outside capital within 12 months</p>
+    </label>
+    <label>
+      <input type="checkbox" name="reason" value="other" onclick="checkOtherReasonField()">
+      <span class="custom-checkbox"></span>
+      <p>Other</p>
+    </label>
+  </div>
+  
+  <div id="otherReasonField" style="display: none; margin: 0 auto; text-align: left; width: 90%; max-width: 600px; padding: 1rem; background: #f9f9f9; border-radius: 10px;">
+    <label for="otherReasonText" style="display: block; margin-bottom: 0.5rem; height: auto; text-align: left; font-weight: 500;">Please specify:</label>
+    <input type="text" id="otherReasonText" class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+  </div>
+</div>
+<p id="errorMsg1" class="errorMsg">Please select at least one option.</p>
+<button class="btn btn-primary  cta-button" onclick="handleStep1()">Next <img src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg" class="arrow-icon" alt=""></button>
+</div>
+<!-- STEP 2 -->
+<div id="step2" class="step">
+  <div class="step-inner">
+    <h2 style="margin-bottom: 15px;">2. What's preventing you from using your available capital in Canada the way you planned?</h2>
+    <h4 style="font-style: italic; font-size: 1rem;">Select all barriers that apply, or describe your own.</h4>
+    <div class="options-grid">
+      <label>
+        <input type="checkbox" name="limit" value="Strict lending rules / low credit limits" onclick="checkOtherLimitField()">
+        <span class="custom-checkbox"></span>
+        <p>Strict lending rules / low credit limits</p>
+      </label>
+      <label>
+        <input type="checkbox" name="limit" value="High tax burden on profits" onclick="checkOtherLimitField()">
+        <span class="custom-checkbox"></span>
+        <p>High tax burden on profits</p>
+      </label>
+      <label>
+        <input type="checkbox" name="limit" value="Slow bureaucracy and red tape" onclick="checkOtherLimitField()">
+        <span class="custom-checkbox"></span>
+        <p>Slow bureaucracy and red tape</p>
+      </label>
+      <label>
+        <input type="checkbox" name="limit" value="Brexit-related restrictions / currency volatility" onclick="checkOtherLimitField()">
+        <span class="custom-checkbox"></span>
+        <p>Brexit-related restrictions / currency volatility</p>
+      </label>
+      <label>
+        <input type="checkbox" name="limit" value="Low interest rates / lack of returns" onclick="checkOtherLimitField()">
+        <span class="custom-checkbox"></span>
+        <p>Low interest rates / lack of returns</p>
+      </label>
+      <label>
+        <input type="checkbox" name="limit" value="other" onclick="checkOtherLimitField()">
+        <span class="custom-checkbox"></span>
+        <p>Other</p>
+      </label>
+    </div>
+    
+    <div id="otherLimitField" style="display: none; margin: 0 auto; text-align: left; width: 90%; max-width: 600px; padding: 1rem; background: #f9f9f9; border-radius: 10px;">
+      <label for="otherLimitText" style="display: block; margin-bottom: 0.5rem; height: auto; text-align: left; font-weight: 500;">Please specify:</label>
+      <input type="text" id="otherLimitText" class="form-input" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+    </div>
+  </div>
+  <p id="errorMsg2" class="errorMsg">Please select at least one option.</p>
+  <button class="btn btn-primary cta-button" onclick="handleStep2()">Next <img src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg" class="arrow-icon" alt=""></button>
+</div>
+
+<!-- STEP 3 -->
+<div id="step3" class="step">
+  <div class="step-inner">
+    <h2>3. Please provide your contact information so we can send your personalised next steps.</h2>
+    <div class="contact-form">
+      <div class="form-group">
+        <label for="fullName" class="text-label">Full Name:</label>
+        <input type="text" id="fullName" class="form-input" placeholder="Enter your full name">
+        <p id="nameError" class="field-error">Please enter your name.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="emailAddress" class="text-label">Email Address:</label>
+        <input type="email" id="emailAddress" class="form-input" placeholder="Enter your email address">
+        <p id="emailError" class="field-error">Please enter a valid email address.</p>
+      </div>
+  
+      <div class="form-group">
+        <label for="phoneNumber" class="text-label">Phone Number:</label>
+        <div class="phone-input-container">
+          <input type="tel" id="phoneNumber" class="form-input phone-number-input" placeholder="Enter your phone number">
+        </div>
+        <p id="phoneError" class="field-error">Please enter a valid phone number.</p>
+        <input type="hidden" id="countryCode" value="+44">
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary cta-button" onclick="handleStep3()">Next <img src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg" class="arrow-icon" alt=""></button>
+</div>
+
+<!-- STEP 4 -->
+<div id="step4" class="step">
+  <div class="step-inner">
+    <h2>4. Are you willing to travel to Miami, Florida to open your U.S. bank accounts?</h2>
+    <div class="options-grid">
+      <label>
+        <input type="radio" name="travel" value="Yes, I can travel anytime">
+        <span class="custom-radio"></span>
+        <p>Yes, I can travel anytime</p>
+      </label>
+      <label>
+        <input type="radio" name="travel" value="Yes, but I need time to plan">
+        <span class="custom-radio"></span>
+        <p>Yes, but I need time to plan</p>
+      </label>
+      <label>
+        <input type="radio" name="travel" value="Maybe, I need more details">
+        <span class="custom-radio"></span>
+        <p>Maybe, I need more details</p>
+      </label>
+      <label>
+        <input type="radio" name="travel" value="No, I prefer to do everything remotely">
+        <span class="custom-radio"></span>
+        <p>No, I prefer to do everything remotely</p>
+      </label>
+    </div>
+  </div>
+  <p id="errorMsg4" class="errorMsg">Please select one option.</p>
+  <button class="btn btn-primary cta-button" onclick="handleStep4()">Next <img src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg" class="arrow-icon" alt=""></button>
+</div>
+
+<!-- STEP 5 -->
+<div id="step5" class="step">
+  <div class="step-inner">
+    <h2>5. How much capital do you currently have available to invest in your U.S. financial protection strategy?</h2>
+    <div class="options-grid capital-grid">
+      <label>
+        <input type="radio" name="capital" value="less50k">
+        <span class="custom-radio"></span>
+        <p>Less than $50,000</p>
+      </label>
+      <label>
+        <input type="radio" name="capital" value="50k-100k">
+        <span class="custom-radio"></span>
+        <p>$50,000 – $100,000</p>
+      </label>
+      <label>
+        <input type="radio" name="capital" value="100k-250k">
+        <span class="custom-radio"></span>
+        <p>$100,000 – $255,000</p>
+      </label>
+      <label>
+        <input type="radio" name="capital" value="250k-500k">
+        <span class="custom-radio"></span>
+        <p>$250,000 – $500,000</p>
+      </label>
+      <label>
+        <input type="radio" name="capital" value="500kplus">
+        <span class="custom-radio"></span>
+        <p>$500,000+</p>
+      </label>
+    </div>
+  </div>
+  <p id="errorMsg5" class="errorMsg">Please select one option.</p>
+  <button class="btn btn-primary cta-button" onclick="handleStep5()">Submit & Book Appointment <img src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg" class="arrow-icon" alt=""></button>
+</div>
+
+<!-- Disqualification -->
+<div id="disqualificationStep" class="step">
+  <div class="step-inner">
+    <h2>Thank you for your interest</h2>
+    <div class="disqualified">
+      <p>We appreciate your interest, but our services are currently designed for clients with investment capital of $50,000 or more.</p>
+      <p>Please reach out again when your available capital meets our minimum requirement.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 6: Calendly -->
+<div id="step6" class="step calendly-hidden">
+  <div class="step-inner">
+    <h2 style="margin-bottom: 12px;">Thank you! Please book your appointment below.</h2>
+    <div id="calendlyContainer"></div>
+  </div>
+</div>
+   
+  <!-- Step indicators -->
+  <div class="step-indicator">
+    <div class="step-indicator__circle active" id="circle0"></div>
+    <div class="step-indicator__circle" id="circle1"></div>
+    <div class="step-indicator__circle" id="circle2"></div>
+    <div class="step-indicator__circle" id="circle3"></div>
+    <div class="step-indicator__circle" id="circle4"></div>
+    <div class="step-indicator__circle" id="circle5"></div>
+    <div class="step-indicator__circle" id="circle6"></div>
+  </div>
+</div>
+
+<style>
+  /* General layout */
+  .form-container {
+
+    margin-top: 80px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Step 0 specific styles */
+  .qualification-message {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+  }
+  
+  .qualification-message p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .important-notice {
+    /* background: #f8f9fa; */
+    border-left: 4px solid #0A1B2F;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+  }
+  
+  .important-notice p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+  .phone-input-container {
+    color: #0C0C0C;
+  }
+  
+  .ready-to-go-container {
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ready-box {
+    background: #28a745;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Step indicator circles at bottom */
+  .step-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .step-indicator__circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+  }
+
+  .step-indicator__circle.active {
+    background: rgba(212, 165, 116, 1);
+  }
+
+  /* Step visibilities and animations */
+  .step {
+    display: none;
+    height: auto;
+    opacity: 0;
+    transition: 0.8s ease;
+  }
+  
+  .step.active {
+    display: block;
+    opacity: 0;
+    transition: 0.8s ease;
+  }
+  
+  .step.fade-in-step {
+    opacity: 1;
+    transition: 0.8s ease;
+  }
+
+  /* Step content */
+  .step h2 {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  
+  .step-inner {
+    min-height: 13rem;
+    padding: 2rem 1rem;;
+    border-radius: 25px;
+    border: 2px solid #c67742;
+    /* background: #FFF; */
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .step-inner h2 {
+    text-align: center;
+  }
+
+  /* Error messages */
+  .errorMsg {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    display: none;
+    color: red;
+  }
+  
+  .errorMsg.active {
+    display: block;
+  }
+
+  /* Options layout */
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .options-grid label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    position: relative;
+    height: auto;
+    min-height: 34px;
+    white-space: normal;
+  }
+  
+  /* Special layout for capital grid with center item */
+  .capital-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      "option1 option2"
+      "option3 option4"
+      "option5 option5";
+  }
+  
+  .capital-grid label:nth-child(1) {
+    grid-area: option1;
+  }
+  
+  .capital-grid label:nth-child(2) {
+    grid-area: option2;
+  }
+  
+  .capital-grid label:nth-child(3) {
+    grid-area: option3;
+  }
+  
+  .capital-grid label:nth-child(4) {
+    grid-area: option4;
+  }
+  
+  .capital-grid label:nth-child(5) {
+    grid-area: option5;
+    justify-self: center;
+  }
+
+  .options-grid label {
+    flex: 0 0 calc(50% - 20px);
+    /*max-width: 300px;*/
+    margin-bottom: 10px !important;
+    white-space: nowrap;
+  }
+
+  /* Custom radio and checkbox styling */
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    position: relative;
+    height: auto;
+    min-height: 34px;
+  }
+  
+  label p {
+    margin-left: 0.5rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    display: inline-block;
+    text-align: left;
+    color: #fff;
+    line-height: 1.4;
+    vertical-align: middle;
+    white-space: normal;
+  }
+
+  input[type="radio"], input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    display: none !important;
+  }
+
+  .custom-radio, .custom-checkbox {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border: 2px solid #D9D9D9;
+    position: relative;
+    background-color: white;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+  
+  .custom-radio {
+    border-radius: 50%;
+  }
+  
+  .custom-checkbox {
+    border-radius: 6px;
+  }
+
+  input[type="radio"]:checked + .custom-radio {
+    border-color: #c67742 ;
+  }
+
+  input[type="radio"]:checked + .custom-radio:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #c67742;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  input[type="checkbox"]:checked + .custom-checkbox {
+    border-color: #c67742 ;
+    background-color: #c67742 ;
+  }
+
+  input[type="checkbox"]:checked + .custom-checkbox:after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  /* Button styling 
+  .btn {
+    display: inline-block;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.2s ease;
+  }
+
+  .btn-primary {
+    border-radius: 50px;
+    color: #fff;
+    margin: auto;
+    padding: 12px 24px;
+    background: #014421;
+    text-align: center;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-primary:hover {
+    transform: scale(1.05);
+    background: #014421;
+  }
+  */
+  /* Arrow icon */
+  .arrow-icon {
+    width: 26px;
+    height: 26px;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* Contact form styles */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .text-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .field-error {
+    color: #d9534f;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+  }
+  
+  /* Phone input styling */
+  .phone-input-container {
+    display: flex;
+  }
+  
+  .country-select-container {
+    position: relative;
+    min-width: 120px;
+  }
+  
+  .country-select {
+    width: 100%;
+    height: 100%;
+    padding: 8px 30px 8px 45px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  }
+  
+  .flag-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+  
+  .phone-number-input {
+    flex-grow: 1;
+  }
+  
+   .iti {
+  width: 100%;
+}
+
+.iti__flag-container {
+  height: 100%;
+}
+
+/* Hide the original phone input container styles as they're no longer needed */
+.country-select-container, .flag-icon, .country-select {
+  display: none;
+}
+  /* Disqualification styling */
+  .disqualified {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #ffefef;
+    color: #c00;
+    border: 1px solid #fdd;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+  
+  .disqualified p {
+    margin-bottom: 1rem;
+  }
+  
+  .disqualified p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .calendly-hidden {
+    height: 1px;
+    opacity: 1;
+    width: 1px;
+    overflow: hidden;
+    display: block !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .options-grid {
+      grid-template-columns: 1fr; /* Change from 2 columns to 1 column on mobile */
+      padding: 0 10px;
+    }
+    
+    .capital-grid {
+      grid-template-columns: 1fr; /* Change from 2 columns to 1 column on mobile */
+      grid-template-areas: 
+        "option1"
+        "option2"
+        "option3"
+        "option4"
+        "option5";
+    }
+    
+    .capital-grid label:nth-child(5) {
+      justify-self: start; /* Align the last option to the left like the others */
+    }
+    
+    .step h2 {
+      font-size: 1.25rem;
+      padding: 0 15px;
+    }
+    
+    label {
+      font-size: 1.1rem;
+    }
+    
+    .step-inner {
+      padding: 1.5rem 1rem;
+      border-radius: 15px;
+    }
+    
+    /* Make phone input responsive */
+    .phone-input-container {
+      flex-direction: column;
+    }
+    
+    .country-select-container {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    
+    .phone-number-input {
+      width: 100%;
+    }
+    
+    /* Mobile adjustments for step 0 */
+    .qualification-message {
+      text-align: center;
+      padding: 0 1rem;
+    }
+    
+    .qualification-message p {
+      font-size: 1rem;
+    }
+    
+    .ready-box {
+      font-size: 1.25rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.min.css">
+
+<script>
+  //const counter = new Counter({ workspace: 'funnel-formular' });
+  const pageViewUrl = "https://script.google.com/macros/s/AKfycbzBmosHQInJ7tkJXU2vSkt9fU3wn4TG-EqGIdWQAcrRwlbsuJrOKgNVZeQftNBE7qLV7Q/exec?action=increment&counter=Page Views&variant=Variant A";
+fetch(pageViewUrl);
+  const question0Url =  "https://script.google.com/macros/s/AKfycbzBmosHQInJ7tkJXU2vSkt9fU3wn4TG-EqGIdWQAcrRwlbsuJrOKgNVZeQftNBE7qLV7Q/exec?action=increment&counter=Question 0&variant=Variant A";
+  const question1Url =  "https://script.google.com/macros/s/AKfycbzBmosHQInJ7tkJXU2vSkt9fU3wn4TG-EqGIdWQAcrRwlbsuJrOKgNVZeQftNBE7qLV7Q/exec?action=increment&counter=Question 1&variant=Variant A";
+  const question2Url =  "https://script.google.com/macros/s/AKfycbzBmosHQInJ7tkJXU2vSkt9fU3wn4TG-EqGIdWQAcrRwlbsuJrOKgNVZeQftNBE7qLV7Q/exec?action=increment&counter=Question 2&variant=Variant A";
+  const question3Url =  "https://script.google.com/macros/s/AKfycbzBmosHQInJ7tkJXU2vSkt9fU3wn4TG-EqGIdWQAcrRwlbsuJrOKgNVZeQftNBE7qLV7Q/exec?action=increment&counter=Question 3&variant=Variant A";
+  const question4Url =  "https://script.google.com/macros/s/AKfycbzBmosHQInJ7tkJXU2vSkt9fU3wn4TG-EqGIdWQAcrRwlbsuJrOKgNVZeQftNBE7qLV7Q/exec?action=increment&counter=Question 4&variant=Variant A";
+  const question5Url =  "https://script.google.com/macros/s/AKfycbzBmosHQInJ7tkJXU2vSkt9fU3wn4TG-EqGIdWQAcrRwlbsuJrOKgNVZeQftNBE7qLV7Q/exec?action=increment&counter=Question 5&variant=Variant A";
+  
+  // Initialize the telephone input plugin
+const phoneInput = window.intlTelInput(document.querySelector("#phoneNumber"), {
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js",
+  separateDialCode: true,
+  initialCountry: "gb", // Default to Canada
+  preferredCountries: ["gb"] // Your most common countries first
+});
+  
+  // Track form data
+  const formData = {
+    capital: null,
+    reasons: [], // Changed to array for multiple selections
+    otherReasonText: null,
+    limits: [], // Changed to array for multiple selections
+    otherLimitText: null,
+    investment: null,
+    otherInvestmentText: null,
+    travel: null,
+    fullName: null,
+    email: null,
+    phone: null,
+    countrycode: null
+  };
+  
+  // Function to check and show/hide other reason field
+  function checkOtherReasonField() {
+    const otherCheckbox = document.querySelector('input[name="reason"][value="other"]');
+    const otherField = document.getElementById('otherReasonField');
+    
+    if (otherCheckbox.checked) {
+      otherField.style.display = 'block';
+    } else {
+      otherField.style.display = 'none';
+      document.getElementById('otherReasonText').value = '';
+    }
+  }
+  
+  // Function to check and show/hide other limit field
+  function checkOtherLimitField() {
+    const otherCheckbox = document.querySelector('input[name="limit"][value="other"]');
+    const otherField = document.getElementById('otherLimitField');
+    
+    if (otherCheckbox.checked) {
+      otherField.style.display = 'block';
+    } else {
+      otherField.style.display = 'none';
+      document.getElementById('otherLimitText').value = '';
+    }
+  }
+  
+  // Track UTM parameters
+  function getUrlParameters() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams;
+  }
+
+  function getUtmParameters() {
+    const params = getUrlParameters();
+    const utmParams = {};
+    
+    const utmKeys = [
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_term',
+      'utm_content'
+    ];
+    
+    utmKeys.forEach(key => {
+      if (params.has(key)) {
+        utmParams[key] = params.get(key);
+      }
+    });
+    
+    return utmParams;
+  }
+
+  function getFacebookParameters() {
+    const params = getUrlParameters();
+    const fbParams = {};
+    
+    const fbKeys = [
+      'fbclid',
+      'fb_source',
+      'fb_ref',
+      'fb_campaign_id',
+      'fb_campaign',
+      'fb_content'
+    ];
+    
+    fbKeys.forEach(key => {
+      if (params.has(key)) {
+        fbParams[key] = params.get(key);
+      }
+    });
+    
+    return fbParams;
+  }
+
+  function saveTrackingParameters() {
+    const utmParams = getUtmParameters();
+    const fbParams = getFacebookParameters();
+    
+    if (Object.keys(utmParams).length > 0) {
+      localStorage.setItem('utmParameters', JSON.stringify(utmParams));
+      console.log('Saved UTM parameters:', utmParams);
+    }
+    
+    if (Object.keys(fbParams).length > 0) {
+      localStorage.setItem('fbParameters', JSON.stringify(fbParams));
+      console.log('Saved Facebook parameters:', fbParams);
+    }
+    
+    window.utmParameters = utmParams;
+    window.fbParameters = fbParams;
+    
+    return {
+      utmParameters: utmParams,
+      fbParameters: fbParams
+    };
+  }
+
+  function loadTrackingParameters() {
+    let utmParams = {};
+    let fbParams = {};
+    
+    const savedUtmParams = localStorage.getItem('utmParameters');
+    if (savedUtmParams) {
+      try {
+        utmParams = JSON.parse(savedUtmParams);
+        console.log('Loaded UTM parameters:', utmParams);
+      } catch (e) {
+        console.error('Error parsing saved UTM parameters:', e);
+      }
+    }
+    
+    const savedFbParams = localStorage.getItem('fbParameters');
+    if (savedFbParams) {
+      try {
+        fbParams = JSON.parse(savedFbParams);
+        console.log('Loaded Facebook parameters:', fbParams);
+      } catch (e) {
+        console.error('Error parsing saved Facebook parameters:', e);
+      }
+    }
+    
+    window.utmParameters = utmParams;
+    window.fbParameters = fbParams;
+    
+    return {
+      utmParameters: utmParams,
+      fbParameters: fbParams
+    };
+  }
+  
+  function initTrackingParameters() {
+    const currentParams = saveTrackingParameters();
+    
+    if (Object.keys(currentParams.utmParameters).length === 0 && 
+        Object.keys(currentParams.fbParameters).length === 0) {
+      loadTrackingParameters();
+    }
+    
+    return {
+      utmParameters: window.utmParameters,
+      fbParameters: window.fbParameters
+    };
+  }
+
+  const trackingParams = initTrackingParameters();
+  
+  // Set active step indicator
+  function setActiveCircle(stepNumber) {
+    const circles = document.querySelectorAll(".step-indicator__circle");
+    circles.forEach((c) => c.classList.remove("active"));
+    if (stepNumber < circles.length) {
+      circles[stepNumber].classList.add("active");
+    }
+  }
+
+  // NEW Step 0 handler
+  function handleStep0() {
+    document.getElementById("step0").classList.remove("fade-in-step");
+    setTimeout(() => {
+      document.getElementById("step0").classList.remove("active");
+      document.getElementById("step1").classList.add("active");
+    }, 800);
+    setTimeout(() => {
+      document.getElementById("step1").classList.add("fade-in-step");
+    }, 900);
+    fetch(question0Url);
+    setActiveCircle(1);
+  }
+
+  // Step 1 handler - Modified for multiple selections
+  function handleStep1() {
+    const reasons = document.querySelectorAll('input[name="reason"]:checked');
+    
+    if (reasons.length === 0) {
+      document.getElementById("errorMsg1").classList.add("active");
+      return;
+    }
+    
+    // Reset error message
+    document.getElementById("errorMsg1").classList.remove("active");
+    
+    // Collect all selected reasons
+    formData.reasons = [];
+    reasons.forEach(reason => {
+      formData.reasons.push(reason.value);
+    });
+    
+    // Check if "other" is selected and get the text
+    if (formData.reasons.includes("other")) {
+      const otherReasonText = document.getElementById("otherReasonText").value.trim();
+      if (otherReasonText === "") {
+        alert("Please specify your other reason.");
+        return;
+      }
+      formData.otherReasonText = otherReasonText;
+    } else {
+      formData.otherReasonText = null;
+    }
+    
+    console.log("Selected reasons:", formData.reasons);
+   
+    document.getElementById("step1").classList.remove("fade-in-step");
+    setTimeout(() => {
+      document.getElementById("step1").classList.remove("active");
+      document.getElementById("step2").classList.add("active");
+    }, 800);
+    setTimeout(() => {
+      document.getElementById("step2").classList.add("fade-in-step");
+    }, 900);
+    fetch(question1Url);
+    setActiveCircle(2);
+  }
+
+  // Step 2 handler - Modified for multiple selections
+  function handleStep2() {
+    const limits = document.querySelectorAll('input[name="limit"]:checked');
+    
+    if (limits.length === 0) {
+      document.getElementById("errorMsg2").classList.add("active");
+      return;
+    }
+    
+    // Reset error message
+    document.getElementById("errorMsg2").classList.remove("active");
+    
+    // Collect all selected limits
+    formData.limits = [];
+    limits.forEach(limit => {
+      formData.limits.push(limit.value);
+    });
+    
+    // Check if "other" is selected and get the text
+    if (formData.limits.includes("other")) {
+      const otherLimitText = document.getElementById("otherLimitText").value.trim();
+      if (otherLimitText === "") {
+        alert("Please specify your other reason.");
+        return;
+      }
+      formData.otherLimitText = otherLimitText;
+    } else {
+      formData.otherLimitText = null;
+    }
+    
+    console.log("Selected limits:", formData.limits);
+   
+    document.getElementById("step2").classList.remove("fade-in-step");
+    setTimeout(() => {
+      document.getElementById("step2").classList.remove("active");
+      document.getElementById("step3").classList.add("active");
+    }, 800);
+    setTimeout(() => {
+      document.getElementById("step3").classList.add("fade-in-step");
+    }, 900);
+    fetch(question2Url);
+    setActiveCircle(3);
+  }
+
+  // Step 3 handler - Contact Info (previously step 5)
+  function handleStep3() {
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("emailAddress").value.trim();
+    
+    document.getElementById("nameError").style.display = "none";
+    document.getElementById("emailError").style.display = "none";
+    document.getElementById("phoneError").style.display = "none";
+    
+    // Check honeypot field for bot detection
+    const honeypotField = document.getElementById("website");
+    if (honeypotField && honeypotField.value !== "") {
+      console.log("Potential bot detected");
+      const submitBtn = document.querySelector("#step3 .btn-primary");
+      submitBtn.innerHTML = "Processing...";
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        // Move to next step for bots
+        document.getElementById("step3").classList.remove("fade-in-step");
+        setTimeout(() => {
+          document.getElementById("step3").classList.remove("active");
+          document.getElementById("step4").classList.add("active");
+        }, 800);
+        setTimeout(() => {
+          document.getElementById("step4").classList.add("fade-in-step");
+        }, 900);
+        setActiveCircle(4);
+        submitBtn.innerHTML = originalBtnText;
+      }, 1500);
+      
+      return;
+    }
+    
+    let isValid = true;
+    
+    if (fullName === "") {
+      document.getElementById("nameError").style.display = "block";
+      isValid = false;
+    }
+    
+    if (email === "" || !validateEmail(email)) {
+      document.getElementById("emailError").style.display = "block";
+      isValid = false;
+    }
+    
+    if (!validatePhone(phoneInput)) {
+      document.getElementById("phoneError").style.display = "block";
+      isValid = false;
+    }
+    
+    if (!isValid) {
+      return;
+    }
+    
+    formData.fullName = fullName;
+    formData.email = email;
+    formData.phone = phoneInput.getNumber(intlTelInputUtils.numberFormat.NATIONAL);
+    formData.countrycode = "+" + phoneInput.getSelectedCountryData().dialCode;
+    console.log("Contact info:", formData.fullName, formData.email, formData.phone);
+
+    let calendlyInitialized = false;
+
+    function initializeCalendly() {
+      if (calendlyInitialized) return;
+
+      var link = "https://calendly.com/d/cscf-3wj-wzd/nuvetra-funding-meeting/?a1=" + formData.countrycode.substring(1) + formData.phone;
+      
+      const calContainer = document.getElementById('calendlyContainer');
+      calContainer.innerHTML = '';
+      
+      Calendly.initInlineWidget({
+        url: link,
+        parentElement: calContainer,
+        resize: true,
+        prefill: {
+          name: formData.fullName,
+          email: formData.email,
+          a1: formData.countrycode.substring(1) + formData.phone,
+        }
+      });
+      
+      calendlyInitialized = true;
+    }
+    
+    // Move to next step
+    document.getElementById("step3").classList.remove("fade-in-step");
+    setTimeout(() => {
+      document.getElementById("step3").classList.remove("active");
+      document.getElementById("step4").classList.add("active");
+      initializeCalendly();    
+    }, 800);
+    setTimeout(() => {
+      document.getElementById("step4").classList.add("fade-in-step");
+    }, 900);
+    fetch(question3Url);
+    setActiveCircle(4);
+  }
+
+  // Step 4 handler - Travel question (previously step 3)
+  function handleStep4() {
+    const travel = document.querySelector('input[name="travel"]:checked');
+    if (!travel) {
+      document.getElementById("errorMsg4").classList.add("active");
+      return;
+    }
+    
+    formData.travel = travel.value;
+    console.log(formData.travel);
+    
+    document.getElementById("step4").classList.remove("fade-in-step");
+    setTimeout(() => {
+      document.getElementById("step4").classList.remove("active");
+      document.getElementById("step5").classList.add("active");
+    }, 800);
+    setTimeout(() => {
+      document.getElementById("step5").classList.add("fade-in-step");
+    }, 900);
+    fetch(question4Url);
+    setActiveCircle(5);
+  }
+
+  // Step 5 handler - Capital question (previously step 4) - This is where submission happens
+  function handleStep5() {
+    const capital = document.querySelector('input[name="capital"]:checked');
+    if (!capital) {
+      document.getElementById("errorMsg5").classList.add("active");
+      return;
+    }
+    
+    formData.capital = capital.value;
+    console.log(formData.capital);
+    
+    if (formData.capital === "less35k") {
+      document.getElementById("step5").classList.remove("fade-in-step");
+      setTimeout(() => {
+        document.getElementById("step5").classList.remove("active");
+        document.getElementById("disqualificationStep").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("disqualificationStep").classList.add("fade-in-step");
+      }, 900);
+      return;
+    }
+    
+    // Process and submit form data
+    const reasonsString = formData.reasons.join(", ");
+    const limitsString = formData.limits.join(", ");
+    const answers = `${formData.capital}-${reasonsString}-${limitsString}-${formData.travel}`;
+    console.log(answers);
+    
+    const zapierWebhookUrl1 = "https://hooks.zapier.com/hooks/catch/16022970/2x1btli/";
+    const zapierWebhookUrl2 = "https://hooks.zapier.com/hooks/catch/16022970/27n8k6z/";
+
+    // Handle multiple selections for limits
+    var limitData = "";
+    if (formData.limits.includes("other") && formData.otherLimitText) {
+      const nonOtherLimits = formData.limits.filter(l => l !== "other");
+      limitData = nonOtherLimits.length > 0 
+        ? nonOtherLimits.join(", ") + ", " + formData.otherLimitText
+        : formData.otherLimitText;
+    } else {
+      limitData = formData.limits.join(", ");
+    }
+    
+    // Handle multiple selections for reasons
+    var reasonData = "";
+    if (formData.reasons.includes("other") && formData.otherReasonText) {
+      const nonOtherReasons = formData.reasons.filter(r => r !== "other");
+      reasonData = nonOtherReasons.length > 0
+        ? nonOtherReasons.join(", ") + ", " + formData.otherReasonText
+        : formData.otherReasonText;
+    } else {
+      reasonData = formData.reasons.join(", ");
+    }
+
+    var percentWatched = null;
+    if (document.getElementById('element-A7o5uwSD') && document.getElementById('element-A7o5uwSD').style.display == "none"){
+      const progressHolder = document.querySelector("#element-bSoX6o4m .vjs-progress-holder");
+      if (progressHolder) {
+        percentWatched = progressHolder.getAttribute("aria-valuenow");
+        console.log(`The viewer has watched ${percentWatched}% of the video.`);
+      }
+    }
+    else if (typeof player !== 'undefined' && player.percentWatched) {
+      percentWatched = player.percentWatched * 100;
+      console.log(`The viewer has watched ${percentWatched}% of the video.`);
+    }
+
+    if (percentWatched != null) {
+      percentWatched = Math.round(percentWatched);
+    }
+    else {
+      percentWatched = "Not Tracked"; 
+    }
+    
+    const zapierData = {
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      countryCode: formData.countrycode,
+      capital: formData.capital,
+      reason: reasonData,
+      otherReason: formData.otherReasonText || "",
+      investment: limitData,
+      otherInvestment: formData.otherLimitText || "",
+      travel: formData.travel,
+      funnel: "UK VSL", 
+      url: "https://uk.mindworkerllc.com",
+      timestamp: Date.now(),
+      answers: answers,
+      percentWatched: percentWatched,
+      trackingParams: trackingParams,
+      variant: "Variant A",
+      limit: limitData,
+      otherLimit: formData.otherLimitText || "",
+    };
+
+    // Add tracking parameters
+    Object.entries(trackingParams.utmParameters).forEach(([key, value]) => {
+      zapierData[key] = value;
+    });
+    Object.entries(trackingParams.fbParameters).forEach(([key, value]) => {
+      zapierData[key] = value;
+    });
+
+    const submitBtn = document.querySelector("#step5 .btn-primary");
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = "Working...";
+    submitBtn.disabled = true;
+
+    function moveToFinalStep() {
+      document.getElementById("step5").classList.remove("fade-in-step");
+      document.getElementById("step6").classList.remove("calendly-hidden");
+      setTimeout(() => {
+        document.getElementById("step5").classList.remove("active");
+        document.getElementById("step6").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step6").classList.add("fade-in-step");
+      }, 900);
+      fetch(question5Url);
+      setActiveCircle(6);
+    }
+
+    // Function to send data to a webhook
+    function sendToWebhook(webhookUrl, data, callback) {
+      const formElement = document.createElement('form');
+      formElement.style.display = 'none';
+      formElement.method = 'POST';
+      formElement.action = webhookUrl;
+      formElement.target = 'zapier_iframe_' + Date.now();
+      
+      const iframe = document.createElement('iframe');
+      iframe.name = formElement.target;
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+      
+      Object.keys(data).forEach(key => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = data[key];
+        formElement.appendChild(input);
+      });
+      
+      document.body.appendChild(formElement);
+      
+      iframe.onload = function() {
+        console.log("Data sent to webhook successfully:", webhookUrl);
+        
+        // Clean up
+        if (document.body.contains(formElement)) document.body.removeChild(formElement);
+        if (document.body.contains(iframe)) document.body.removeChild(iframe);
+        
+        callback(true);
+      };
+      
+      // Set timeout for this webhook
+      setTimeout(() => {
+        console.error("Timeout sending data to webhook:", webhookUrl);
+        
+        // Clean up
+        if (document.body.contains(formElement)) document.body.removeChild(formElement);
+        if (document.body.contains(iframe)) document.body.removeChild(iframe);
+        
+        callback(false);
+      }, 5000);
+      
+      formElement.submit();
+    }
+
+    // Track completion of both webhooks
+    let completedWebhooks = 0;
+    let hasProcessed = false;
+
+    function onWebhookComplete(success) {
+      completedWebhooks++;
+      
+      if (success) {
+        console.log(`Webhook ${completedWebhooks} completed successfully`);
+      } else {
+        console.log(`Webhook ${completedWebhooks} failed or timed out`);
+      }
+      
+      // Move to final step when both webhooks are complete
+      if (completedWebhooks >= 2 && !hasProcessed) {
+        hasProcessed = true;
+        moveToFinalStep();
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    }
+
+    // Send to both webhooks
+    sendToWebhook(zapierWebhookUrl1, zapierData, onWebhookComplete);
+    sendToWebhook(zapierWebhookUrl2, zapierData, onWebhookComplete);
+  }
+  
+  // Validation helpers
+  function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  
+  function validatePhone(phoneInputInstance) {
+    return phoneInputInstance.isValidNumber();
+  }
+  
+  // Initialize on DOM load
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("Form initialized with Step 0, multiple selection support and reordered steps");
+  });
+</script>
 
     <script>
-        // IMPORTANT: Update variant tracking to "Variant B"
-        const CURRENT_VARIANT = "Variant B";
-        
-        // Update all tracking URLs with Variant B
-        const pageViewUrl = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Page Views&variant=Variant B";
-        fetch(pageViewUrl);
-        
-        const question0Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 0&variant=Variant B";
-        const question1Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 1&variant=Variant B";
-        const question2Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 2&variant=Variant B";
-        const question3Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 3&variant=Variant B";
-        const question4Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 4&variant=Variant B";
-        const question5Url = "https://script.google.com/macros/s/AKfycbxkPdpjbsCLAGMD_e1JExJsy0lqK7Me75ne0u9qQb8DC285z_Yunc23DjldsL4CV8Zz/exec?action=increment&counter=Question 5&variant=Variant B";
-        
-        // When submitting form data, include variant B
-        // In the handleStep5 function, update the zapierData object:
-        // variant: "Variant B",
-        
-        // Rest of your existing JavaScript code...
-        // [Include all the existing form handling code but with variant: "Variant B" in zapierData]
-        
         function applyForAppointment() {
+            // Add your appointment booking logic here
+            // For example, redirect to a booking page or open a modal
+            //alert('Weiterleitung zur Terminbuchung...');
             window.location.href = '#form';
         }
 
@@ -293,11 +1755,192 @@
                 }, index * 150);
             });
         });
+
+        // Parallax effect on scroll (subtle)
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const decorations = document.querySelectorAll('.decoration');
+            decorations.forEach((el, index) => {
+                const speed = index === 0 ? 0.5 : 0.3;
+                el.style.transform = `translateY(${scrolled * speed}px) rotate(${index === 0 ? 15 : -30}deg)`;
+            });
+        });
     </script>
 
-    <!-- Include all the rest of your form HTML and JavaScript here -->
-    <!-- For brevity, I'm not including the entire form code again, but it should be identical except for the variant tracking -->
-    
-    <!-- Footer section remains the same -->
+<style>
+        footer {
+            color: #fff;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-logo-section {
+           display: block;
+ 
+        }
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+
+        .footer-logo-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .utility-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .utility-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .utility-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            width: 100%;
+            display: block;
+            color: #fff;
+            font-size: 16px !important;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .footer-logo-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                order: 3;
+                margin: 0;
+            }
+
+            .utility-links {
+                order: 2;
+            }
+
+            .footer-bottom {
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="/logo.png" alt="Nuvetra Logo" class="footer-logo-icon">
+                    <div class="footer-bottom" style="font-size: 0.5rem !important;"
+                        <p>NUVETRA Inc. 2025, All Rights Reserved</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" aria-label="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="#" aria-label="TikTok">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="utility-links">
+                    <a href="#">Imprint</a>
+                    <span>-</span>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+
+            
+        </div>
+    </footer>
 </body>
 </html>
