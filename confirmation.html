@@ -1,1035 +1,1852 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Confirmation - Nuvetra</title>
+
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+
     <style>
+
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
             font-size: calc(15px + 0.390625vw);
+
         }
 
         body {
+
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
             background: radial-gradient(circle at top left,rgba(0, 0, 0, 1) 0%, rgba(10, 27, 47, 1) 40%, rgba(10, 27, 47, 1) 100%);
+
             color: #fff;
+
             min-height: 100vh;
+
             padding: 20px;
+
             overflow-x: hidden;
+
         }
 
         .container {
+
             max-width: 1200px;
+
             margin: 0 auto;
+
             padding: 0 20px;
+
         }
 
         /* Header Section */
+
         .header {
+
             text-align: center;
+
             margin-bottom: 40px;
+
             padding-top: 20px;
+
         }
 
         .celebration-emoji {
+
             font-size: 48px;
+
             margin-bottom: 20px;
+
         }
 
         .main-title {
+
             font-size: 42px;
+
             font-weight: 700;
+
             background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
+
             background-clip: text;
+
             margin-bottom: 10px;
+
         }
 
         .confirmation-badge {
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 10px;
+
             font-size: 20px;
+
             margin-bottom: 30px;
+
         }
 
         .check-mark {
+
             background: #4CAF50;
+
             color: white;
+
             padding: 2px 6px;
+
             border-radius: 4px;
+
             font-weight: bold;
+
         }
 
         /* Step Indicator */
+
         .step-badge {
+
             display: inline-block;
+
             background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+
             color: #000;
+
             padding: 8px 24px;
+
             border-radius: 25px;
+
             font-weight: 600;
+
             margin: auto;
+
             margin-bottom: 30px;
+
         }
 
         /* Content Sections */
+
         .content-section {
+
             background: linear-gradient(135deg, rgba(44, 95, 111, 0.1) 0%, rgba(26, 58, 68, 0.1) 100%);
+
             border-radius: 25px;
+
             border: 2px solid #c67742;
+
             box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+
             padding: 40px;
+
             margin-bottom: 60px;
+
             position: relative;
+
             text-align: center;
+
             display: none;
+
         }
 
         .content-section.active {
+
             display: block;
+
             animation: fadeIn 0.8s ease;
+
         }
 
         @keyframes fadeIn {
+
             from { opacity: 0; transform: translateY(20px); }
+
             to { opacity: 1; transform: translateY(0); }
+
         }
 
         .section-title {
+
             font-size: 28px;
+
             font-weight: 600;
+
             margin-bottom: 20px;
+
             text-align: center;
+
         }
 
         .section-subtitle {
+
             font-size: 18px;
+
             color: #ccc;
+
             text-align: center;
+
             margin-bottom: 30px;
+
             line-height: 1.6;
+
         }
 
         /* Video Container */
+
         .video-container {
+
             width: 100%;
+
             max-width: 900px;
+
             margin: 0 auto 40px;
+
             position: relative;
+
             padding-bottom: 56.25%;
+
             background: #000;
+
             border-radius: 20px;
+
             overflow: hidden;
+
             border: 2px solid #c67742;
+
             box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+
         }
 
-        .video-placeholder {
+        .video-container iframe {
+
             position: absolute;
+
             top: 0;
+
             left: 0;
+
             width: 100%;
+
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            cursor: pointer;
-        }
 
-        .play-button {
-            width: 80px;
-            height: 80px;
-            background: rgba(212, 165, 116, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
+            border: none;
 
-        .play-button:hover {
-            transform: scale(1.1);
-        }
-
-        .play-icon {
-            width: 0;
-            height: 0;
-            border-left: 25px solid white;
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            margin-left: 5px;
-        }
-
-        .tap-text {
-            color: white;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
         }
 
         /* Video Grid */
+
         .video-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+
             gap: 30px;
+
             margin: 40px 0;
+
         }
 
         .video-card {
+
             background: #1a1a1a;
+
             border-radius: 20px;
+
             border: 2px solid #c67742;
+
             overflow: hidden;
+
             transition: transform 0.3s ease;
+
         }
 
         .video-card:hover {
+
             transform: translateY(-5px);
+
         }
 
         .video-thumbnail {
+
             position: relative;
+
             padding-bottom: 56.25%;
+
             background: #000;
+
+        }
+
+        .video-thumbnail iframe {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            border: none;
+
         }
 
         .video-info {
+
             padding: 20px;
+
             background: linear-gradient(135deg, rgba(44, 95, 111, 0.3) 0%, rgba(26, 58, 68, 0.3) 100%);
+
         }
 
         .video-title {
+
             font-size: 18px;
+
             font-weight: 600;
+
             color: #d4a574;
+
             margin-bottom: 5px;
+
         }
 
         .video-duration {
+
             font-size: 14px;
+
             color: #999;
+
         }
 
         /* Navigation */
+
         .navigation {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-top: 40px;
+
             gap: 20px;
+
         }
 
         .nav-button {
+
             background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+
             color: white;
+
             padding: 15px 40px;
+
             font-size: 18px;
+
             font-weight: 600;
+
             border: none;
+
             border-radius: 50px;
+
             cursor: pointer;
+
             transition: all 0.3s ease;
+
             text-decoration: none;
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 10px;
+
         }
 
         .nav-button:hover {
+
             transform: translateY(-3px);
+
             box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5);
+
         }
 
         .nav-button.secondary {
+
             background: transparent;
+
             border: 2px solid #c67742;
+
         }
 
         .nav-button:disabled {
+
             opacity: 0.5;
+
             cursor: not-allowed;
+
         }
 
         /* Progress Bar */
+
         .progress-container {
+
             width: 100%;
+
             max-width: 600px;
+
             margin: 0 auto 40px;
+
         }
 
         .progress-bar {
+
             width: 100%;
+
             height: 8px;
+
             background: rgba(255, 255, 255, 0.1);
+
             border-radius: 10px;
+
             overflow: hidden;
+
         }
 
         .progress-fill {
+
             height: 100%;
+
             background: linear-gradient(90deg, #d4a574 0%, #c67742 100%);
+
             border-radius: 10px;
+
             transition: width 0.5s ease;
+
         }
 
         /* Step Dots */
+
         .step-dots {
+
             display: flex;
+
             justify-content: center;
+
             gap: 10px;
+
             margin-top: 20px;
+
         }
 
         .step-dot {
+
             width: 10px;
+
             height: 10px;
+
             border-radius: 50%;
+
             background: rgba(255, 255, 255, 0.3);
+
             transition: all 0.3s ease;
+
         }
 
         .step-dot.active {
+
             background: #d4a574;
+
             transform: scale(1.3);
+
         }
 
-        /* Gift Section */
-        .gift-box {
-            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
+        /* Completion Section Styles */
+
+        .completion-header {
+
             text-align: center;
+
+            margin-bottom: 40px;
+
         }
 
-        .gift-value {
-            font-size: 36px;
+        .completion-icon {
+
+            font-size: 48px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .completion-title {
+
+            font-size: 26px;
+
+            background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
             font-weight: 700;
-            color: #000;
-            margin-bottom: 10px;
+
+            margin: 0;
+
         }
 
-        .free-badge {
-            display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-left: 10px;
+        .completion-content {
+
+            color: #fff;
+
         }
 
-        /* Calendar Preview */
-        .calendar-preview {
-            background: white;
-            color: #333;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 30px auto;
-            max-width: 600px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
+        .completion-info-row {
 
-        .calendar-header {
-            font-size: 14px;
-            color: #1a73e8;
-            margin-bottom: 10px;
-        }
-
-        .calendar-details {
-            border-left: 4px solid #1a73e8;
-            padding-left: 15px;
-        }
-
-        .calendar-details div {
-            margin: 10px 0;
             display: flex;
-            gap: 10px;
-        }
 
-        .calendar-label {
-            color: #666;
-            min-width: 60px;
-        }
+            justify-content: space-between;
 
-        .important-notice {
-            background: rgba(198, 119, 66, 0.1);
-            border-left: 4px solid #c67742;
-            padding: 20px;
-            margin: 30px 0;
+            align-items: center;
+
+            padding: 14px 18px;
+
+            background: rgba(0, 0, 0, 0.25);
+
             border-radius: 10px;
+
+            margin-bottom: 12px;
+
+            min-height: 50px;
+
         }
 
-        .important-notice strong {
+        .completion-label {
+
+            color: #94a3b8;
+
+            font-size: 15px;
+
+            font-weight: 400;
+
+            white-space: nowrap;
+
+            margin-right: 15px;
+
+        }
+
+        .completion-value {
+
             color: #d4a574;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            text-align: right;
+
+            flex: 1;
+
+        }
+
+        .completion-calendar-section {
+
+            background: rgba(0, 0, 0, 0.2);
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            margin: 20px 0;
+
+            text-align: center;
+
+        }
+
+        .completion-calendar-prompt {
+
+            color: #d4a574;
+
+            font-size: 15px;
+
+            margin-bottom: 12px;
+
+            font-weight: 400;
+
+        }
+
+        .completion-notice {
+
+            background: rgba(0, 0, 0, 0.25);
+
+            border-left: 3px solid #d4a574;
+
+            border-radius: 8px;
+
+            padding: 18px;
+
+            margin: 20px 0;
+
+            display: flex;
+
+            gap: 12px;
+
+            align-items: flex-start;
+
+        }
+
+        .completion-notice-icon {
+
+            font-size: 20px;
+
+            flex-shrink: 0;
+
+            margin-top: 2px;
+
+        }
+
+        .completion-notice-text {
+
+            color: #e2e8f0;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            flex: 1;
+
+        }
+
+        .completion-notice-text strong {
+
+            color: #d4a574;
+
+            font-weight: 600;
+
         }
 
         /* Responsive */
+
         @media (max-width: 768px) {
+
             .main-title {
+
                 font-size: 28px;
+
             }
 
             .content-section {
+
                 padding: 20px;
+
             }
 
             .video-grid {
+
                 grid-template-columns: 1fr;
+
             }
 
             .navigation {
+
                 flex-direction: column;
+
             }
 
             .nav-button {
+
                 width: 100%;
+
                 justify-content: center;
+
             }
+
         }
+
     </style>
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="/logo.png" alt="Nuvetra Logo" style="max-width: 150px; margin-bottom: 20px;">
-            <h1 class="main-title">You've Made a Great Decision</h1>
+
+    <!-- Meeting Confirmation Popup -->
+<div id="meetingPopup" class="popup-overlay">
+    <div class="popup-content">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <div class="popup-header">
+            <div class="popup-icon">📅</div>
+            <h2>Your Call is Confirmed!</h2>
+        </div>
+        <div class="popup-body">
+            <div class="popup-info-row">
+                <span class="popup-label">Your Funding Expert:</span>
+                <span class="popup-value" id="popupAssignedTo">Loading...</span>
+            </div>
+            <div class="popup-info-row">
+                <span class="popup-label">Meeting Time:</span>
+                <span class="popup-value" id="popupMeetingTime">Loading...</span>
+            </div>
+            
+            <!-- Calendar Button Container -->
+            <div class="popup-calendar-section">
+                <p class="calendar-prompt">Save this to your calendar now:</p>
+                <div id="popupCalBtn" style="margin: auto; font-size: 1rem; text-align: center; position: relative;"></div>
+            </div>
+            
+            <div class="popup-notice">
+                <div class="notice-icon">📞</div>
+                <div class="notice-text">
+                    <strong>Important:</strong> You will receive a phone call in the next few hours before your scheduled meeting to confirm your attendance and ensure everything is set up properly.
+                </div>
+            </div>
+            <button class="popup-btn" onclick="closePopup()">Got it, I'll be ready!</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 10000;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .popup-overlay.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .popup-content {
+        background: linear-gradient(135deg, #1e3c48 0%, #2b5468 100%);
+        border: 2px solid rgba(198, 119, 66, 0.3);
+        border-radius: 20px;
+        padding: 35px 30px;
+        max-width: 480px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        animation: slideUp 0.5s ease;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: rgba(212, 165, 116, 0.8);
+        font-size: 32px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        line-height: 1;
+        padding: 0;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popup-close:hover {
+        transform: rotate(90deg);
+        color: #d4a574;
+    }
+
+    .popup-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .popup-icon {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    .popup-header h2 {
+        font-size: 26px;
+        background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .popup-body {
+        color: #fff;
+    }
+
+    .popup-info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        margin-bottom: 12px;
+        min-height: 50px;
+    }
+
+    .popup-label {
+        color: #94a3b8;
+        font-size: 15px;
+        font-weight: 400;
+        white-space: nowrap;
+        margin-right: 15px;
+    }
+
+    .popup-value {
+        color: #d4a574;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: right;
+        flex: 1;
+    }
+
+    .popup-calendar-section {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        padding: 18px;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .calendar-prompt {
+        color: #d4a574;
+        font-size: 15px;
+        margin-bottom: 12px;
+        font-weight: 400;
+    }
+
+    .popup-notice {
+        background: rgba(0, 0, 0, 0.25);
+        border-left: 3px solid #d4a574;
+        border-radius: 8px;
+        padding: 18px;
+        margin: 20px 0;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .notice-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .notice-text {
+        color: #e2e8f0;
+        font-size: 14px;
+        line-height: 1.5;
+        flex: 1;
+    }
+
+    .notice-text strong {
+        color: #d4a574;
+        font-weight: 600;
+    }
+
+    .popup-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+        color: white;
+        padding: 14px 28px;
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+
+    .popup-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(212, 165, 116, 0.35);
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .popup-content {
+            padding: 30px 20px;
+        }
         
+        .popup-header h2 {
+            font-size: 22px;
+        }
+        
+        .popup-value {
+            font-size: 14px;
+        }
+    }
+</style>
+
+    <div class="container">
+
+        <div class="header">
+
+            <img src="/logo.png" alt="Nuvetra Logo" style="max-width: 150px; margin-bottom: 20px;">
+
+            <h1 class="main-title">You've Made a Great Decision</h1>
+
         </div>
 
         <!-- Step 1: Initial Video -->
+
         <div class="content-section active" id="step1">
-            <div class="step-badge">Step 1 of 6</div>
+
+            <div class="step-badge">Step 1 of 3</div>
+
             <h2 class="section-title">Watch the video below in full before moving on to the rest of the page</h2>
+
             
+
             <div class="video-container">
-                <div class="video-placeholder" onclick="playVideo(this)">
-                    <div class="tap-text">TAP HERE</div>
-                    <div class="tap-text">PLAY VIDEO</div>
-                    <div class="play-button">
-                        <div class="play-icon"></div>
-                    </div>
-                </div>
+
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+
+                        title="Welcome Video" 
+
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+                        allowfullscreen>
+
+                </iframe>
+
             </div>
 
             <div class="navigation">
+
                 <button class="nav-button secondary" disabled>Previous</button>
+
                 <button class="nav-button" onclick="nextStep()">Continue to Step 2 →</button>
+
             </div>
+
         </div>
 
         <!-- Step 2: Full Overview -->
+
         <div class="content-section" id="step2">
-            <div class="step-badge">Step 2 of 6</div>
+
+            <div class="step-badge">Step 2 of 3</div>
+
             <h2 class="section-title">Full Overview of Our Offer and How Everything Works</h2>
+
             
+
             <div class="video-container">
-                <div class="video-placeholder" onclick="playVideo(this)">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23222' width='1920' height='1080'/%3E%3Ctext x='50%25' y='40%25' fill='%23d4a574' font-size='60' font-weight='bold' text-anchor='middle'%3E$0 → $100K%3C/text%3E%3Ctext x='50%25' y='50%25' fill='%23d4a574' font-size='40' text-anchor='middle'%3E/MONTH%3C/text%3E%3Ctext x='50%25' y='65%25' fill='white' font-size='36' font-weight='bold' text-anchor='middle'%3EBuild Your High Ticket%3C/text%3E%3Ctext x='50%25' y='72%25' fill='white' font-size='36' font-weight='bold' text-anchor='middle'%3EA.I. Business%3C/text%3E%3Ctext x='50%25' y='85%25' fill='white' font-size='28' text-anchor='middle'%3Ein 60 days%3C/text%3E%3C/svg%3E" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
-                    <div class="play-button" style="position: absolute;">
-                        <div class="play-icon"></div>
-                    </div>
-                </div>
+
+                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" 
+
+                        title="Full Overview Video" 
+
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+                        allowfullscreen>
+
+                </iframe>
+
             </div>
 
             <div style="text-align: center; margin-top: 30px;">
+
                 <button class="nav-button" style="background: #FFD700; color: #000;">Access Resource Document</button>
+
             </div>
 
             <div class="navigation">
+
                 <button class="nav-button secondary" onclick="previousStep()">← Previous</button>
+
                 <button class="nav-button" onclick="nextStep()">Continue to Step 3 →</button>
+
             </div>
+
         </div>
 
         <!-- Step 3: Common Questions -->
+
         <div class="content-section" id="step3">
-            <div class="step-badge">Step 3 of 6</div>
+
+            <div class="step-badge">Step 3 of 3</div>
+
             <h2 class="section-title">Most Common Questions</h2>
+
             
+
             <div class="video-grid">
+
                 <div class="video-card">
+
                     <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
+
+                        <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" 
+
+                                title="Income Expectations" 
+
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+                                allowfullscreen>
+
+                        </iframe>
+
                     </div>
+
                     <div class="video-info">
+
                         <div class="video-title">WHAT ARE REALISTIC INCOME/RESULTS EXPECTATIONS?</div>
+
                         <div class="video-duration">00:36</div>
+
                     </div>
+
                 </div>
 
                 <div class="video-card">
+
                     <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
+
+                        <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" 
+
+                                title="No Experience Required" 
+
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+                                allowfullscreen>
+
+                        </iframe>
+
                     </div>
+
                     <div class="video-info">
+
                         <div class="video-title">I'VE NEVER SOLD A PRODUCT ONLINE BEFORE. WILL THAT HOLD ME BACK?</div>
+
                         <div class="video-duration">00:48</div>
+
                     </div>
+
                 </div>
 
                 <div class="video-card">
+
                     <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
+
+                        <iframe src="https://www.youtube.com/embed/AjWfY7SnMBI" 
+
+                                title="First Sale Timeframe" 
+
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+                                allowfullscreen>
+
+                        </iframe>
+
                     </div>
+
                     <div class="video-info">
+
                         <div class="video-title">WHAT'S THE TIMEFRAME TO MAKE MY FIRST SALE?</div>
+
                         <div class="video-duration">01:21</div>
+
                     </div>
+
                 </div>
 
                 <div class="video-card">
+
                     <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
+
+                        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" 
+
+                                title="Experience Proof" 
+
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+
+                                allowfullscreen>
+
+                        </iframe>
+
                     </div>
+
                     <div class="video-info">
+
                         <div class="video-title">HOW LONG HAVE I BEEN DOING IT? PROVE IT.</div>
+
                         <div class="video-duration">00:45</div>
+
                     </div>
+
                 </div>
+
             </div>
 
             <div class="navigation">
+
                 <button class="nav-button secondary" onclick="previousStep()">← Previous</button>
-                <button class="nav-button" onclick="nextStep()">Continue to Step 4 →</button>
+
+                <button class="nav-button" onclick="nextStep()">Complete ✓</button>
+
             </div>
+
         </div>
 
-        <!-- Step 4: Due Diligence -->
-        <div class="content-section" id="step4">
-            <div class="step-badge">Step 4 of 6</div>
-            <h2 class="section-title">Do Your Proper Due Diligence</h2>
-            
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">VIEW OUR PRIVATE CLIENT FEEDBACK</div>
-                        <div class="video-duration">03:31</div>
-                    </div>
-                </div>
+        <!-- Completion Section -->
 
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">YOUTUBE/GOOGLE REVIEWS</div>
-                        <div class="video-duration">03:59</div>
-                    </div>
-                </div>
+        <div class="content-section" id="completion">
+
+            <div class="completion-header">
+
+                <div class="completion-icon">📅</div>
+
+                <h2 class="completion-title">Your Meeting Info</h2>
+
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <button class="nav-button" style="background: #FFD700; color: #000; width: auto;">+ View More FAQs</button>
+            <div class="completion-content">
+
+                <div class="completion-info-row">
+
+                    <span class="completion-label">Your Funding Expert:</span>
+
+                    <span class="completion-value" id="assignedTo">Loading...</span>
+
+                </div>
+
+                <div class="completion-info-row">
+
+                    <span class="completion-label">Meeting Time:</span>
+
+                    <span class="completion-value" id="meetingTime">Loading...</span>
+
+                </div>
+
+                
+
+                <!-- Calendar Button Container -->
+
+                <div class="completion-calendar-section">
+
+                    <p class="completion-calendar-prompt">Save this to your calendar now:</p>
+
+                    <div id="calBtn" style="margin: auto; font-size: 1rem; text-align: center; position: relative;"></div>
+
+                </div>
+
+                
+
+                <div class="completion-notice">
+
+                    <div class="completion-notice-icon">📞</div>
+
+                    <div class="completion-notice-text">
+
+                        <strong>Important:</strong> You will receive a phone call in the next few hours before your scheduled meeting to confirm your attendance and ensure everything is set up properly.
+
+                    </div>
+
+                </div>
+
+                
+
+                <div style="text-align: center; margin: 40px 0;">
+
+                    <p style="font-size: 24px; margin-bottom: 20px;">💡 This call could be step #1 toward completely changing your life. So be there and don't miss it!</p>
+
+                </div>
+
             </div>
 
             <div class="navigation">
+
                 <button class="nav-button secondary" onclick="previousStep()">← Previous</button>
-                <button class="nav-button" onclick="nextStep()">Continue to Step 5 →</button>
-            </div>
-        </div>
 
-        <!-- Step 5: Client Interviews -->
-        <div class="content-section" id="step5">
-            <div class="step-badge">Step 5 of 6</div>
-            <h2 class="section-title">Full-Length Client Interviews</h2>
-            
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">How He Made $167,000 on 1 Order</div>
-                        <div class="video-duration">22:26</div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">Beginner to $50,000/Month</div>
-                        <div class="video-duration">17:52</div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">$100,000 Selling a Product He Loves</div>
-                        <div class="video-duration">28:34</div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <div class="video-placeholder" style="position: absolute; width: 100%; height: 100%;">
-                            <div class="play-button">
-                                <div class="play-icon"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <div class="video-title">$58,000 in Month #1 of Ads</div>
-                        <div class="video-duration">19:43</div>
-                    </div>
-                </div>
             </div>
 
-            <div class="navigation">
-                <button class="nav-button secondary" onclick="previousStep()">← Previous</button>
-                <button class="nav-button" onclick="nextStep()">Continue to Final Step →</button>
-            </div>
-        </div>
-
-
-        <!-- Step 7: Calendar Confirmation -->
-        <div class="content-section" id="step6">
-            <div class="step-badge">Step 6 of 6</div>
-            <h2 class="section-title">Don't Miss Your Call</h2>
-            
-            <div id="calBtn" style="margin: auto; font-size: 1.25rem; text-align: center; position: relative; border-radius: 100px; background: transparent; color: #014421;"></div>
-
-<script>
-  // A helper function to retrieve a specific parameter from the URL
-function getQueryParam(paramName) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(paramName);
-}
-// 1. Get the "meetingTime" parameter from the URL
-const meetingTime = getQueryParam("event_start_time");
-const meetingEndTime = getQueryParam("event_end_time");
-const inviteemail = getQueryParam("invitee_email");
-const inviteename = getQueryParam("invitee_first_name") + " " + getQueryParam("invitee_last_name");
-const assigned_to = getQueryParam("assigned_to");
-
-//document.getElementById("assignedTo").textContent = "Annika Sander";
-console.log(inviteename);
-// or if Calendly passes it differently, e.g. ?event_start_time=..., rename accordingly
-
-// 2. Update the textContent of the element with id="Termin"
-if (meetingTime != null) {
-  console.log(meetingTime);
-  const date = new Date(meetingTime);
-  // Tag, Monatsname (lang), Jahr ermitteln
-  const day = date.getDate();
-  const month = date.toLocaleString("de-DE", { month: "long" });
-  const year = date.getFullYear();
-  // Stunden und Minuten zweistellig formatieren
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-
-  // Zusammenbauen des endgültigen Strings
-  const formattedDate = `${day}. ${month} ${year} at ${hours}:${minutes}`;
-  console.log(formattedDate);
-  /*document.getElementById("termin").textContent = date.toLocaleString("en-CA", { weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric", hour: "2-digit", minute: "2-digit",  timezoneName: "short" });*/
-}
-else {
-  //document.getElementById("meetingWer").style = "display: none !important;";
-}
-
-function splitISO8601(dateString) {
-  // Split the date string into date and time components
-  const [date, timeWithOffset] = dateString.split('T');
-  // Remove any timezone offset information (like Z or +hh:mm) from the time
-  const time = timeWithOffset.split(/[Z+-]/)[0];
-  // Remove the seconds from the time (keep only hours and minutes)
-  const [hours, minutes] = time.split(':');
-  const timeWithoutSeconds = `${hours}:${minutes}`;
-  return { date, time, timeWithoutSeconds };
-}
-
-function formatGermanDate(isoDateString) {
-  // Split the ISO date string into date and time
-  const [date] = isoDateString.split('T');
-  
-  // Extract the day, month, and year from the date part
-  const [year, month, day] = date.split('-');
-  // Define an array of month names in German
-  const germanMonths = [
-    "Januar", "Februar", "März", "April", "Mai", "Juni",
-    "Juli", "August", "September", "Oktober", "November", "Dezember"
-  ];
-  // Format the date in the German format "11. Oktober" (day + month)
-  const formattedDate = `${parseInt(day)}. ${germanMonths[parseInt(month) - 1]}`;
-  return formattedDate;
-}
-
-// Use the actual meeting times instead of placeholders
-if (meetingTime != null) {
-var calStartTimeResult = splitISO8601(meetingTime);
-var calEndTimeResult = splitISO8601(meetingEndTime);
-  
-}
-  else {
-    var calStartTimeResult = splitISO8601("2025-02-28T19:20:00+01:00");
-var calEndTimeResult = splitISO8601("2025-02-28T19:21:30+01:00");
-  }
-
-// Fixed HTML string with proper spacing and actual meeting times REMOVED: with ' + assigned_to + ' 
-document.getElementById("calBtn").innerHTML = '<add-to-calendar-button name="Erstgespräch Mindworker" description="An initial consultation from Nuvetra for answering your questions." startDate="' + calStartTimeResult.date + '"  startTime="' + calStartTimeResult.time + '"  endDate="' + calEndTimeResult.date + '" endTime="' + calEndTimeResult.time + '"  timeZone="Europe/Berlin"  options="\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\',\'MicrosoftTeams\'"  listStyle="overlay"  buttonStyle="round"  label="Add to calendar"  language="en"></add-to-calendar-button>';
-
-setTimeout(function(){ 
-//host is the element that holds the shadow root:
-var host;
-var style;
-
-host = document.getElementsByTagName('add-to-calendar-button')[0];
-style = document.createElement( 'style' );
-style.innerHTML = '.atcb-button {margin: 0 !important; transition-property: transform !important; transition-duration: .3s !important; border: none !important; box-shadow: none !important;  width: 100% !important; max-width: 100% !important;  font-weight: 400 !important; font-size: 1.25rem !important; padding-top: 0px !important;  padding-bottom: 0px !important;  padding-right: 0px !important;  padding-left: 0px !important; color: white !important; background: transparent !important; -webkit-background-clip: text !important; background-clip: text !important; }  .atcb-button:not([disabled]):hover{color: white !important; } .atcb-icon {display:none;} .atcb-initialized { width: 90% !important; padding: 8px 0px !important; background: #c67742 !important; border-radius: 100px !important; transition: 0.2s ease !important; --btn-border-radius: 0px !important; margin-left: auto !important; margin-right: auto !important; }.atcb-button-wrapper {    width: 100% !important;  } #atcb-reference {display:none !important;}'
-host.shadowRoot.appendChild( style );
-  
-
-    }, 500);
-
-</script>
-<style>
-  #calBtnBorder::before {
-  	cursor: pointer;
-    transition: 0.3s;
-  }
-  #calBtnBorder:hover::before{
-    mask-composite: add;
-  }
-  
-  #calBtnBorder{
-    transition: 0.2s ease !important;
-  }
-  #calBtnBorder div {
-  	transition: 0.3s;
-  }
-  
-  #calBtnBorder:hover div {
-  	color: white !important;  
-  }
-</style>
-
-
-                      
-
-            <div style="text-align: center; margin: 40px 0;">
-                <p style="font-size: 24px; margin-bottom: 20px;">💡 This call could be step #1 toward completely changing your life. So be there and don't miss it!</p>
-            </div>
-
-            <div class="navigation">
-                <button class="nav-button secondary" onclick="previousStep()">← Previous</button>
-                <button class="nav-button" style="background: #4CAF50;">Complete ✓</button>
-            </div>
         </div>
 
         <!-- Progress indicator -->
+
         <div class="progress-container">
+
             <div class="progress-bar">
-                <div class="progress-fill" id="progressBar" style="width: 14.3%;"></div>
+
+                <div class="progress-fill" id="progressBar" style="width: 33.33%;"></div>
+
             </div>
+
             <div class="step-dots">
+
                 <div class="step-dot active"></div>
+
                 <div class="step-dot"></div>
+
                 <div class="step-dot"></div>
-                <div class="step-dot"></div>
-                <div class="step-dot"></div>
-                <div class="step-dot"></div>
-                
+
             </div>
+
         </div>
+
     </div>
 
     <script>
+
         let currentStep = 1;
-        const totalSteps = 6;
+
+        const totalSteps = 3;
+
+        
+
+        // A helper function to retrieve a specific parameter from the URL
+
+        function getQueryParam(paramName) {
+
+            const urlParams = new URLSearchParams(window.location.search);
+
+            return urlParams.get(paramName);
+
+        }
+
+        // Get parameters from URL
+
+        const meetingTime = getQueryParam("event_start_time");
+
+        const meetingEndTime = getQueryParam("event_end_time");
+
+        const inviteemail = getQueryParam("invitee_email");
+
+        const inviteename = getQueryParam("invitee_first_name") + " " + getQueryParam("invitee_last_name");
+
+        const assigned_to = getQueryParam("assigned_to");
+
+        console.log(inviteename);
+
+        function splitISO8601(dateString) {
+
+            const [date, timeWithOffset] = dateString.split('T');
+
+            const time = timeWithOffset.split(/[Z+-]/)[0];
+
+            const [hours, minutes] = time.split(':');
+
+            const timeWithoutSeconds = `${hours}:${minutes}`;
+
+            return { date, time, timeWithoutSeconds };
+
+        }
 
         function updateProgress() {
+
             const progress = (currentStep / totalSteps) * 100;
+
             document.getElementById('progressBar').style.width = progress + '%';
+
             
+
             // Update dots
+
             const dots = document.querySelectorAll('.step-dot');
+
             dots.forEach((dot, index) => {
+
                 if (index < currentStep) {
+
                     dot.classList.add('active');
+
                 } else {
+
                     dot.classList.remove('active');
+
                 }
+
             });
+
         }
 
         function showStep(stepNumber) {
+
             // Hide all sections
+
             document.querySelectorAll('.content-section').forEach(section => {
+
                 section.classList.remove('active');
+
             });
+
             
+
             // Show current section
-            const currentSection = document.getElementById('step' + stepNumber);
-            if (currentSection) {
-                currentSection.classList.add('active');
+
+            let currentSection;
+
+            if (stepNumber <= totalSteps) {
+
+                currentSection = document.getElementById('step' + stepNumber);
+
+            } else {
+
+                currentSection = document.getElementById('completion');
+
+                // Initialize completion data when showing completion
+
+                initializeCompletionData();
+
             }
+
             
+
+            if (currentSection) {
+
+                currentSection.classList.add('active');
+
+            }
+
+            
+
             updateProgress();
+
             
+
             // Scroll to top
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
         }
 
         function nextStep() {
+
             if (currentStep < totalSteps) {
+
                 currentStep++;
+
                 showStep(currentStep);
+
+            } else {
+
+                // Show completion section
+
+                showStep(totalSteps + 1);
+
             }
+
         }
 
         function previousStep() {
+
             if (currentStep > 1) {
+
                 currentStep--;
+
                 showStep(currentStep);
+
             }
+
         }
 
-        function playVideo(element) {
-            // In production, this would trigger actual video playback
-            element.innerHTML = '<div style="color: white; font-size: 24px;">Video Player Would Load Here</div>';
+        function initializeCompletionData() {
+
+            // Set assigned person
+
+            const assignedPerson = assigned_to || 'Your Funding Expert';
+
+            document.getElementById('assignedTo').textContent = assignedPerson;
+
+            
+
+            // Format and display meeting time
+
+            if (meetingTime) {
+
+                const date = new Date(meetingTime);
+
+                const dateOptions = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+
+                const formattedDate = date.toLocaleDateString('en-US', dateOptions);
+
+                const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true, timeZoneName: 'short' };
+
+                const formattedTime = date.toLocaleTimeString('en-US', timeOptions);
+
+                document.getElementById('meetingTime').textContent = `${formattedDate} at ${formattedTime}`;
+
+            } else {
+
+                document.getElementById('meetingTime').textContent = 'Time to be confirmed';
+
+            }
+
+            
+
+            // Initialize calendar button
+
+            initializeCalendarButton();
+
+        }
+
+        function initializeCalendarButton() {
+
+            // Use the actual meeting times
+
+            let calStartTimeResult, calEndTimeResult;
+
+            if (meetingTime != null) {
+
+                calStartTimeResult = splitISO8601(meetingTime);
+
+                calEndTimeResult = splitISO8601(meetingEndTime);
+
+            } else {
+
+                calStartTimeResult = splitISO8601("2025-02-28T19:20:00+01:00");
+
+                calEndTimeResult = splitISO8601("2025-02-28T19:21:30+01:00");
+
+            }
+
+            // Create calendar button
+
+            document.getElementById("calBtn").innerHTML = '<add-to-calendar-button name="Erstgespräch Mindworker" description="An initial consultation from Nuvetra for answering your questions." startDate="' + calStartTimeResult.date + '"  startTime="' + calStartTimeResult.time + '"  endDate="' + calEndTimeResult.date + '" endTime="' + calEndTimeResult.time + '"  timeZone="Europe/Berlin"  options="\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\',\'MicrosoftTeams\'"  listStyle="overlay"  buttonStyle="round"  label="Add to calendar"  language="en"></add-to-calendar-button>';
+
+            setTimeout(function(){ 
+
+                var host = document.getElementsByTagName('add-to-calendar-button')[1];
+
+                var style = document.createElement( 'style' );
+
+                style.innerHTML = '.atcb-button {margin: 0 !important; border: none !important; box-shadow: none !important; width: 100% !important; max-width: 100% !important; font-weight: 600 !important; font-size: 16px !important; padding: 0 !important; color: white !important; background: transparent !important; } .atcb-button:not([disabled]):hover{color: white !important; transform: scale(1.02) !important; } .atcb-icon {display:none;} .atcb-initialized { width: 80% !important; padding: 13px 24px !important; background: linear-gradient(135deg, #4CAF50, #45a049) !important; border-radius: 50px !important; transition: all 0.3s ease !important; margin: 0 auto !important; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.25) !important; }.atcb-button-wrapper { width: 100% !important; } #atcb-reference {display:none !important;} .atcb-initialized:hover { transform: translateY(-2px) !important; box-shadow: 0 6px 18px rgba(76, 175, 80, 0.35) !important; }'
+
+                host.shadowRoot.appendChild( style );
+
+            }, 500);
+
         }
 
         // Initialize
+
         updateProgress();
+
+        // Popup Functions
+function initializePopupCalendar() {
+    // Use the actual meeting times
+    if (meetingTime != null) {
+        var popupCalStartTimeResult = splitISO8601(meetingTime);
+        var popupCalEndTimeResult = splitISO8601(meetingEndTime);
+    } else {
+        var popupCalStartTimeResult = splitISO8601("2025-02-28T19:20:00+01:00");
+        var popupCalEndTimeResult = splitISO8601("2025-02-28T19:21:30+01:00");
+    }
+
+    // Create calendar button in popup
+    document.getElementById("popupCalBtn").innerHTML = '<add-to-calendar-button name="Funding Meeting Nuvetra" description="An initial consultation with Nuvetra for answering your questions." startDate="' + popupCalStartTimeResult.date + '"  startTime="' + popupCalStartTimeResult.time + '"  endDate="' + popupCalEndTimeResult.date + '" endTime="' + popupCalEndTimeResult.time + '"  timeZone="Europe/Berlin"  options="\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\',\'MicrosoftTeams\'"  listStyle="overlay"  buttonStyle="round"  label="Add to calendar"  language="en"></add-to-calendar-button>';
+
+    // Style the calendar button after it's created
+    setTimeout(function() {
+        var popupHost = document.querySelector('#popupCalBtn add-to-calendar-button');
+        if (popupHost && popupHost.shadowRoot) {
+            var popupStyle = document.createElement('style');
+            popupStyle.innerHTML = '.atcb-button {margin: 0 !important; border: none !important; box-shadow: none !important; width: 100% !important; max-width: 100% !important; font-weight: 600 !important; font-size: 16px !important; padding: 0 !important; color: white !important; background: transparent !important; } .atcb-button:not([disabled]):hover{color: white !important; transform: scale(1.02) !important; } .atcb-icon {display:none;} .atcb-initialized { width: 80% !important; padding: 13px 24px !important; background: linear-gradient(135deg, #4CAF50, #45a049) !important; border-radius: 50px !important; transition: all 0.3s ease !important; margin: 0 auto !important; box-shadow: 0 4px 12px rgba(76, 175, 80, 0.25) !important; }.atcb-button-wrapper { width: 100% !important; } #atcb-reference {display:none !important;} .atcb-initialized:hover { transform: translateY(-2px) !important; box-shadow: 0 6px 18px rgba(76, 175, 80, 0.35) !important; }';
+            popupHost.shadowRoot.appendChild(popupStyle);
+        }
+    }, 500);
+}
+
+function showPopup() {
+    const popup = document.getElementById('meetingPopup');
+    
+    // Get the assigned person
+    const assignedPerson = assigned_to || 'Your Funding Expert';
+    document.getElementById('popupAssignedTo').textContent = assignedPerson;
+    
+    // Format and display the meeting time - all on one line
+    if (meetingTime) {
+        const date = new Date(meetingTime);
+        
+        // Format date
+        const dateOptions = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+        const formattedDate = date.toLocaleDateString('en-US', dateOptions);
+        
+        // Format time with timezone
+        const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true, timeZoneName: 'short' };
+        const formattedTime = date.toLocaleTimeString('en-US', timeOptions);
+        
+        // Combine on one line
+        document.getElementById('popupMeetingTime').textContent = 
+            `${formattedDate} at ${formattedTime}`;
+    } else {
+        document.getElementById('popupMeetingTime').textContent = 'Time to be confirmed';
+    }
+    
+    // Initialize calendar button in popup
+    initializePopupCalendar();
+    
+    // Show the popup
+    popup.classList.add('show');
+}
+
+function closePopup() {
+    const popup = document.getElementById('meetingPopup');
+    popup.classList.remove('show');
+}
+
+// Show popup when page loads (with a small delay for better UX)
+window.addEventListener('load', function() {
+    setTimeout(showPopup, 1500);
+});
+
+// Close popup when clicking outside
+document.getElementById('meetingPopup').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closePopup();
+    }
+});
     </script>
 
     <style>
+
         footer {
+
             color: #fff;
+
             padding: 2rem 0;
+
             width: 100%;
+
         }
 
         .footer-container {
+
             max-width: 1200px;
+
             margin: 0 auto;
+
             padding: 0 2rem;
+
         }
 
         .footer-top {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 1.5rem;
+
             flex-wrap: wrap;
+
             gap: 1rem;
-        }
-        .footer-logo-section {
-           display: block;
- 
-        }
-        .footer-logo-icon {
-            width: 50px;
-            height: 50px;
-            display: block;
-            margin-bottom: 10px;
+
         }
 
+        .footer-logo-section {
+
+           display: block;
+
+        }
+
+        .footer-logo-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            display: block;
+
+            margin-bottom: 10px;
+
+        }
 
         .footer-logo-text {
+
             font-size: 1.1rem;
+
             font-weight: 600;
+
             letter-spacing: 0.05em;
+
             color: #fff;
+
         }
 
         .social-links {
+
             display: flex;
+
             gap: 1.25rem;
+
             align-items: center;
+
             margin-right: 20px;
+
         }
 
         .social-links a {
+
             color: #fff;
+
             text-decoration: none;
+
             transition: opacity 0.2s ease;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
         }
 
         .social-links a:hover {
+
             opacity: 0.7;
+
         }
 
         .social-links svg {
+
             width: 20px;
+
             height: 20px;
+
         }
 
         .utility-links {
+
             display: flex;
+
             gap: 0.5rem;
+
             align-items: center;
+
             color: #fff;
+
             font-size: 0.9rem;
+
         }
 
         .utility-links a {
+
             color: #fff;
+
             text-decoration: none;
+
             transition: color 0.2s ease;
+
         }
 
         .utility-links a:hover {
+
             color: #fff;
+
         }
 
         .footer-bottom {
+
             text-align: left;
+
             width: 100%;
+
             display: block;
+
             color: #fff;
+
             font-size: 16px !important;
+
         }
 
         @media (max-width: 768px) {
+
             .footer-top {
+
                 flex-direction: column;
+
                 align-items: center;
+
                 gap: 1.5rem;
+
             }
 
             .footer-logo-icon {
+
                 margin-left: auto;
+
                 margin-right: auto;
+
             }
 
             .social-links {
+
                 order: 3;
+
                 margin: 0;
+
             }
 
             .utility-links {
+
                 order: 2;
+
             }
 
             .footer-bottom {
+
                 margin-top: 1.5rem;
+
             }
+
         }
+
     </style>
 
     <footer>
+
         <div class="footer-container">
+
             <div class="footer-top">
+
                 <div class="footer-logo-section">
+
                     <img src="/logo.png" alt="Nuvetra Logo" class="footer-logo-icon">
-                    <div class="footer-bottom" style="font-size: 0.5rem !important;"
+
+                    <div class="footer-bottom" style="font-size: 0.5rem !important;">
+
                         <p>NUVETRA Inc. 2025, All Rights Reserved</p>
+
                     </div>
+
                 </div>
 
                 <div class="social-links">
+
                     <!-- Facebook -->
+
                     <a href="#" aria-label="Facebook">
+
                         <svg fill="currentColor" viewBox="0 0 24 24">
+
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+
                         </svg>
+
                     </a>
 
                     <!-- Instagram -->
+
                     <a href="#" aria-label="Instagram">
+
                         <svg fill="currentColor" viewBox="0 0 24 24">
+
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+
                         </svg>
+
                     </a>
 
                     <!-- YouTube -->
+
                     <a href="#" aria-label="YouTube">
+
                         <svg fill="currentColor" viewBox="0 0 24 24">
+
                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+
                         </svg>
+
                     </a>
 
                     <!-- LinkedIn -->
+
                     <a href="#" aria-label="LinkedIn">
+
                         <svg fill="currentColor" viewBox="0 0 24 24">
+
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+
                         </svg>
+
                     </a>
 
                     <!-- TikTok -->
+
                     <a href="#" aria-label="TikTok">
+
                         <svg fill="currentColor" viewBox="0 0 24 24">
+
                             <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+
                         </svg>
+
                     </a>
+
                 </div>
 
                 <div class="utility-links">
+
                     <a href="#">Imprint</a>
+
                     <span>-</span>
+
                     <a href="#">Privacy</a>
+
                 </div>
+
             </div>
 
-            
         </div>
+
     </footer>
+
 </body>
 
 </html>
-
-
-
 
