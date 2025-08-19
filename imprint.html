@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/_vercel/insights/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/cookie-banner/silktide-consent-manager.css">
+    <script src="/cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: {
+        showBackground: false
+      },
+      cookieIcon: {
+        position: "bottomLeft"
+      },
+      cookieTypes: [
+        {
+          id: "necessary",
+          name: "Necessary",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          required: true,
+          onAccept: function() {
+            console.log('Add logic for the required Necessary here');
+          }
+        },
+        {
+          id: "analytical",
+          name: "Analytical",
+          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          required: false,
+          onAccept: function() {
+            gtag('consent', 'update', {
+              analytics_storage: 'granted',
+            });
+            dataLayer.push({
+              'event': 'consent_accepted_analytical',
+            });
+          },
+          onReject: function() {
+            gtag('consent', 'update', {
+              analytics_storage: 'denied',
+            });
+          }
+        }
+      ],
+      text: {
+        banner: {
+          description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://nuvetra-inc.com/privacy\" target=\"_blank\">Cookie Policy.</a></p>",
+          acceptAllButtonText: "Accept all",
+          acceptAllButtonAccessibleLabel: "Accept all cookies",
+          rejectNonEssentialButtonText: "Reject non-essential",
+          rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+          preferencesButtonText: "Preferences",
+          preferencesButtonAccessibleLabel: "Toggle preferences"
+        },
+        preferences: {
+          title: "Customize your cookie preferences",
+          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          creditLinkText: "Get this banner for free",
+          creditLinkAccessibleLabel: "Get this banner for free"
+        }
+      },
+      position: {
+        banner: "bottomCenter"
+      }
+    });
+    </script>
+    
+    <title>Legal Notice & Imprint - Nuvetra</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: calc(15px + 0.390625vw);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: radial-gradient(circle at top left,rgba(0, 0, 0, 1) 0%, rgba(10, 27, 47, 1) 40%, rgba(10, 27, 47, 1) 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #2c5f6f 0%, #d4a574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+        }
+
+        /* Main Content */
+        .imprint-content {
+            background: rgba(44, 95, 111, 0.1);
+            border-radius: 25px;
+            border: 2px solid #c67742;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .imprint-title {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .imprint-subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ccc;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .imprint-section {
+            margin-bottom: 30px;
+        }
+
+        .imprint-section h2 {
+            color: #d4a574;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .imprint-section h3 {
+            color: #d4a574;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .imprint-section p {
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        .imprint-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .imprint-section li {
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .imprint-section a {
+            color: #d4a574;
+            text-decoration: underline;
+        }
+
+        .imprint-section a:hover {
+            color: #FFD700;
+        }
+
+        .company-info {
+            background: rgba(212, 165, 116, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid #d4a574;
+        }
+
+        .company-info h3 {
+            color: #d4a574;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .info-card h3 {
+            color: #d4a574;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .highlight {
+            background: rgba(212, 165, 116, 0.2);
+            border-left: 4px solid #d4a574;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning h4 {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            color: #fff;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo-section {
+           display: block;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .utility-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .utility-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .utility-links a:hover {
+            color: #d4a574;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            width: 100%;
+            display: block;
+            color: #fff;
+            font-size: 16px !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .imprint-content {
+                padding: 25px;
+                border-radius: 15px;
+            }
+
+            .imprint-title {
+                font-size: 24px;
+            }
+
+            .imprint-section h2 {
+                font-size: 20px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .footer-logo-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                order: 3;
+                margin: 0;
+            }
+
+            .utility-links {
+                order: 2;
+            }
+
+            .footer-bottom {
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="/logo.png" alt="Nuvetra Logo" class="logo-icon">
+            </div>
+            <a href="/" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                Back to Home
+            </a>
+        </header>
+
+        <!-- Imprint Content -->
+        <main class="imprint-content">
+            <h1 class="imprint-title">Legal Notice & Imprint</h1>
+            <p class="imprint-subtitle">Information in accordance with applicable law</p>
+
+            <div class="company-info">
+                <h3>Company Information</h3>
+                <p><strong>Nuvetra Inc.</strong><br>
+                Business Services & Financial Consulting</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        <p><strong>Email:</strong> <a href="mailto:support@nuvetra-inc.com">support@nuvetra-inc.com</a></p>
+                        <p><strong>Website:</strong> <a href="https://nuvetra-inc.com" target="_blank">https://nuvetra-inc.com</a></p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Legal Information</h3>
+                        <p><strong>Company Type:</strong> Incorporated Business</p>
+                        <p><strong>Business Focus:</strong> International Financial Services & Business Consulting</p>
+                        <p><strong>Established:</strong> 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="imprint-section">
+                <h2>1. Responsible for Content</h2>
+                <p>Nuvetra Inc. is responsible for all content published on this website in accordance with applicable laws. All information provided on this website is for general informational purposes only.</p>
+                
+                <div class="highlight">
+                    <p><strong>Content Responsibility:</strong> The management of Nuvetra Inc. assumes full responsibility for the content of this website, including but not limited to text, images, videos, and interactive elements.</p>
+                </div>
+            </div>
+
+            <div class="imprint-section">
+                <h2>2. Disclaimer of Liability</h2>
+                <p>The information contained on this website is provided in good faith and for general information purposes only. We make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information, products, services, or related graphics contained on the website.</p>
+                
+                <h3>Limitation of Liability</h3>
+                <ul>
+                    <li>Nuvetra Inc. shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of this website</li>
+                    <li>We do not warrant that the website will be uninterrupted, secure, or error-free</li>
+                    <li>The use of information on this website is at your own risk</li>
+                    <li>We reserve the right to modify or discontinue any part of the website without notice</li>
+                </ul>
+            </div>
+
+            <div class="imprint-section">
+                <h2>3. External Links</h2>
+                <p>Our website may contain links to external websites that are not operated by us. We have no control over the content and practices of these sites and cannot accept responsibility or liability for their respective privacy policies or content.</p>
+                
+                <div class="warning">
+                    <h4>Important Notice</h4>
+                    <p>When you click on links to external websites, you will leave our site. We strongly advise you to review the privacy policy and terms of service of every site you visit.</p>
+                </div>
+            </div>
+
+            <div class="imprint-section">
+                <h2>4. Intellectual Property Rights</h2>
+                <p>Unless otherwise stated, Nuvetra Inc. and/or its licensors own the intellectual property rights for all material on this website. All intellectual property rights are reserved.</p>
+                
+                <h3>Copyright Notice</h3>
+                <ul>
+                    <li>All content, including text, graphics, logos, images, and software, is the property of Nuvetra Inc.</li>
+                    <li>Unauthorized reproduction, distribution, or modification of any content is strictly prohibited</li>
+                    <li>You may view and download content for personal, non-commercial use only</li>
+                    <li>Commercial use of any content requires prior written permission</li>
+                </ul>
+            </div>
+
+            <div class="imprint-section">
+                <h2>5. Privacy and Data Protection</h2>
+                <p>We are committed to protecting your privacy and handling your personal data in accordance with applicable data protection laws. For detailed information about how we collect, use, and protect your data, please refer to our <a href="/privacy">Privacy Policy</a>.</p>
+                
+                <div class="highlight">
+                    <p><strong>Data Processing:</strong> By using our website, you consent to the collection and use of information in accordance with our Privacy Policy.</p>
+                </div>
+            </div>
+
+            <div class="imprint-section">
+                <h2>6. Terms of Use</h2>
+                <p>By accessing and using this website, you agree to comply with these terms and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+                
+                <h3>User Obligations</h3>
+                <ul>
+                    <li>Use the website only for lawful purposes</li>
+                    <li>Respect intellectual property rights</li>
+                    <li>Do not attempt to disrupt or compromise website security</li>
+                    <li>Provide accurate information when required</li>
+                    <li>Respect the privacy and rights of other users</li>
+                </ul>
+            </div>
+
+            <div class="imprint-section">
+                <h2>7. Governing Law</h2>
+                <p>These terms and conditions are governed by and construed in accordance with applicable law. Any disputes relating to these terms and conditions will be subject to the exclusive jurisdiction of the appropriate courts.</p>
+            </div>
+
+            <div class="imprint-section">
+                <h2>8. Changes to This Imprint</h2>
+                <p>We reserve the right to update or change this legal notice at any time. Any changes will be posted on this page with an updated revision date. We encourage you to review this page periodically for any changes.</p>
+                
+                <div class="highlight">
+                    <p><strong>Last Updated:</strong> August 19, 2025</p>
+                </div>
+            </div>
+
+            <div class="imprint-section">
+                <h2>9. Contact Information</h2>
+                <p>If you have any questions about this legal notice or need to contact us for any reason, please use the following information:</p>
+                
+                <div class="company-info">
+                    <h3>Get in Touch</h3>
+                    <p><a href="mailto:support@nuvetra-inc.com">support@nuvetra-inc.com</a></p>
+                   
+                    
+                    <p style="margin-top: 20px;"><em>We strive to respond to all inquiries within 24-48 hours during business days.</em></p>
+                </div>
+            </div>
+
+            
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="/logo.png" alt="Nuvetra Logo" class="footer-logo-icon">
+                    <div class="footer-bottom" style="font-size: 0.5rem !important;">
+                        <p>NUVETRA Inc. 2025, All Rights Reserved</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" aria-label="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="#" aria-label="TikTok">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="utility-links">
+                    <a href="/imprint">Imprint</a>
+                    <span>-</span>
+                    <a href="/privacy">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
