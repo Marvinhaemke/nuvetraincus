@@ -67,8 +67,8 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     preferences: {
       title: "Customize your cookie preferences",
       description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
-      LinkText: "Get this banner for free",
-      LinkAccessibleLabel: "Get this banner for free"
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
     }
   },
   position: {
@@ -174,7 +174,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
            
             margin-bottom: 40px;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+             /*padding-bottom: 56.25%; 16:9 aspect ratio */
             
             border-radius: 25px;
     border: 2px solid #B89745;
@@ -348,12 +348,62 @@ src="https://www.facebook.com/tr?id=1285384883292530&ev=PageView&noscript=1"
         </div>
 
         <div class="video-container">
-            <!-- Replace VIDEO_ID with your actual YouTube video ID -->
-            <iframe 
-                src="https://www.youtube.com/embed/9AtmXihzbFs?autoplay=0&controls=1&rel=0&modestbranding=1&hd=1" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          
+            <div id="wistia_video">
+            <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/hwnxl4s31j.js" async type="module"></script><style>wistia-player[media-id='hwnxl4s31j']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/hwnxl4s31j/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="hwnxl4s31j" aspect="1.7777777777777777"></wistia-player>
+            </div>
+
+            <iframe id="youtube_video"
+                src="https://www.youtube.com/embed/4rrjxpN_tiA?autoplay=0&controls=1&rel=0&modestbranding=1&hd=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
+              <style>
+                #youtube_video {
+                    display: none;
+                }
+                #wistia_video {
+                    display: block;
+                }
+                </style>
+            <script>
+                // Wistia fallback - directly test video URL accessibility
+                (function() {
+                    let fallbackShown = false;
+
+                    function testWistiaAccess() {
+                        const videoId = 'hwnxl4s31j'; // Replace with your actual video ID
+                        const videoUrl = `https://fast.wistia.com/embed/medias/hwnxl4s31j`;
+
+                        fetch(videoUrl, {
+                            method: 'GET',
+                            mode: 'no-cors' // This prevents CORS issues while still testing if request is blocked
+                        })
+                        .then(response => {
+                            // If we get here, the request wasn't blocked
+                            console.log('Wistia video accessible - video should work');
+                        })
+                        .catch(error => {
+                            // Request was blocked or failed
+                            console.log('Wistia video blocked - showing fallback');
+                            showFallback();
+                        });
+                    }
+
+                    function showFallback() {
+                        if (!fallbackShown) {
+                            
+                            document.getElementById('youtube_video').style.setProperty('display', 'block', 'important');
+                            fallbackShown = true;
+                            console.log('Wistia fallback activated');
+                        }
+                    }
+
+                    // Test on page load
+                    window.addEventListener('load', testWistiaAccess);
+                })();
+            </script>
+
         </div>
 
         <button class="cta-button" onclick="applyForAppointment()">
