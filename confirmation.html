@@ -699,12 +699,11 @@
     <div class="popup-content">
         <button class="popup-close" onclick="closePopup()">&times;</button>
         <div class="popup-header">
-            <div class="popup-icon">📅</div>
             <h2>Your Call is Confirmed!</h2>
         </div>
         <div class="popup-body">
             <div class="popup-info-row">
-                <span class="popup-label">Your Funding Expert:</span>
+                <span class="popup-label">Your Strategist:</span>
                 <span class="popup-value" id="popupAssignedTo">Loading...</span>
             </div>
             <div class="popup-info-row">
@@ -940,7 +939,7 @@
 
         <div class="content-section active" id="step1">
 
-            <div class="step-badge">Step 1 of 2</div>
+            <div class="step-badge">Step 1 of 3</div>
 
             <h2 class="section-title">Watch the video below in full before moving on to the rest of the page</h2>
 
@@ -970,11 +969,34 @@
 
         </div>
 
-        <!-- Step 2: Common Questions (previously Step 3) -->
+        <!-- Step 2: Full Overview -->
 
         <div class="content-section" id="step2">
 
-            <div class="step-badge">Step 2 of 2</div>
+            <div class="step-badge">Step 2 of 3</div>
+
+            <h2 class="section-title">Full Overview of Our Offer and How Everything Works</h2>
+
+            
+
+            <div class="video-container" style="padding-bottom: 0 !important;" >
+                <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/itzvw3mhjf.js" async type="module"></script><style>wistia-player[media-id='itzvw3mhjf']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/itzvw3mhjf/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="itzvw3mhjf" aspect="1.7777777777777777"></wistia-player>
+            </div>
+
+            <div class="navigation">
+
+                <button class="nav-button secondary" onclick="previousStep()">← Previous</button>
+
+                <button class="nav-button" onclick="nextStep()">Continue to Step 3 →</button>
+
+            </div>
+
+        </div>
+        <!-- Step 3: Common Questions (previously Step 3) -->
+
+        <div class="content-section" id="step3">
+
+            <div class="step-badge">Step 3 of 3</div>
 
             <h2 class="section-title">Most Common Questions</h2>
 
@@ -1344,6 +1366,8 @@
 
                 <div class="step-dot"></div>
 
+                <div class="step-dot"></div>
+
             </div>
 
         </div>
@@ -1354,7 +1378,7 @@
 
         let currentStep = 1;
 
-        const totalSteps = 2;
+        const totalSteps = 3;
 
         
 
@@ -1375,17 +1399,17 @@ let showPopupOnLoad = true;
 function checkDirectNavigation() {
     const directStep = getQueryParam("step");
     const videoId = getQueryParam("video");
-    
-    if (directStep === "2") {
+
+    if (directStep === "3" || directStep === "2") {
         // Disable popup when direct navigation is used
         showPopupOnLoad = false;
         
         // Jump directly to the requested step
         currentStep = parseInt(directStep);
         showStep(currentStep);
-        
-        // If step 2 with a specific video is requested, scroll to it
-        if (directStep === "2" && videoId) {
+
+        // If step 3 with a specific video is requested, scroll to it
+        if (directStep === "3" && videoId) {
             setTimeout(() => {
                 const videos = document.querySelectorAll('.video-card');
                 const videoIndex = parseInt(videoId) - 1;
@@ -2004,4 +2028,3 @@ document.getElementById('meetingPopup').addEventListener('click', function(e) {
 </body>
 
 </html>
-
