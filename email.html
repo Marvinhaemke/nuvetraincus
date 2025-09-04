@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - Nuvetra</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: calc(15px + 0.390625vw);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: radial-gradient(circle at top left,rgba(0, 0, 0, 1) 0%, rgba(10, 27, 47, 1) 40%, rgba(10, 27, 47, 1) 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #2c5f6f 0%, #d4a574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4a574;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .subscription-card {
+            background: rgba(44, 95, 111, 0.1);
+            border-radius: 25px;
+            border: 2px solid #c67742;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .subscription-title {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .subscription-subtitle {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .email-form {
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            border-radius: 50px;
+            color: #fff;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .email-input:focus {
+            border-color: #d4a574;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+        }
+
+        .subscribe-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.5);
+        }
+
+        .subscribe-btn:active {
+            transform: translateY(0);
+        }
+
+        .subscribe-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+            color: #28a745;
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(220, 53, 69, 0.2);
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            display: block;
+        }
+
+        .privacy-note {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 20px;
+        }
+
+        .privacy-note a {
+            color: #d4a574;
+            text-decoration: none;
+        }
+
+        .privacy-note a:hover {
+            text-decoration: underline;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .benefit svg {
+            color: #d4a574;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .subscribe-btn.loading .btn-text {
+            display: none;
+        }
+
+        .subscribe-btn.loading .spinner {
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            color: #fff;
+            padding: 2rem 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo-section {
+           display: block;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            width: 100%;
+            display: block;
+            color: #fff;
+            font-size: 16px !important;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .utility-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .utility-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .utility-links a:hover {
+            color: #d4a574;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .subscription-card {
+                padding: 40px 25px;
+            }
+
+            .subscription-title {
+                font-size: 28px;
+            }
+
+            .subscription-subtitle {
+                font-size: 16px;
+            }
+
+            .benefits {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .footer-logo-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                order: 3;
+                margin: 0;
+            }
+
+            .utility-links {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="/logo.png" alt="Nuvetra Logo" class="logo-icon">
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="hero-section">
+            <div class="subscription-card">
+                <h1 class="subscription-title">Stay Connected</h1>
+                <p class="subscription-subtitle">
+                    Join our exclusive community and receive insights on business strategy, financial innovation, and market trends.
+                </p>
+
+                <form id="subscriptionForm" class="email-form">
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="emailInput" 
+                            class="email-input" 
+                            placeholder="Enter your email address" 
+                            required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        />
+                    </div>
+                    <button type="submit" class="subscribe-btn">
+                        <span class="btn-text">Subscribe Now</span>
+                        <div class="spinner"></div>
+                    </button>
+                </form>
+
+                <div id="formMessage" class="form-message"></div>
+
+                <div class="benefits">
+                    <div class="benefit">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Weekly Insights
+                    </div>
+                    <div class="benefit">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Exclusive Content
+                    </div>
+                    <div class="benefit">
+                        <svg fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        No Spam
+                    </div>
+                </div>
+
+                <p class="privacy-note">
+                    We respect your privacy. Read our <a href="/privacy">Privacy Policy</a>.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="/logo.png" alt="Nuvetra Logo" class="footer-logo-icon">
+                    <div class="footer-bottom" style="font-size: 0.5rem !important;">
+                        <p>NUVETRA Inc. 2025, All Rights Reserved</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn
+                    <a href="#" aria-label="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>-->
+
+                    <!-- TikTok
+                    <a href="#" aria-label="TikTok">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>-->
+                </div>
+
+                <div class="utility-links">
+                    <a href="/imprint">Imprint</a>
+                    <span>-</span>
+                    <a href="/privacy">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Replace this with your actual Zapier webhook URL
+        const ZAPIER_WEBHOOK_URL = 'YOUR_ZAPIER_WEBHOOK_URL_HERE';
+        
+        const form = document.getElementById('subscriptionForm');
+        const emailInput = document.getElementById('emailInput');
+        const formMessage = document.getElementById('formMessage');
+        const submitButton = form.querySelector('.subscribe-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Show loading state
+            submitButton.classList.add('loading');
+            submitButton.disabled = true;
+            formMessage.style.display = 'none';
+
+            try {
+                // Send to Zapier webhook
+                const response = await fetch(ZAPIER_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        timestamp: new Date().toISOString(),
+                        source: 'subscription-page'
+                    })
+                });
+
+                if (response.ok || response.status === 200) {
+                    showMessage('Success! Welcome to our community. Check your email for confirmation.', 'success');
+                    emailInput.value = '';
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            } catch (error) {
+                console.error('Subscription error:', error);
+                showMessage('Something went wrong. Please try again later.', 'error');
+            } finally {
+                submitButton.classList.remove('loading');
+                submitButton.disabled = false;
+            }
+        });
+
+        function showMessage(text, type) {
+            formMessage.textContent = text;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+            
+            // Auto-hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Clear message when user starts typing
+        emailInput.addEventListener('input', () => {
+            formMessage.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
