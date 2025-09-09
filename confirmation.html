@@ -1292,7 +1292,7 @@
 
                 <div class="completion-info-row">
 
-                    <span class="completion-label">Your Funding Expert:</span>
+                    <span class="completion-label">Your Strategist:</span>
 
                     <span class="completion-value" id="assignedTo">Loading...</span>
 
@@ -1572,7 +1572,7 @@ window.addEventListener('DOMContentLoaded', checkDirectNavigation);
 
             // Set assigned person
 
-            const assignedPerson = assigned_to || 'Your Funding Expert';
+            const assignedPerson = assigned_to || 'Your Strategist Expert';
 
             document.getElementById('assignedTo').textContent = assignedPerson;
 
@@ -1630,7 +1630,7 @@ window.addEventListener('DOMContentLoaded', checkDirectNavigation);
 
             // Create calendar button
 
-            document.getElementById("calBtn").innerHTML = '<add-to-calendar-button name="Nuvetra Funding Call" description="An initial consultation from Nuvetra for answering your questions." startDate="' + calStartTimeResult.date + '"  startTime="' + calStartTimeResult.time + '"  endDate="' + calEndTimeResult.date + '" endTime="' + calEndTimeResult.time + '"  timeZone="Europe/Berlin"  options="\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\',\'MicrosoftTeams\'"  listStyle="overlay"  buttonStyle="round"  label="Add to calendar"  language="en"></add-to-calendar-button>';
+            document.getElementById("calBtn").innerHTML = '<add-to-calendar-button name="Nuvetra Strategy Call" description="An initial consultation from Nuvetra for answering your questions." startDate="' + calStartTimeResult.date + '"  startTime="' + calStartTimeResult.time + '"  endDate="' + calEndTimeResult.date + '" endTime="' + calEndTimeResult.time + '"  timeZone="Europe/Berlin"  options="\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\',\'MicrosoftTeams\'"  listStyle="overlay"  buttonStyle="round"  label="Add to calendar"  language="en"></add-to-calendar-button>';
 
             setTimeout(function(){ 
 
@@ -1662,7 +1662,7 @@ function initializePopupCalendar() {
     }
 
     // Create calendar button in popup
-    document.getElementById("popupCalBtn").innerHTML = '<add-to-calendar-button name="Funding Meeting Nuvetra" description="An initial consultation with Nuvetra for answering your questions." startDate="' + popupCalStartTimeResult.date + '"  startTime="' + popupCalStartTimeResult.time + '"  endDate="' + popupCalEndTimeResult.date + '" endTime="' + popupCalEndTimeResult.time + '"  timeZone="Europe/Berlin"  options="\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\',\'MicrosoftTeams\'"  listStyle="overlay"  buttonStyle="round"  label="Add to calendar"  language="en"></add-to-calendar-button>';
+    document.getElementById("popupCalBtn").innerHTML = '<add-to-calendar-button name="Strategy Meeting Nuvetra" description="An initial consultation with Nuvetra for answering your questions." startDate="' + popupCalStartTimeResult.date + '"  startTime="' + popupCalStartTimeResult.time + '"  endDate="' + popupCalEndTimeResult.date + '" endTime="' + popupCalEndTimeResult.time + '"  timeZone="Europe/Berlin"  options="\'Apple\',\'Google\',\'iCal\',\'Outlook.com\',\'Yahoo\',\'Microsoft365\',\'MicrosoftTeams\'"  listStyle="overlay"  buttonStyle="round"  label="Add to calendar"  language="en"></add-to-calendar-button>';
 
     // Style the calendar button after it's created
     setTimeout(function() {
@@ -1679,7 +1679,7 @@ function showPopup() {
     const popup = document.getElementById('meetingPopup');
     
     // Get the assigned person
-    const assignedPerson = assigned_to || 'Your Funding Expert';
+    const assignedPerson = assigned_to || 'Your Strategy Expert';
     document.getElementById('popupAssignedTo').textContent = assignedPerson;
     
     // Format and display the meeting time - all on one line
@@ -2028,4 +2028,5 @@ document.getElementById('meetingPopup').addEventListener('click', function(e) {
 </body>
 
 </html>
+
 
