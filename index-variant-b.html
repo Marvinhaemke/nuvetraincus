@@ -477,8 +477,9 @@
         <div class="outcome-options">
           <label class="outcome-option-box">
             <input type="checkbox" name="outcome" value="Financial Identity & Growth">
+            <span class="custom-checkbox"></span>
             <div class="outcome-content">
-              <strong>Option A – Financial Identity & Growth</strong>
+              <strong>Financial Identity & Growth</strong>
               <ul class="outcome-list">
                 <li>Second Financial Identity in the U.S.</li>
                 <li>U.S. Bank Accounts</li>
@@ -491,8 +492,9 @@
 
           <label class="outcome-option-box">
             <input type="checkbox" name="outcome" value="U.S. Structure & Protection">
+            <span class="custom-checkbox"></span>
             <div class="outcome-content">
-              <strong>Option B – U.S. Structure & Protection</strong>
+              <strong>U.S. Structure & Protection</strong>
               <ul class="outcome-list">
                 <li>Strategic Tax Optimization</li>
                 <li>U.S. Business Structures for International Growth</li>
@@ -732,7 +734,7 @@
     .outcome-option-box input[type="checkbox"]:checked+.outcome-content strong {
       color: #d4a574;
     }
-
+/*
     .outcome-option-box input[type="checkbox"]:checked~.outcome-content::before {
       content: "✓";
       position: absolute;
@@ -752,7 +754,7 @@
 
     .outcome-option-box input[type="checkbox"]:checked~.outcome-content {
       padding-right: 3rem;
-    }
+    }*/
 
     .outcome-option-box input[type="checkbox"]:checked+.outcome-content~.outcome-option-box,
     .outcome-option-box input[type="checkbox"]:checked~.outcome-option-box {
@@ -1004,6 +1006,7 @@
 
     .custom-checkbox {
       border-radius: 6px;
+      margin-bottom: 12px;
     }
 
     input[type="radio"]:checked+.custom-radio {
