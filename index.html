@@ -539,6 +539,11 @@
             <input type="hidden" id="countryCode" value="+44">
           </div>
         </div>
+        <label style="display: flex; justify-content: center;">
+          <input type="radio" id="optin" name="optin" value="Yes, I agree to receive SMS from Nuvetra Inc. for scheduling purposes">
+          <span class="custom-radio"></span>
+          <p>Yes, I agree to receive SMS from Nuvetra Inc. for scheduling purposes as outlined in the <a href="/privacy">Privacy Policy</a></p>
+        </label>
       </div>
       <button class="btn btn-primary cta-button" onclick="handleStep3()">Next <img
           src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
@@ -1297,12 +1302,15 @@
       preferredCountries: ["ca, us"] // Your most common countries first
     });
 
+
+
     // Track form data
     const formData = {
       businessOwner: null,
       fullName: null,
       email: null,
       phone: null,
+      optin: null,
       countrycode: null,
       outcome: [], // Array for multiple selections
       travel: null,
@@ -1569,6 +1577,9 @@
       formData.fullName = fullName;
       formData.email = email;
       formData.phone = phoneInput.getNumber(intlTelInputUtils.numberFormat.NATIONAL);
+      formData.optin = document.getElementById("optin").checked;
+      
+      
       formData.countrycode = "+" + phoneInput.getSelectedCountryData().dialCode;
       console.log("Contact info:", formData.fullName, formData.email, formData.phone);
 
@@ -1714,6 +1725,7 @@
         fullName: formData.fullName,
         email: formData.email,
         phone: formData.phone,
+        optin: formData.optin,
         countryCode: formData.countrycode,
         businessOwner: formData.businessOwner,
         outcome: outcomeString,
