@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Sovereign Structures - Build Global Sovereignty. Protect Your Profit.</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         * {
             margin: 0;
@@ -131,9 +132,10 @@
         }
 
         .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            width: auto;
+            height: 150px;
+            margin: -30px;
+            /*background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));*/
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -223,7 +225,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            padding: 120px 40px 80px;
+            padding: 170px 40px 80px;
         }
 
         .hero-content {
@@ -598,6 +600,7 @@
 
         .phase-features {
             display: grid;
+            list-style-type: none;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin-top: 25px;
@@ -953,30 +956,365 @@
             color: var(--primary-gold);
         }
 
-        /* Privacy Section */
-        .privacy-section {
-            padding: 80px 40px;
-            background: linear-gradient(180deg, transparent 0%, rgba(10, 27, 47, 0.3) 100%);
-        }
+        /* REDESIGNED OUR CLIENTS SECTION */
+.clients-section {
+    padding: 120px 40px;
+    background: linear-gradient(180deg, rgba(10, 27, 47, 0.3) 0%, transparent 100%);
+    position: relative;
+    overflow: hidden;
+}
 
-        .privacy-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.clients-hero {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    position: relative;
+    z-index: 1;
+}
 
-        .privacy-content h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
+.clients-hero h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, var(--text-light) 0%, var(--primary-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .privacy-points {
-            text-align: left;
-            margin: 30px 0;
-            font-size: 17px;
-            line-height: 1.8;
-            color: var(--text-muted);
-        }
+.clients-subtitle {
+    font-size: 24px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.clients-divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+    margin: 40px auto;
+}
+
+.trust-indicators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.trust-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(184, 151, 69, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.trust-card:hover::before {
+    left: 100%;
+}
+
+.trust-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-gold);
+    box-shadow: 0 20px 60px rgba(184, 151, 69, 0.3);
+}
+
+.trust-card:hover .trust-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.trust-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, rgba(184, 151, 69, 0.2), rgba(44, 95, 111, 0.2));
+    border: 2px solid var(--primary-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.trust-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--primary-gold);
+    stroke-width: 2;
+}
+
+.trust-number {
+    font-size: 56px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.trust-label {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.trust-description {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.client-profiles {
+    max-width: 1200px;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.client-profile {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.client-profile:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-gold);
+    box-shadow: 0 20px 60px rgba(184, 151, 69, 0.2);
+}
+
+.client-profile:hover .client-avatar svg {
+    transform: scale(1.15);
+}
+
+.client-avatar {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, rgba(184, 151, 69, 0.3) 0%, rgba(44, 95, 111, 0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.client-avatar::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(184, 151, 69, 0.2) 0%, transparent 60%);
+    animation: rotate 15s linear infinite;
+}
+
+.client-avatar svg {
+    width: 80px;
+    height: 80px;
+    color: var(--primary-gold);
+    stroke-width: 1.5;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 4px 20px rgba(184, 151, 69, 0.4));
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.client-info {
+    padding: 30px;
+}
+
+.client-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.client-description {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.client-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.client-tag {
+    background: rgba(184, 151, 69, 0.1);
+    color: var(--primary-gold);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(184, 151, 69, 0.3);
+}
+
+.privacy-promise {
+    max-width: 900px;
+    margin: 80px auto 0;
+    background: linear-gradient(135deg, rgba(184, 151, 69, 0.05) 0%, rgba(44, 95, 111, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    border: 2px solid var(--primary-gold);
+    border-radius: 30px;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.privacy-promise::before {
+    content: '';
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    right: -500px;
+    bottom: -500px;
+    background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold), var(--accent-teal), var(--primary-gold));
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.privacy-promise:hover::before {
+    opacity: 0.5;
+}
+
+.privacy-promise:hover .privacy-icon {
+    transform: scale(1.1);
+}
+
+.privacy-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 0 10px 40px rgba(184, 151, 69, 0.4);
+    transition: transform 0.4s ease;
+}
+
+.privacy-icon svg {
+    width: 50px;
+    height: 50px;
+    color: white;
+    stroke-width: 2;
+}
+
+.privacy-promise h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.privacy-promise p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.privacy-promise strong {
+    color: var(--primary-gold);
+    font-weight: 700;
+}
+
+.privacy-highlight {
+    background: rgba(184, 151, 69, 0.1);
+    border-left: 3px solid var(--primary-gold);
+    padding: 20px 25px;
+    margin: 30px 0;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.privacy-highlight p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 17px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .trust-indicators {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .client-profiles {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .clients-section {
+        padding: 80px 20px;
+    }
+
+    .trust-indicators {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .client-profiles {
+        gap: 30px;
+    }
+
+    .privacy-promise {
+        padding: 40px 25px;
+    }
+}
 
         /* FAQ Section */
         .faq-section {
@@ -1334,8 +1672,8 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <div class="logo-icon">GS</div>
-                <span class="logo-text">GLOBAL SOVEREIGN</span>
+                <img src="Logo.png" class="logo-icon"></img>
+               <!-- <span class="logo-text">GLOBAL SOVEREIGN</span>-->
             </a>
             <div class="nav-links">
                 <a href="#home" class="nav-link">Home</a>
@@ -1618,9 +1956,7 @@
         <div class="about-content">
             <div class="founder-intro reveal">
                 <div class="founder-image">
-                    <div class="founder-image-placeholder">
-                        DR
-                    </div>
+                        <img src="DrRobin.jpeg" class="founder-image-placeholder"> </img>
                 </div>
                 <div class="founder-bio">
                     <h3>Dr. Robin — From Taxed and Trapped Entrepreneur to Global Sovereignty Architect</h3>
@@ -1710,55 +2046,118 @@
         </div>
     </section>
 
-    <!-- Privacy/Testimonials Section -->
-    <section class="privacy-section" id="testimonials">
-        <div class="privacy-content reveal">
-            <div class="privacy-header">
-                <p class="privacy-subtitle">Our Clients</p>
-                <h2 class="section-title">Why You Won't See Testimonials</h2>
-                <h3>And Why That's a Feature, Not a Flaw</h3>
-            </div>
+    <!-- REDESIGNED OUR CLIENTS SECTION -->
+<section class="clients-section" id="testimonials">
+    <div class="clients-hero reveal">
+        <h2>Our Clients</h2>
+        <p class="clients-subtitle">Elite entrepreneurs who refuse to play by broken rules</p>
+        <div class="clients-divider"></div>
+        <p style="font-size: 18px; color: var(--text-muted); max-width: 800px; margin: 30px auto; line-height: 1.8;">
+            We don't showcase testimonials. We don't publish case studies. We don't broadcast how much our clients save or which structures they use. That's not discretion—<strong>it's design.</strong>
+        </p>
+    </div>
 
-            <div class="privacy-grid">
-                <div class="privacy-card">
-                    <div class="privacy-card-icon">👁️</div>
-                    <h4>What We Don't Share</h4>
-                    <ul class="privacy-list">
-                        <li>Client case studies</li>
-                        <li>Screenshots of "X dollars saved"</li>
-                        <li>Before-and-after tax returns</li>
-                        <li>Names or company details</li>
-                    </ul>
-                </div>
-                <div class="privacy-card">
-                    <div class="privacy-card-icon">❓</div>
-                    <h4>Would You Want Us To Publish</h4>
-                    <ul class="privacy-list">
-                        <li>Your financial setup?</li>
-                        <li>Your tax position?</li>
-                        <li>Which banks you use?</li>
-                        <li>How much you're legally not paying?</li>
-                    </ul>
-                </div>
+    <div class="trust-indicators reveal">
+        <div class="trust-card">
+            <div class="trust-icon">
+                <i data-lucide="trending-up"></i>
             </div>
+            <div class="trust-number">$500M+</div>
+            <div class="trust-label">Protected Assets</div>
+            <p class="trust-description">Across jurisdictions for clients worldwide</p>
+        </div>
+        <div class="trust-card">
+            <div class="trust-icon">
+                <i data-lucide="globe"></i>
+            </div>
+            <div class="trust-number">50+</div>
+            <div class="trust-label">Countries Served</div>
+            <p class="trust-description">International entrepreneurs from every continent</p>
+        </div>
+        <div class="trust-card">
+            <div class="trust-icon">
+                <i data-lucide="award"></i>
+            </div>
+            <div class="trust-number">100%</div>
+            <div class="trust-label">Compliance Rate</div>
+            <p class="trust-description">Every structure verified by licensed professionals</p>
+        </div>
+        <div class="trust-card">
+            <div class="trust-icon">
+                <i data-lucide="clock"></i>
+            </div>
+            <div class="trust-number">24/7</div>
+            <div class="trust-label">Priority Support</div>
+            <p class="trust-description">For all active client structures</p>
+        </div>
+    </div>
 
-            <div class="privacy-statement">
-                <div class="privacy-statement-icon">🛡️</div>
-                <p>
-                    <strong>Of course not.</strong>
-                </p>
-                <p>
-                    That's why Global Sovereign never discloses client structures, names, or financial outcomes.
-                </p>
-                <p style="font-size: 22px; margin-top: 30px;">
-                    Your <strong>privacy is not a marketing asset</strong> — it's part of your protection.
-                </p>
-                <p>
-                    If you join us, your results will remain <strong>as invisible as they're meant to be.</strong>
-                </p>
+    <div class="client-profiles reveal">
+        <div class="client-profile">
+            <div class="client-avatar">
+                <i data-lucide="laptop"></i>
+            </div>
+            <div class="client-info">
+                <div class="client-title">Tech Entrepreneurs</div>
+                <p class="client-description">Software founders, SaaS operators, and digital nomads building global businesses without geographic limitations.</p>
+                <div class="client-tags">
+                    <span class="client-tag">E-Commerce</span>
+                    <span class="client-tag">SaaS</span>
+                    <span class="client-tag">Digital</span>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="client-profile">
+            <div class="client-avatar">
+                <i data-lucide="briefcase"></i>
+            </div>
+            <div class="client-info">
+                <div class="client-title">High-Net-Worth Investors</div>
+                <p class="client-description">Real estate investors, portfolio managers, and wealth holders seeking legitimate tax optimization and asset protection.</p>
+                <div class="client-tags">
+                    <span class="client-tag">Real Estate</span>
+                    <span class="client-tag">Trading</span>
+                    <span class="client-tag">Crypto</span>
+                </div>
+            </div>
+        </div>
+        <div class="client-profile">
+            <div class="client-avatar">
+                <i data-lucide="users"></i>
+            </div>
+            <div class="client-info">
+                <div class="client-title">International Business Owners</div>
+                <p class="client-description">Consultants, agency owners, and service providers operating across borders who need compliant multi-jurisdictional structures.</p>
+                <div class="client-tags">
+                    <span class="client-tag">Consulting</span>
+                    <span class="client-tag">Agencies</span>
+                    <span class="client-tag">Services</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="privacy-promise reveal">
+        <div class="privacy-icon">
+            <i data-lucide="shield-check"></i>
+        </div>
+        <h3>Our Privacy Promise</h3>
+        <p>
+            Your financial architecture is not a marketing tool. When you work with Global Sovereign, your structure details, tax savings, banking relationships, and personal information remain <strong>completely confidential.</strong>
+        </p>
+        <div class="privacy-highlight">
+            <p>
+                We will never publish your name, company, income figures, or tax optimization results. Your privacy isn't negotiable—it's part of your protection.
+            </p>
+        </div>
+        <p>
+            Would you want your tax strategy, banking locations, and wealth details broadcast online?
+        </p>
+        <p>
+            <strong>Neither do our clients. And that's exactly why they trust us.</strong>
+        </p>
+    </div>
+</section>
 
     <!-- FAQ Section -->
     <section class="faq-section" id="faq">
@@ -1891,7 +2290,10 @@
             <p class="footer-copyright">© 2025 Global Sovereign Structures. All rights reserved.</p>
         </div>
     </footer>
-
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
