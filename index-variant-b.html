@@ -121,7 +121,7 @@
 
     .logo-icon {
       width: auto;
-      height: 150px;
+      height: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -269,9 +269,23 @@
       height: 22px;
     }
 
+    #headline-mobile {
+      display: none;
+    }
+
+    #headline-desktop {
+      display: block;
+    }
+
     @media (max-width: 768px) {
+      #headline-mobile {
+        display: block;
+      }
+      #headline-desktop {
+        display: none;
+      }
       .logo-icon {
-        height: 120px;
+        height: 100px;
       }
       .headline h1 {
         font-size: 24px;
@@ -334,9 +348,9 @@
     </div>
 
     <div class="headline">
-      <h1>Stop donating half your income!</h1>
-      <p class="subheadline">Most entrepreneurs still overpay because no one ever showed them how to set up their business for tax efficiency. We design your Global Sovereign structure to ensure full compliance and legally protect your profit.</p> 
-      <p class="subheadline" style="margin-top: 0.75em;">With the right structure, documentation, and strategy, your tax bill becomes a decision, not a destiny.</p>
+      <h1 id="headline-mobile">The<br>Global Sovereign Structure</h1>
+      <h1 id="headline-desktop">The Global Sovereign Structure</h1>
+      <p class="subheadline">How smart high net-worth individuals keep more of their wealth by legally paying less taxes.</p>
     </div>
 
     <div class="video-container">
@@ -1261,14 +1275,14 @@
 
   <script>
     //const counter = new Counter({ workspace: 'funnel-formular' });
-    const pageViewUrl = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Page Views&variant=Variant A";
+    const pageViewUrl = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Page Views&variant=Variant B";
     fetch(pageViewUrl);
-    const question0Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 0&variant=Variant A";
-    const question1Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 1&variant=Variant A";
-    const question2Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 2&variant=Variant A";
-    const question3Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 3&variant=Variant A";
-    const question4Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 4&variant=Variant A";
-    const question5Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 5&variant=Variant A";
+    const question0Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 0&variant=Variant B";
+    const question1Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 1&variant=Variant B";
+    const question2Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 2&variant=Variant B";
+    const question3Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 3&variant=Variant B";
+    const question4Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 4&variant=Variant B";
+    const question5Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 5&variant=Variant B";
 
     // Cookie functions
     function setCookie(name, value, days) {
@@ -1593,7 +1607,7 @@
       function initializeCalendly() {
       if (calendlyInitialized) return;
 
-      var link = "https://calendly.com/d/csns-w7g-c7p/global-sovereign-intro-call/?a1=" + formData.countrycode.substring(1) + formData.phone;
+      var link = "https://calendly.com/d/csns-w7g-c7p/nuvetra-intro-call/?a1=" + formData.countrycode.substring(1) + formData.phone;
       
       const calContainer = document.getElementById('calendlyContainer');
       calContainer.innerHTML = '';
@@ -1742,7 +1756,7 @@
         answers: answers,
         percentWatched: percentWatched,
         trackingParams: trackingParams,
-        variant: "Variant A",
+        variant: "Variant B",
       };
 
       // Add tracking parameters
