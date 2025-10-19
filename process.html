@@ -335,7 +335,6 @@
 
     <div class="headline">
       <h1>Stop donating half your income!</h1>
-      <p class="subheadline">Most entrepreneurs still overpay because no one ever showed them how to set up their business for tax efficiency. We design your Global Sovereign structure to ensure full compliance and legally protect your profit.</p> 
     </div>
 
     <div class="video-container">
@@ -406,7 +405,1436 @@
       </script>
 
     </div>
+<div class="form-container" id="form">
 
+
+    <!-- STEP 0: Qualification Message -->
+    <div id="step0" class="step active fade-in-step">
+      <div style="text-align: center !important;" class="step-inner">
+        <h2>Read Before You Apply: </br>For High-Income Earners Only</h2>
+        <div class="qualification-message">
+          <p>This is an application for business owners and entrepreneurs with at least <strong>$300K in revenue.</strong> If
+            you are below this threshold, the strategies we specialize in may not apply to your
+            current situation yet. If your application does not meet the requirements for this department, we will
+            unfortunately not be able to make you an offer. In this case, you will receive a cancellation notice.</p>
+
+          <div class="important-notice">
+            <p><strong>Important:</strong> Your call is reserved exclusively for you. Missed appointments or failure to
+              cancel in advance will result in no further calls being offered. We ask that you respect our time as we do
+              yours.</p>
+          </div>
+        </div>
+
+        <button class="btn btn-primary cta-button" onclick="handleStep0()">Ready To Go! <img
+            src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
+            class="arrow-icon" alt=""></button>
+      </div>
+
+    </div>
+
+    <!-- STEP 1: Business Owner Question (Qualifying) -->
+    <div id="step1" class="step">
+      <div class="step-inner">
+        <h2>1. Are you currently a business owner or entrepreneur?</h2>
+        <div class="options-grid">
+          <label>
+            <input type="radio" name="businessOwner" value="Yes, I own my business">
+            <span class="custom-radio"></span>
+            <p>Yes, I own my business</p>
+          </label>
+          <label>
+            <input type="radio" name="businessOwner" value="Yes, I am the CEO">
+            <span class="custom-radio"></span>
+            <p>Yes, I am the CEO</p>
+          </label>
+          <label>
+            <input type="radio" name="businessOwner" value="No, none of the above">
+            <span class="custom-radio"></span>
+            <p>No, none of the above</p>
+          </label>
+        </div>
+      </div>
+      <p id="errorMsg1" class="errorMsg">Please select one option.</p>
+      <button class="btn btn-primary cta-button" onclick="handleStep1()">Next <img
+          src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
+          class="arrow-icon" alt=""></button>
+    </div>
+
+    <!-- STEP 2: Outcome Interest (moved from step 3) -->
+    <div id="step3" class="step">
+      <div class="step-inner">
+        <h2>2. Which outcome are you most interested in right now?</h2>
+        <p style="font-style: italic; font-size: 0.9rem; margin-top: -1rem; margin-bottom: 1.5rem;">Select one or both
+        </p>
+
+        <div class="outcome-options">
+          <label class="outcome-option-box">
+            <input type="checkbox" name="outcome" value="Financial Identity & Growth">
+            <span class="custom-checkbox"></span>
+            <div class="outcome-content">
+              <strong>Financial Identity & Growth</strong>
+              <ul class="outcome-list">
+                <li>Second Financial Identity in the U.S.</li>
+                <li>U.S. Bank Accounts</li>
+                <li>U.S. Credit Profile</li>
+                <li>U.S. Business Funding</li>
+                <li>Access to U.S. Investments</li>
+              </ul>
+            </div>
+          </label>
+
+          <label class="outcome-option-box">
+            <input type="checkbox" name="outcome" value="U.S. Structure & Protection">
+            <span class="custom-checkbox"></span>
+            <div class="outcome-content">
+              <strong>U.S. Structure & Protection</strong>
+              <ul class="outcome-list">
+                <li>Strategic Tax Optimization</li>
+                <li>U.S. Business Structures for International Growth</li>
+                <li>International Company Structures</li>
+                <li>Generational Wealth Protection</li>
+                <li>Global Entrepreneur Network</li>
+              </ul>
+            </div>
+          </label>
+        </div>
+      </div>
+      <p id="errorMsg3" class="errorMsg">Please select at least one option.</p>
+      <button class="btn btn-primary cta-button" onclick="handleStep2()">Next <img
+          src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
+          class="arrow-icon" alt=""></button>
+    </div>
+
+    <!-- STEP 3: Contact Info (moved from step 2) -->
+    <div id="step2" class="step">
+      <div class="step-inner">
+        <h2>3. Please provide your contact information so we can send your personalised next steps.</h2>
+        <div class="contact-form">
+          <div class="form-group">
+            <label for="fullName" class="text-label">Full Name:</label>
+            <input type="text" id="fullName" class="form-input" placeholder="Enter your full name">
+            <p id="nameError" class="field-error">Please enter your name.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="emailAddress" class="text-label">Email Address:</label>
+            <input type="email" id="emailAddress" class="form-input" placeholder="Enter your email address">
+            <p id="emailError" class="field-error">Please enter a valid email address.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber" class="text-label">Phone Number:</label>
+            <div class="phone-input-container">
+              <input type="tel" id="phoneNumber" class="form-input phone-number-input"
+                placeholder="Enter your phone number">
+            </div>
+            <p id="phoneError" class="field-error">Please enter a valid phone number.</p>
+            <input type="hidden" id="countryCode" value="+44">
+          </div>
+        </div>
+        <label style="display: flex; justify-content: center;">
+          <input type="radio" id="optin" name="optin" value="Yes, I agree to receive SMS for scheduling purposes">
+          <span class="custom-radio"></span>
+          <p>Yes, I agree to receive SMS for scheduling purposes as outlined in the <a href="/privacy">Privacy Policy</a></p>
+        </label>
+      </div>
+      <button class="btn btn-primary cta-button" onclick="handleStep3()">Next <img
+          src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
+          class="arrow-icon" alt=""></button>
+    </div>
+
+    <!-- STEP 4: Travel -->
+    <div id="step4" class="step">
+      <div class="step-inner">
+        <h2>4. Are you able to travel to Miami, Florida to open your U.S. bank accounts?</h2>
+        <div class="options-grid">
+          <label>
+            <input type="radio" name="travel" value="Yes, I can travel anytime">
+            <span class="custom-radio"></span>
+            <p>Yes, I can travel anytime</p>
+          </label>
+          <label>
+            <input type="radio" name="travel" value="Yes, but I need time to plan">
+            <span class="custom-radio"></span>
+            <p>Yes, but I need time to plan</p>
+          </label>
+          <label>
+            <input type="radio" name="travel" value="Maybe, I need more details">
+            <span class="custom-radio"></span>
+            <p>Maybe, I need more details</p>
+          </label>
+          <label>
+            <input type="radio" name="travel" value="No, I prefer to do everything remotely">
+            <span class="custom-radio"></span>
+            <p>No, I prefer to do everything remotely</p>
+          </label>
+        </div>
+      </div>
+      <p id="errorMsg4" class="errorMsg">Please select one option.</p>
+      <button class="btn btn-primary cta-button" onclick="handleStep4()">Next <img
+          src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
+          class="arrow-icon" alt=""></button>
+    </div>
+
+    <!-- STEP 5: Revenue Question (Qualifying) -->
+    <div id="step5" class="step">
+      <div class="step-inner">
+        <h2>5. Is your company's annual revenue above $300K?</h2>
+        <div class="options-grid">
+          <label>
+            <input type="radio" name="revenue" value="Yes, my companies annual revenue is above $300K">
+            <span class="custom-radio"></span>
+            <p>Yes, my companies annual revenue is above $300K</p>
+          </label>
+          <label>
+            <input type="radio" name="revenue" value="No, my companies annual revenue is below $300K">
+            <span class="custom-radio"></span>
+            <p>No, my companies annual revenue is below $300K</p>
+          </label>
+        </div>
+      </div>
+      <p id="errorMsg5" class="errorMsg">Please select one option.</p>
+      <button class="btn btn-primary cta-button" onclick="handleStep5()">Submit & Book Appointment <img
+          src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
+          class="arrow-icon" alt=""></button>
+    </div>
+
+    <!-- Disqualification Step -->
+    <div id="stepDisqualified" class="step">
+      <div class="step-inner">
+        <h2 style="color: #ff6b6b;">Unfortunately, You Don't Qualify</h2>
+        <div class="disqualified-message">
+          <p style="font-size: 1.1rem; line-height: 1.6;">We appreciate your interest in our services. However, our
+            specialized strategies are designed specifically for established business owners and entrepreneurs with
+            companies generating <strong>at least $300K in annual revenue.</strong></p>
+
+          <p style="font-size: 1rem; margin-top: 1.5rem;">These advanced financial structures and strategies require a
+            certain business scale to be both effective and cost-efficient. We encourage you to revisit our services
+            once you meet these requirements.</p>
+
+          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+            <p style="font-size: 0.95rem; color: #B89745;">In the meantime, we wish you the best of success in growing
+              your business!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6: Calendly -->
+    <div id="step6" class="step calendly-hidden">
+      <div class="step-inner">
+        <h2 style="margin-bottom: 12px;">Thank you! Please book your appointment below.</h2>
+        <div id="calendlyContainer"></div>
+      </div>
+    </div>
+
+    <!-- Step indicators -->
+    <div class="step-indicator">
+      <div class="step-indicator__circle active" id="circle0"></div>
+      <div class="step-indicator__circle" id="circle1"></div>
+      <div class="step-indicator__circle" id="circle2"></div>
+      <div class="step-indicator__circle" id="circle3"></div>
+      <div class="step-indicator__circle" id="circle4"></div>
+      <div class="step-indicator__circle" id="circle5"></div>
+      <div class="step-indicator__circle" id="circle6"></div>
+    </div>
+  </div>
+
+  <style>
+    /* General layout */
+    .form-container {
+
+      margin-top: 80px;
+      text-align: center;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Step 0 specific styles */
+    .qualification-message {
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+    }
+
+    .qualification-message p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .important-notice {
+      /* background: #f8f9fa; */
+      border-left: 4px solid #0A1B2F;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .important-notice p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    /* Disqualification message styles */
+    .disqualified-message {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    .disqualified-message p {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    /* Outcome options specific styles */
+    .outcome-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+
+    .outcome-option-box {
+      display: block;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid transparent;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .outcome-option-box:hover {
+      border-color: rgba(184, 151, 69, 0.5);
+      background: rgba(184, 151, 69, 0.05);
+      box-shadow: 0 5px 20px rgba(212, 165, 116, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .outcome-option-box input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .outcome-option-box input[type="checkbox"]:checked~.outcome-content {
+      color: #fff;
+    }
+
+    .outcome-option-box input[type="checkbox"]:checked+.outcome-content strong {
+      color: #d4a574;
+    }
+/*
+    .outcome-option-box input[type="checkbox"]:checked~.outcome-content::before {
+      content: "✓";
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #B89745;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .outcome-option-box input[type="checkbox"]:checked~.outcome-content {
+      padding-right: 3rem;
+    }*/
+
+    .outcome-option-box input[type="checkbox"]:checked+.outcome-content~.outcome-option-box,
+    .outcome-option-box input[type="checkbox"]:checked~.outcome-option-box {
+      border-color: #B89745;
+      background: rgba(184, 151, 69, 0.1);
+      box-shadow: 0 8px 30px rgba(212, 165, 116, 0.4);
+    }
+
+    .outcome-option-box input[type="checkbox"]:checked~* {
+      position: relative;
+    }
+
+    .outcome-option-box:has(input:checked) {
+      border-color: #B89745;
+      background: rgba(184, 151, 69, 0.1);
+      box-shadow: 0 8px 30px rgba(212, 165, 116, 0.4);
+    }
+
+    .outcome-content {
+      position: relative;
+      text-align: left;
+      pointer-events: none;
+    }
+
+    .outcome-content strong {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #d4a574;
+      transition: color 0.3s ease;
+    }
+
+    .outcome-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .outcome-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: #e0e0e0;
+    }
+
+    .outcome-list li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #B89745;
+    }
+
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .outcome-options {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .outcome-option-box {
+        padding: 1.25rem;
+      }
+    }
+
+    .phone-input-container {
+      color: #0C0C0C;
+    }
+
+    .ready-to-go-container {
+      margin: 2rem 0 1rem 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ready-box {
+      background: #28a745;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Step indicator circles at bottom */
+    .step-indicator {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .step-indicator__circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #D9D9D9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.5rem;
+    }
+
+    .step-indicator__circle.active {
+      background: rgba(212, 165, 116, 1);
+    }
+
+    /* Step visibilities and animations */
+    .step {
+      display: none;
+      height: auto;
+      opacity: 0;
+      transition: 0.8s ease;
+    }
+
+    .step.active {
+      display: block;
+      opacity: 0;
+      transition: 0.8s ease;
+    }
+
+    .step.fade-in-step {
+      opacity: 1;
+      transition: 0.8s ease;
+    }
+
+    /* Step content */
+    .step h2 {
+      color: #fff;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #fff;
+      margin-top: -1.5rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .step-inner {
+      min-height: 13rem;
+      padding: 2rem 1rem;
+      border-radius: 25px;
+      border: 2px solid #B89745;
+      /* background: #FFF; */
+      box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .step-inner h2 {
+      text-align: center;
+    }
+
+    /* Error messages */
+    .errorMsg {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      display: none;
+      color: red;
+    }
+
+    .errorMsg.active {
+      display: block;
+    }
+
+    /* Options layout */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .simple-grid {
+      max-width: 600px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .options-grid label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0.5rem;
+      font-size: 1.25rem;
+      cursor: pointer;
+      position: relative;
+      height: auto;
+      min-height: 34px;
+      white-space: normal;
+    }
+
+    /* Custom radio and checkbox styling */
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0.5rem;
+      font-size: 1.25rem;
+      cursor: pointer;
+      position: relative;
+      height: auto;
+      min-height: 34px;
+    }
+
+    label p {
+      margin-left: 0.5rem;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      display: inline-block;
+      text-align: left;
+      color: #fff;
+      line-height: 1.4;
+      vertical-align: middle;
+      white-space: normal;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      opacity: 0;
+      position: absolute;
+      display: none !important;
+    }
+
+    .custom-radio,
+    .custom-checkbox {
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      border: 2px solid #D9D9D9;
+      position: relative;
+      background-color: white;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .custom-radio {
+      border-radius: 50%;
+    }
+
+    .custom-checkbox {
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    input[type="radio"]:checked+.custom-radio {
+      border-color: #B89745;
+    }
+
+    input[type="radio"]:checked+.custom-radio:after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #B89745;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    input[type="checkbox"]:checked+.custom-checkbox {
+      border-color: #B89745;
+      background-color: #B89745;
+    }
+
+    input[type="checkbox"]:checked+.custom-checkbox:after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    /* Arrow icon */
+    .arrow-icon {
+      width: 26px;
+      height: 26px;
+      margin-left: 8px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Contact form styles */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .text-label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+      text-align: left;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .field-error {
+      color: #d9534f;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    /* Phone input styling */
+    .phone-input-container {
+      display: flex;
+    }
+
+    .country-select-container {
+      position: relative;
+      min-width: 120px;
+    }
+
+    .country-select {
+      width: 100%;
+      height: 100%;
+      padding: 8px 30px 8px 45px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    }
+
+    .flag-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.5rem;
+      height: 1rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    .phone-number-input {
+      flex-grow: 1;
+    }
+
+    .iti {
+      width: 100%;
+    }
+
+    .iti__flag-container {
+      height: 100%;
+    }
+
+    .iti__country-name {
+      color: black !important;
+    }
+
+    /* Hide the original phone input container styles as they're no longer needed */
+    .country-select-container,
+    .flag-icon,
+    .country-select {
+      display: none;
+    }
+
+    /* Disqualification styling */
+    .disqualified {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #ffefef;
+      color: #c00;
+      border: 1px solid #fdd;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+
+    .disqualified p {
+      margin-bottom: 1rem;
+    }
+
+    .disqualified p:last-child {
+      margin-bottom: 0;
+    }
+
+    .calendly-hidden {
+      height: 1px;
+      opacity: 1;
+      width: 1px;
+      overflow: hidden;
+      display: block !important;
+    }
+
+    /* Center the last option if it's alone in its row on desktop */
+    @media (min-width: 769px) {
+      .options-grid label:nth-child(odd):last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+        /* Change from 2 columns to 1 column on mobile */
+        padding: 0 10px;
+      }
+
+      .outcome-options {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .simple-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step h2 {
+        font-size: 1.25rem;
+        padding: 0 15px;
+      }
+
+      label {
+        font-size: 1.1rem;
+      }
+
+      .step-inner {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+      }
+
+      /* Make phone input responsive */
+      .phone-input-container {
+        flex-direction: column;
+      }
+
+      .country-select-container {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      .phone-number-input {
+        width: 100%;
+      }
+
+      /* Mobile adjustments for step 0 */
+      .qualification-message {
+        text-align: center;
+        padding: 0 1rem;
+      }
+
+      .qualification-message p {
+        font-size: 1rem;
+      }
+
+      .ready-box {
+        font-size: 1.25rem;
+        padding: 0.75rem 1.5rem;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.min.css">
+
+  <script>
+    //const counter = new Counter({ workspace: 'funnel-formular' });
+    const pageViewUrl = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Page Views&variant=Variant A";
+    fetch(pageViewUrl);
+    const question0Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 0&variant=Variant A";
+    const question1Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 1&variant=Variant A";
+    const question2Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 2&variant=Variant A";
+    const question3Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 3&variant=Variant A";
+    const question4Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 4&variant=Variant A";
+    const question5Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 5&variant=Variant A";
+
+    // Cookie functions
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+      document.cookie = name + "=" + value + ";expires=" + expires.toUTCString() + ";path=/";
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    // Check if user is disqualified
+    function checkDisqualification() {
+      const disqualified = getCookie('nuvetra_disqualified');
+      if (disqualified === 'true') {
+        // Skip to disqualified step
+        document.getElementById("step0").classList.remove("active", "fade-in-step");
+        document.getElementById("stepDisqualified").classList.add("active", "fade-in-step");
+        setActiveCircle(-1); // Hide indicators for disqualified users
+      }
+    }
+
+    // Initialize the telephone input plugin
+    const phoneInput = window.intlTelInput(document.querySelector("#phoneNumber"), {
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js",
+      separateDialCode: true,
+      initialCountry: "ca", // Default to Canada
+      preferredCountries: ["ca, us"] // Your most common countries first
+    });
+
+
+
+    // Track form data
+    const formData = {
+      businessOwner: null,
+      fullName: null,
+      email: null,
+      phone: null,
+      optin: null,
+      countrycode: null,
+      outcome: [], // Array for multiple selections
+      travel: null,
+      revenue: null
+    };
+
+    // Track UTM parameters
+    function getUrlParameters() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      return urlParams;
+    }
+
+    function getUtmParameters() {
+      const params = getUrlParameters();
+      const utmParams = {};
+
+      const utmKeys = [
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_term',
+        'utm_content'
+      ];
+
+      utmKeys.forEach(key => {
+        if (params.has(key)) {
+          utmParams[key] = params.get(key);
+        }
+      });
+
+      return utmParams;
+    }
+
+    function getFacebookParameters() {
+      const params = getUrlParameters();
+      const fbParams = {};
+
+      const fbKeys = [
+        'fbclid',
+        'fb_source',
+        'fb_ref',
+        'fb_campaign_id',
+        'fb_campaign',
+        'fb_content'
+      ];
+
+      fbKeys.forEach(key => {
+        if (params.has(key)) {
+          fbParams[key] = params.get(key);
+        }
+      });
+
+      return fbParams;
+    }
+
+    function saveTrackingParameters() {
+      const utmParams = getUtmParameters();
+      const fbParams = getFacebookParameters();
+
+      if (Object.keys(utmParams).length > 0) {
+        localStorage.setItem('utmParameters', JSON.stringify(utmParams));
+        console.log('Saved UTM parameters:', utmParams);
+      }
+
+      if (Object.keys(fbParams).length > 0) {
+        localStorage.setItem('fbParameters', JSON.stringify(fbParams));
+        console.log('Saved Facebook parameters:', fbParams);
+      }
+
+      window.utmParameters = utmParams;
+      window.fbParameters = fbParams;
+
+      return {
+        utmParameters: utmParams,
+        fbParameters: fbParams
+      };
+    }
+
+    function loadTrackingParameters() {
+      let utmParams = {};
+      let fbParams = {};
+
+      const savedUtmParams = localStorage.getItem('utmParameters');
+      if (savedUtmParams) {
+        try {
+          utmParams = JSON.parse(savedUtmParams);
+          console.log('Loaded UTM parameters:', utmParams);
+        } catch (e) {
+          console.error('Error parsing saved UTM parameters:', e);
+        }
+      }
+
+      const savedFbParams = localStorage.getItem('fbParameters');
+      if (savedFbParams) {
+        try {
+          fbParams = JSON.parse(savedFbParams);
+          console.log('Loaded Facebook parameters:', fbParams);
+        } catch (e) {
+          console.error('Error parsing saved Facebook parameters:', e);
+        }
+      }
+
+      window.utmParameters = utmParams;
+      window.fbParameters = fbParams;
+
+      return {
+        utmParameters: utmParams,
+        fbParameters: fbParams
+      };
+    }
+
+    function initTrackingParameters() {
+      const currentParams = saveTrackingParameters();
+
+      if (Object.keys(currentParams.utmParameters).length === 0 &&
+        Object.keys(currentParams.fbParameters).length === 0) {
+        loadTrackingParameters();
+      }
+
+      return {
+        utmParameters: window.utmParameters,
+        fbParameters: window.fbParameters
+      };
+    }
+
+    const trackingParams = initTrackingParameters();
+
+    // Set active step indicator
+    function setActiveCircle(stepNumber) {
+      const circles = document.querySelectorAll(".step-indicator__circle");
+      if (stepNumber === -1) {
+        // Hide indicators for disqualified users
+        document.querySelector(".step-indicator").style.display = 'none';
+        return;
+      }
+      document.querySelector(".step-indicator").style.display = 'flex';
+      circles.forEach((c) => c.classList.remove("active"));
+      if (stepNumber < circles.length) {
+        circles[stepNumber].classList.add("active");
+      }
+    }
+
+
+    // Step 0 handler
+    function handleStep0() {
+      document.getElementById("step0").classList.remove("fade-in-step");
+      setTimeout(() => {
+        document.getElementById("step0").classList.remove("active");
+        document.getElementById("step1").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step1").classList.add("fade-in-step");
+      }, 900);
+      fetch(question0Url);
+      setActiveCircle(1);
+    }
+
+    // Step 1 handler - Business Owner (Qualifying)
+    function handleStep1() {
+      const businessOwner = document.querySelector('input[name="businessOwner"]:checked');
+
+      if (!businessOwner) {
+        document.getElementById("errorMsg1").classList.add("active");
+        return;
+      }
+
+      document.getElementById("errorMsg1").classList.remove("active");
+      formData.businessOwner = businessOwner.value;
+      console.log("Business owner:", formData.businessOwner);
+
+      // Check if disqualified
+      if (formData.businessOwner === "No, none of the above") {
+        // User is disqualified
+        setCookie('nuvetra_disqualified', 'true', 30);
+
+        // Show disqualification message
+        document.getElementById("step1").classList.remove("fade-in-step");
+        setTimeout(() => {
+          document.getElementById("step1").classList.remove("active");
+          document.getElementById("stepDisqualified").classList.add("active");
+        }, 800);
+        setTimeout(() => {
+          document.getElementById("stepDisqualified").classList.add("fade-in-step");
+        }, 900);
+
+        // Submit data for tracking
+        submitFormData(true);
+        return;
+      }
+
+      // Continue to outcome interest (now step 2)
+      document.getElementById("step1").classList.remove("fade-in-step");
+      setTimeout(() => {
+        document.getElementById("step1").classList.remove("active");
+        document.getElementById("step3").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step3").classList.add("fade-in-step");
+      }, 900);
+      fetch(question1Url);
+      setActiveCircle(2);
+    }
+
+    // Step 2 handler - Outcome Interest (moved from step 3)
+    function handleStep2() {
+      const outcomes = document.querySelectorAll('input[name="outcome"]:checked');
+
+      if (outcomes.length === 0) {
+        document.getElementById("errorMsg3").classList.add("active");
+        return;
+      }
+
+      document.getElementById("errorMsg3").classList.remove("active");
+
+      formData.outcome = [];
+      outcomes.forEach(outcome => {
+        formData.outcome.push(outcome.value);
+      });
+      console.log("Selected outcomes:", formData.outcome);
+
+      document.getElementById("step3").classList.remove("fade-in-step");
+      setTimeout(() => {
+        document.getElementById("step3").classList.remove("active");
+        document.getElementById("step2").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step2").classList.add("fade-in-step");
+      }, 900);
+      fetch(question2Url);
+      setActiveCircle(3);
+    }
+
+    // Step 3 handler - Contact Info (moved from step 2)
+    function handleStep3() {
+      const fullName = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("emailAddress").value.trim();
+
+      document.getElementById("nameError").style.display = "none";
+      document.getElementById("emailError").style.display = "none";
+      document.getElementById("phoneError").style.display = "none";
+
+      let isValid = true;
+
+      if (fullName === "") {
+        document.getElementById("nameError").style.display = "block";
+        isValid = false;
+      }
+
+      if (email === "" || !validateEmail(email)) {
+        document.getElementById("emailError").style.display = "block";
+        isValid = false;
+      }
+
+      if (!validatePhone(phoneInput)) {
+        document.getElementById("phoneError").style.display = "block";
+        isValid = false;
+      }
+
+      if (!isValid) {
+        return;
+      }
+
+      formData.fullName = fullName;
+      formData.email = email;
+      formData.phone = phoneInput.getNumber(intlTelInputUtils.numberFormat.NATIONAL);
+      formData.optin = document.getElementById("optin").checked;
+      
+      
+      formData.countrycode = "+" + phoneInput.getSelectedCountryData().dialCode;
+      console.log("Contact info:", formData.fullName, formData.email, formData.phone);
+
+      let calendlyInitialized = false;
+
+      function initializeCalendly() {
+      if (calendlyInitialized) return;
+
+      var link = "https://calendly.com/d/csns-w7g-c7p/nuvetra-intro-call/?a1=" + formData.countrycode.substring(1) + formData.phone;
+      
+      const calContainer = document.getElementById('calendlyContainer');
+      calContainer.innerHTML = '';
+      
+      Calendly.initInlineWidget({
+        url: link,
+        parentElement: calContainer,
+        resize: true,
+        prefill: {
+          name: formData.fullName,
+          email: formData.email,
+          a1: formData.countrycode.substring(1) + formData.phone,
+        }
+      });
+      
+      calendlyInitialized = true;
+    }
+
+      // Move to travel question
+      document.getElementById("step2").classList.remove("fade-in-step");
+      setTimeout(() => {
+        document.getElementById("step2").classList.remove("active");
+        document.getElementById("step4").classList.add("active");
+        initializeCalendly();
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step4").classList.add("fade-in-step");
+      }, 900);
+      fetch(question3Url);
+      setActiveCircle(4);
+    }
+
+    // Step 4 handler - Travel
+    function handleStep4() {
+      const travel = document.querySelector('input[name="travel"]:checked');
+      if (!travel) {
+        document.getElementById("errorMsg4").classList.add("active");
+        return;
+      }
+
+      formData.travel = travel.value;
+      console.log("Travel:", formData.travel);
+
+      document.getElementById("step4").classList.remove("fade-in-step");
+      setTimeout(() => {
+        document.getElementById("step4").classList.remove("active");
+        document.getElementById("step5").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step5").classList.add("fade-in-step");
+      }, 900);
+      fetch(question4Url);
+      setActiveCircle(5);
+    }
+
+    // Step 5 handler - Revenue (Qualifying)
+    function handleStep5() {
+      const revenue = document.querySelector('input[name="revenue"]:checked');
+      if (!revenue) {
+        document.getElementById("errorMsg5").classList.add("active");
+        return;
+      }
+
+      formData.revenue = revenue.value;
+      console.log("Revenue:", formData.revenue);
+
+      // Check if disqualified
+      if (formData.revenue === "No") {
+        // User is disqualified
+        setCookie('nuvetra_disqualified', 'true', 30);
+
+        // Show disqualification message
+        document.getElementById("step5").classList.remove("fade-in-step");
+        setTimeout(() => {
+          document.getElementById("step5").classList.remove("active");
+          document.getElementById("stepDisqualified").classList.add("active");
+        }, 800);
+        setTimeout(() => {
+          document.getElementById("stepDisqualified").classList.add("fade-in-step");
+        }, 900);
+
+        // Submit data for tracking
+        submitFormData(true);
+        return;
+      }
+
+      // User qualifies - proceed with submission and show calendly
+      submitFormData(false);
+
+      document.getElementById("step5").classList.remove("fade-in-step");
+      document.getElementById("step6").classList.remove("calendly-hidden");
+      setTimeout(() => {
+        document.getElementById("step5").classList.remove("active");
+        document.getElementById("step6").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step6").classList.add("fade-in-step");
+      }, 900);
+      fetch(question5Url);
+      setActiveCircle(6);
+    }
+
+    // Function to submit form data
+    function submitFormData(isDisqualified) {
+      // Process and submit form data
+      const outcomeString = formData.outcome.join(", ");
+      const answers = `${formData.businessOwner}-${outcomeString}-${formData.travel}-${formData.revenue}`;
+      console.log(answers);
+
+      const zapierWebhookUrl1 = "https://hooks.zapier.com/hooks/catch/24204039/u6euqu3/";
+      const zapierWebhookUrl2 = "https://hooks.zapier.com/hooks/catch/24204039/u6euqsd/";
+
+      var percentWatched = null;
+      if (document.getElementById('element-A7o5uwSD') && document.getElementById('element-A7o5uwSD').style.display == "none") {
+        const progressHolder = document.querySelector("#element-bSoX6o4m .vjs-progress-holder");
+        if (progressHolder) {
+          percentWatched = progressHolder.getAttribute("aria-valuenow");
+          console.log(`The viewer has watched ${percentWatched}% of the video.`);
+        }
+      }
+      else if (typeof player !== 'undefined' && player.percentWatched) {
+        percentWatched = player.percentWatched * 100;
+        console.log(`The viewer has watched ${percentWatched}% of the video.`);
+      }
+
+      if (percentWatched != null) {
+        percentWatched = Math.round(percentWatched);
+      }
+      else {
+        percentWatched = "Not Tracked";
+      }
+
+      const zapierData = {
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        optin: formData.optin,
+        countryCode: formData.countrycode,
+        businessOwner: formData.businessOwner,
+        outcome: outcomeString,
+        travel: formData.travel,
+        revenue: formData.revenue,
+        funnel: "Canada VSL",
+        url: "https://global-sovereign.com",
+        timestamp: Date.now(),
+        answers: answers,
+        percentWatched: percentWatched,
+        trackingParams: trackingParams,
+        variant: "Variant A",
+      };
+
+      // Add tracking parameters
+      Object.entries(trackingParams.utmParameters).forEach(([key, value]) => {
+        zapierData[key] = value;
+      });
+      Object.entries(trackingParams.fbParameters).forEach(([key, value]) => {
+        zapierData[key] = value;
+      });
+
+      const submitBtn = document.querySelector("#step5 .btn-primary");
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = "Working...";
+      submitBtn.disabled = true;
+
+      // Function to send data to a webhook
+      function sendToWebhook(webhookUrl, data, callback) {
+        const formElement = document.createElement('form');
+        formElement.style.display = 'none';
+        formElement.method = 'POST';
+        formElement.action = webhookUrl;
+        formElement.target = 'zapier_iframe_' + Date.now();
+
+        const iframe = document.createElement('iframe');
+        iframe.name = formElement.target;
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        Object.keys(data).forEach(key => {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = data[key];
+          formElement.appendChild(input);
+        });
+
+        document.body.appendChild(formElement);
+
+        iframe.onload = function () {
+          console.log("Data sent to webhook successfully:", webhookUrl);
+
+          // Clean up
+          if (document.body.contains(formElement)) document.body.removeChild(formElement);
+          if (document.body.contains(iframe)) document.body.removeChild(iframe);
+
+          callback(true);
+        };
+
+        // Set timeout for this webhook
+        setTimeout(() => {
+          console.error("Timeout sending data to webhook:", webhookUrl);
+
+          // Clean up
+          if (document.body.contains(formElement)) document.body.removeChild(formElement);
+          if (document.body.contains(iframe)) document.body.removeChild(iframe);
+
+          callback(false);
+        }, 5000);
+
+        formElement.submit();
+      }
+
+      // Track completion of both webhooks
+      let completedWebhooks = 0;
+      let hasProcessed = false;
+
+      function onWebhookComplete(success) {
+        completedWebhooks++;
+
+        if (success) {
+          console.log(`Webhook ${completedWebhooks} completed successfully`);
+        } else {
+          console.log(`Webhook ${completedWebhooks} failed or timed out`);
+        }
+
+        // Restore button when both webhooks are complete
+        if (completedWebhooks >= 2 && !hasProcessed) {
+          hasProcessed = true;
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      // Send to both webhooks
+      sendToWebhook(zapierWebhookUrl1, zapierData, onWebhookComplete);
+      sendToWebhook(zapierWebhookUrl2, zapierData, onWebhookComplete);
+    }
+
+    // Validation helpers
+    function validateEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    function validatePhone(phoneInputInstance) {
+      return phoneInputInstance.isValidNumber();
+    }
+
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', function () {
+      checkDisqualification(); // Check if user was previously disqualified
+      console.log("Form initialized with simplified qualifying questions");
+    });
+  </script>
   <script>
     function applyForAppointment() {
       // Add your appointment booking logic here
