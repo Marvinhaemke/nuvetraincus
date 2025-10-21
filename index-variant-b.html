@@ -1679,7 +1679,7 @@
       console.log("Revenue:", formData.revenue);
 
       // Check if disqualified
-      if (formData.revenue === "No") {
+      if (formData.revenue === "No, my companies annual revenue is below $300K") {
         // User is disqualified
         setCookie('nuvetra_disqualified', 'true', 30);
 
@@ -1724,26 +1724,60 @@
       const zapierWebhookUrl1 = "https://hooks.zapier.com/hooks/catch/24204039/u6euqu3/";
       const zapierWebhookUrl2 = "https://hooks.zapier.com/hooks/catch/24204039/u6euqsd/";
 
-      var percentWatched = null;
-      if (document.getElementById('element-A7o5uwSD') && document.getElementById('element-A7o5uwSD').style.display == "none") {
-        const progressHolder = document.querySelector("#element-bSoX6o4m .vjs-progress-holder");
-        if (progressHolder) {
-          percentWatched = progressHolder.getAttribute("aria-valuenow");
-          console.log(`The viewer has watched ${percentWatched}% of the video.`);
-        }
-      }
-      else if (typeof player !== 'undefined' && player.percentWatched) {
-        percentWatched = player.percentWatched * 100;
-        console.log(`The viewer has watched ${percentWatched}% of the video.`);
+      // Get Wistia video tracking
+      function getWistiaPercentWatched() {
+        return new Promise((resolve) => {
+          // Check if YouTube fallback is showing by checking computed styles
+          const youtubeVideo = document.getElementById('youtube_video');
+          const computedStyle = window.getComputedStyle(youtubeVideo);
+          
+          if (computedStyle.display !== "none") {
+            console.log('YouTube fallback detected - video tracking disabled');
+            resolve("Not Tracked (YouTube)");
+            return;
+          }
+
+          try {
+            const wistiaPlayer = document.querySelector('wistia-player');
+            
+            if (!wistiaPlayer) {
+              console.log('Wistia player element not found');
+              resolve("Not Tracked");
+              return;
+            }
+
+            // Listen for api-ready event to know when the player is ready
+            const handleApiReady = () => {
+              // percentWatched is a property, not a method!
+              const percent = Math.round(wistiaPlayer.percentWatched * 100);
+              console.log(`The viewer has watched ${percent}% of the video (Wistia).`);
+              resolve(percent);
+            };
+
+            // Check if API is already ready
+            if (typeof wistiaPlayer.percentWatched !== 'undefined') {
+              handleApiReady();
+            } else {
+              // Wait for api-ready event
+              wistiaPlayer.addEventListener('api-ready', handleApiReady, { once: true });
+              
+              // Fallback timeout
+              setTimeout(() => {
+                console.log('Wistia API ready timeout');
+                resolve("Not Tracked");
+              }, 5000);
+            }
+            
+          } catch (error) {
+            console.log('Could not retrieve Wistia tracking:', error);
+            resolve("Not Tracked");
+          }
+        });
       }
 
-      if (percentWatched != null) {
-        percentWatched = Math.round(percentWatched);
-      }
-      else {
-        percentWatched = "Not Tracked";
-      }
-
+      var percentWatched = "Not Tracked";
+getWistiaPercentWatched().then(watchedPercent => {
+    percentWatched = watchedPercent;
       const zapierData = {
         fullName: formData.fullName,
         email: formData.email,
@@ -1847,6 +1881,7 @@
       // Send to both webhooks
       sendToWebhook(zapierWebhookUrl1, zapierData, onWebhookComplete);
       sendToWebhook(zapierWebhookUrl2, zapierData, onWebhookComplete);
+    });
     }
 
     // Validation helpers
