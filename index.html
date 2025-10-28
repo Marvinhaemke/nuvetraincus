@@ -447,25 +447,30 @@
 
     </div>
 
-    <!-- STEP 1: Business Owner Question (Qualifying) -->
+    <!-- STEP 1: Current Situation -->
     <div id="step1" class="step">
       <div class="step-inner">
-        <h2>1. Are you currently a business owner or entrepreneur?</h2>
+        <h2>1. Which of these best fits your current situation?</h2>
         <div class="options-grid">
           <label>
-            <input type="radio" name="businessOwner" value="Yes, I own my business">
+            <input type="radio" name="currentSituation" value="I'm a business owner">
             <span class="custom-radio"></span>
-            <p>Yes, I own my business</p>
+            <p>I'm a business owner</p>
           </label>
           <label>
-            <input type="radio" name="businessOwner" value="Yes, I am the CEO">
+            <input type="radio" name="currentSituation" value="I sold my business">
             <span class="custom-radio"></span>
-            <p>Yes, I am the CEO</p>
+            <p>I sold my business</p>
           </label>
           <label>
-            <input type="radio" name="businessOwner" value="No, none of the above">
+            <input type="radio" name="currentSituation" value="I'm an active investor">
             <span class="custom-radio"></span>
-            <p>No, none of the above</p>
+            <p>I'm an active investor</p>
+          </label>
+          <label>
+            <input type="radio" name="currentSituation" value="None of them">
+            <span class="custom-radio"></span>
+            <p>None of them</p>
           </label>
         </div>
       </div>
@@ -475,40 +480,71 @@
           class="arrow-icon" alt=""></button>
     </div>
 
-    <!-- STEP 2: Outcome Interest (moved from step 3) -->
+    <!-- STEP 1B: Experience with Structures -->
+    <div id="step1b" class="step">
+      <div class="step-inner">
+        <h2>2. Have you ever explored using U.S. or international structures to legally reduce your taxes?</h2>
+        <div class="options-grid">
+          <label>
+            <input type="radio" name="structureExperience" value="I've tried it before - wasn't set up properly">
+            <span class="custom-radio"></span>
+            <p>I've tried it before - wasn't set up properly</p>
+          </label>
+          <label>
+            <input type="radio" name="structureExperience" value="Yes - I'm actively looking into it">
+            <span class="custom-radio"></span>
+            <p>Yes - I'm actively looking into it</p>
+          </label>
+          <label>
+            <input type="radio" name="structureExperience" value="I've heard of it, but don't know much">
+            <span class="custom-radio"></span>
+            <p>I've heard of it, but don't know much</p>
+          </label>
+          <label>
+            <input type="radio" name="structureExperience" value="No - this is completely new to me">
+            <span class="custom-radio"></span>
+            <p>No - this is completely new to me</p>
+          </label>
+        </div>
+      </div>
+      <p id="errorMsg1b" class="errorMsg">Please select one option.</p>
+      <button class="btn btn-primary cta-button" onclick="handleStep1b()">Next <img
+          src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
+          class="arrow-icon" alt=""></button>
+    </div>
+
+    <!-- STEP 2: Outcome Interest -->
     <div id="step3" class="step">
       <div class="step-inner">
-        <h2>2. Which outcome are you most interested in right now?</h2>
+        <h2>3. What outcome are you most focused on right now?</h2>
         <p style="font-style: italic; font-size: 0.9rem; margin-top: -1rem; margin-bottom: 1.5rem;">Select one or both
         </p>
 
         <div class="outcome-options">
           <label class="outcome-option-box">
-            <input type="checkbox" name="outcome" value="Financial Identity & Growth">
+            <input type="checkbox" name="outcome" value="U.S. Structure for Scaling & Tax Optimization">
             <span class="custom-checkbox"></span>
             <div class="outcome-content">
-              <strong>Financial Identity & Growth</strong>
+              <strong>U.S. Structure for Scaling & Tax Optimization</strong>
               <ul class="outcome-list">
-                <li>Second Financial Identity in the U.S.</li>
-                <li>U.S. Bank Accounts</li>
-                <li>U.S. Credit Profile</li>
-                <li>U.S. Business Funding</li>
-                <li>Access to U.S. Investments</li>
+                <li>Gain flexibility to operate and invest in the U.S.</li>
+                <li>Set up a U.S. business structure as a non-resident</li>
+                <li>Expand your business into the U.S.</li>
+                <li>Explore tax strategies using compliant U.S. entities</li>
               </ul>
             </div>
           </label>
 
           <label class="outcome-option-box">
-            <input type="checkbox" name="outcome" value="U.S. Structure & Protection">
+            <input type="checkbox" name="outcome" value="Global Tax Strategy & Asset Protection">
             <span class="custom-checkbox"></span>
             <div class="outcome-content">
-              <strong>U.S. Structure & Protection</strong>
+              <strong>Global Tax Strategy & Asset Protection</strong>
               <ul class="outcome-list">
-                <li>Strategic Tax Optimization</li>
-                <li>U.S. Business Structures for International Growth</li>
-                <li>International Company Structures</li>
-                <li>Generational Wealth Protection</li>
-                <li>Global Entrepreneur Network</li>
+                <li>Build long-term wealth using compliant international entity models</li>
+                <li>Protect assets across borders with trusted legal structures</li>
+                <li>Reduce exposure to lawsuits, regulation, and instability</li>
+                <li>Separate ownership and control with advanced structuring tools</li>
               </ul>
             </div>
           </label>
@@ -520,10 +556,10 @@
           class="arrow-icon" alt=""></button>
     </div>
 
-    <!-- STEP 3: Contact Info (moved from step 2) -->
+    <!-- STEP 3: Contact Info -->
     <div id="step2" class="step">
       <div class="step-inner">
-        <h2>3. Please provide your contact information so we can send your personalised next steps.</h2>
+        <h2>4. To proceed, we'll need your name and contact.</h2>
         <div class="contact-form">
           <div class="form-group">
             <label for="fullName" class="text-label">Full Name:</label>
@@ -558,40 +594,7 @@
           class="arrow-icon" alt=""></button>
     </div>
 
-    <!-- STEP 4: Travel -->
-    <div id="step4" class="step">
-      <div class="step-inner">
-        <h2>4. Are you able to travel to Miami, Florida to open your U.S. bank accounts?</h2>
-        <div class="options-grid">
-          <label>
-            <input type="radio" name="travel" value="Yes, I can travel anytime">
-            <span class="custom-radio"></span>
-            <p>Yes, I can travel anytime</p>
-          </label>
-          <label>
-            <input type="radio" name="travel" value="Yes, but I need time to plan">
-            <span class="custom-radio"></span>
-            <p>Yes, but I need time to plan</p>
-          </label>
-          <label>
-            <input type="radio" name="travel" value="Maybe, I need more details">
-            <span class="custom-radio"></span>
-            <p>Maybe, I need more details</p>
-          </label>
-          <label>
-            <input type="radio" name="travel" value="No, I prefer to do everything remotely">
-            <span class="custom-radio"></span>
-            <p>No, I prefer to do everything remotely</p>
-          </label>
-        </div>
-      </div>
-      <p id="errorMsg4" class="errorMsg">Please select one option.</p>
-      <button class="btn btn-primary cta-button" onclick="handleStep4()">Next <img
-          src="https://static.funnelcockpit.com/upload/8y8JSpa5mHDHAN8EX/57e212a89f891d78575b309d2f3480d3.svg"
-          class="arrow-icon" alt=""></button>
-    </div>
-
-    <!-- STEP 5: Revenue Question (Qualifying) -->
+    <!-- STEP 4: Revenue Question (Qualifying) -->
     <div id="step5" class="step">
       <div class="step-inner">
         <h2>5. Is your company's annual revenue above $300K?</h2>
@@ -635,7 +638,7 @@
       </div>
     </div>
 
-    <!-- STEP 6: Calendly -->
+    <!-- STEP 5: Calendly -->
     <div id="step6" class="step calendly-hidden">
       <div class="step-inner">
         <h2 style="margin-bottom: 12px;">Thank you! Please book your appointment below.</h2>
@@ -647,11 +650,11 @@
     <div class="step-indicator">
       <div class="step-indicator__circle active" id="circle0"></div>
       <div class="step-indicator__circle" id="circle1"></div>
+      <div class="step-indicator__circle" id="circle1b"></div>
       <div class="step-indicator__circle" id="circle2"></div>
       <div class="step-indicator__circle" id="circle3"></div>
       <div class="step-indicator__circle" id="circle4"></div>
       <div class="step-indicator__circle" id="circle5"></div>
-      <div class="step-indicator__circle" id="circle6"></div>
     </div>
   </div>
 
@@ -747,27 +750,6 @@
     .outcome-option-box input[type="checkbox"]:checked+.outcome-content strong {
       color: #d4a574;
     }
-/*
-    .outcome-option-box input[type="checkbox"]:checked~.outcome-content::before {
-      content: "✓";
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #B89745;
-      color: white;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .outcome-option-box input[type="checkbox"]:checked~.outcome-content {
-      padding-right: 3rem;
-    }*/
 
     .outcome-option-box input[type="checkbox"]:checked+.outcome-content~.outcome-option-box,
     .outcome-option-box input[type="checkbox"]:checked~.outcome-option-box {
@@ -1268,10 +1250,10 @@
     fetch(pageViewUrl);
     const question0Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 0&variant=Variant A";
     const question1Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 1&variant=Variant A";
+    const question1bUrl = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 1b&variant=Variant A";
     const question2Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 2&variant=Variant A";
     const question3Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 3&variant=Variant A";
     const question4Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 4&variant=Variant A";
-    const question5Url = "https://script.google.com/macros/s/AKfycby7uhOsAUN_G_HUa0l4yFO9h_wfRwvowxqEAIz6iLb0tURI0Hs3fmtDy1Rs3kX-DZMDwQ/exec?action=increment&counter=Question 5&variant=Variant A";
 
     // Cookie functions
     function setCookie(name, value, days) {
@@ -1314,14 +1296,14 @@
 
     // Track form data
     const formData = {
-      businessOwner: null,
+      currentSituation: null,
+      structureExperience: null,
       fullName: null,
       email: null,
       phone: null,
       optin: null,
       countrycode: null,
       outcome: [], // Array for multiple selections
-      travel: null,
       revenue: null
     };
 
@@ -1477,21 +1459,21 @@
       setActiveCircle(1);
     }
 
-    // Step 1 handler - Business Owner (Qualifying)
+    // Step 1 handler - Current Situation (Qualifying)
     function handleStep1() {
-      const businessOwner = document.querySelector('input[name="businessOwner"]:checked');
+      const currentSituation = document.querySelector('input[name="currentSituation"]:checked');
 
-      if (!businessOwner) {
+      if (!currentSituation) {
         document.getElementById("errorMsg1").classList.add("active");
         return;
       }
 
       document.getElementById("errorMsg1").classList.remove("active");
-      formData.businessOwner = businessOwner.value;
-      console.log("Business owner:", formData.businessOwner);
+      formData.currentSituation = currentSituation.value;
+      console.log("Current situation:", formData.currentSituation);
 
       // Check if disqualified
-      if (formData.businessOwner === "No, none of the above") {
+      if (formData.currentSituation === "None of them") {
         // User is disqualified
         setCookie('nuvetra_disqualified', 'true', 30);
 
@@ -1510,20 +1492,46 @@
         return;
       }
 
-      // Continue to outcome interest (now step 2)
+      // Continue to structure experience question (step 1b)
       document.getElementById("step1").classList.remove("fade-in-step");
       setTimeout(() => {
         document.getElementById("step1").classList.remove("active");
-        document.getElementById("step3").classList.add("active");
+        document.getElementById("step1b").classList.add("active");
       }, 800);
       setTimeout(() => {
-        document.getElementById("step3").classList.add("fade-in-step");
+        document.getElementById("step1b").classList.add("fade-in-step");
       }, 900);
       fetch(question1Url);
       setActiveCircle(2);
     }
 
-    // Step 2 handler - Outcome Interest (moved from step 3)
+    // Step 1b handler - Structure Experience
+    function handleStep1b() {
+      const structureExperience = document.querySelector('input[name="structureExperience"]:checked');
+
+      if (!structureExperience) {
+        document.getElementById("errorMsg1b").classList.add("active");
+        return;
+      }
+
+      document.getElementById("errorMsg1b").classList.remove("active");
+      formData.structureExperience = structureExperience.value;
+      console.log("Structure experience:", formData.structureExperience);
+
+      // Continue to outcome interest
+      document.getElementById("step1b").classList.remove("fade-in-step");
+      setTimeout(() => {
+        document.getElementById("step1b").classList.remove("active");
+        document.getElementById("step3").classList.add("active");
+      }, 800);
+      setTimeout(() => {
+        document.getElementById("step3").classList.add("fade-in-step");
+      }, 900);
+      fetch(question1bUrl);
+      setActiveCircle(3);
+    }
+
+    // Step 2 handler - Outcome Interest
     function handleStep2() {
       const outcomes = document.querySelectorAll('input[name="outcome"]:checked');
 
@@ -1549,10 +1557,10 @@
         document.getElementById("step2").classList.add("fade-in-step");
       }, 900);
       fetch(question2Url);
-      setActiveCircle(3);
+      setActiveCircle(4);
     }
 
-    // Step 3 handler - Contact Info (moved from step 2)
+    // Step 3 handler - Contact Info
     function handleStep3() {
       const fullName = document.getElementById("fullName").value.trim();
       const email = document.getElementById("emailAddress").value.trim();
@@ -1615,40 +1623,17 @@
       calendlyInitialized = true;
     }
 
-      // Move to travel question
+      // Move to revenue question (step5)
       document.getElementById("step2").classList.remove("fade-in-step");
       setTimeout(() => {
         document.getElementById("step2").classList.remove("active");
-        document.getElementById("step4").classList.add("active");
-        initializeCalendly();
-      }, 800);
-      setTimeout(() => {
-        document.getElementById("step4").classList.add("fade-in-step");
-      }, 900);
-      fetch(question3Url);
-      setActiveCircle(4);
-    }
-
-    // Step 4 handler - Travel
-    function handleStep4() {
-      const travel = document.querySelector('input[name="travel"]:checked');
-      if (!travel) {
-        document.getElementById("errorMsg4").classList.add("active");
-        return;
-      }
-
-      formData.travel = travel.value;
-      console.log("Travel:", formData.travel);
-
-      document.getElementById("step4").classList.remove("fade-in-step");
-      setTimeout(() => {
-        document.getElementById("step4").classList.remove("active");
         document.getElementById("step5").classList.add("active");
+        initializeCalendly();
       }, 800);
       setTimeout(() => {
         document.getElementById("step5").classList.add("fade-in-step");
       }, 900);
-      fetch(question4Url);
+      fetch(question3Url);
       setActiveCircle(5);
     }
 
@@ -1695,7 +1680,7 @@
       setTimeout(() => {
         document.getElementById("step6").classList.add("fade-in-step");
       }, 900);
-      fetch(question5Url);
+      fetch(question4Url);
       setActiveCircle(6);
     }
 
@@ -1703,7 +1688,7 @@
     function submitFormData(isDisqualified) {
       // Process and submit form data
       const outcomeString = formData.outcome.join(", ");
-      const answers = `${formData.businessOwner}-${outcomeString}-${formData.travel}-${formData.revenue}`;
+      const answers = `${formData.currentSituation}-${formData.structureExperience}-${outcomeString}-${formData.revenue}`;
       console.log(answers);
 
       const zapierWebhookUrl1 = "https://hooks.zapier.com/hooks/catch/24204039/u6euqu3/";
@@ -1769,9 +1754,9 @@ getWistiaPercentWatched().then(watchedPercent => {
         phone: formData.phone,
         optin: formData.optin,
         countryCode: formData.countrycode,
-        businessOwner: formData.businessOwner,
+        currentSituation: formData.currentSituation,
+        structureExperience: formData.structureExperience,
         outcome: outcomeString,
-        travel: formData.travel,
         revenue: formData.revenue,
         funnel: "Canada VSL",
         url: "https://global-sovereign.com",
@@ -1882,7 +1867,7 @@ getWistiaPercentWatched().then(watchedPercent => {
     // Initialize on DOM load
     document.addEventListener('DOMContentLoaded', function () {
       checkDisqualification(); // Check if user was previously disqualified
-      console.log("Form initialized with simplified qualifying questions");
+      console.log("Form initialized with new question flow");
     });
   </script>
 
@@ -2050,13 +2035,6 @@ getWistiaPercentWatched().then(watchedPercent => {
         </div>
 
         <div class="social-links">
-          <!-- Facebook 
-                    <a href="#" aria-label="Facebook">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                    </a>-->
-
           <!-- Instagram-->
           <a href="https://www.instagram.com/dr.robincassidy" aria-label="Instagram">
             <svg fill="currentColor" viewBox="0 0 24 24">
@@ -2072,20 +2050,6 @@ getWistiaPercentWatched().then(watchedPercent => {
                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
           </a>
-
-          <!-- LinkedIn 
-                    <a href="#" aria-label="LinkedIn">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>-->
-
-          <!-- TikTok 
-                    <a href="#" aria-label="TikTok">
-                        <svg fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                        </svg>
-                    </a>-->
         </div>
 
         <div class="utility-links">
