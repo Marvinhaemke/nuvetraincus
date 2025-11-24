@@ -428,7 +428,7 @@
       <div style="text-align: center !important;" class="step-inner">
         <h2>Read Before You Apply: </br>For High-Income Earners Only</h2>
         <div class="qualification-message">
-          <p>This is an application for business owners and entrepreneurs with at least <strong>$300K in revenue.</strong> If
+          <p>This is an application for business owners and entrepreneurs with at least <strong>$300K in total annual tax burden.</strong> If
             you are below this threshold, the strategies we specialize in may not apply to your
             current situation yet. If your application does not meet the requirements for this department, we will
             unfortunately not be able to make you an offer. In this case, you will receive a cancellation notice.</p>
@@ -522,29 +522,29 @@
 
         <div class="outcome-options">
           <label class="outcome-option-box">
-            <input type="checkbox" name="outcome" value="U.S. Structure for Scaling & Tax Optimization">
+            <input type="checkbox" name="outcome" value="Global Tax Strategy">
             <span class="custom-checkbox"></span>
             <div class="outcome-content">
-              <strong>U.S. Structure for Scaling & Tax Optimization</strong>
+              <strong>Global Tax Strategy</strong>
               <ul class="outcome-list">
-                <li>Gain flexibility to operate and invest in the U.S.</li>
-                <li>Set up a U.S. business structure as a non-resident</li>
-                <li>Expand your business into the U.S.</li>
-                <li>Explore tax strategies using compliant U.S. entities</li>
+                <li>Reduce six-figure tax exposure through compliant multi-jurisdiction structures</li>
+                <li>Optimize cross-border income flows for predictable long-term taxation</li>
+                <li>Build international entity layers that stabilize your global tax position</li>
+                <li>Ensure full compliance across your operating, holding, and investment jurisdictions</li>
               </ul>
             </div>
           </label>
 
           <label class="outcome-option-box">
-            <input type="checkbox" name="outcome" value="Global Tax Strategy & Asset Protection">
+            <input type="checkbox" name="outcome" value="Asset Protection">
             <span class="custom-checkbox"></span>
             <div class="outcome-content">
-              <strong>Global Tax Strategy & Asset Protection</strong>
+              <strong>Asset Protection</strong>
               <ul class="outcome-list">
-                <li>Build long-term wealth using compliant international entity models</li>
-                <li>Protect assets across borders with trusted legal structures</li>
-                <li>Reduce exposure to lawsuits, regulation, and instability</li>
-                <li>Separate ownership and control with advanced structuring tools</li>
+                <li>Protect wealth across borders with multi-layered legal structures</li>
+                <li>Separate ownership and control to isolate personal and business risk</li>
+                <li>Shield assets from regulatory pressure, lawsuits, and geopolitical volatility</li>
+                <li>Preserve long-term wealth with durable, international ownership models</li>
               </ul>
             </div>
           </label>
@@ -597,17 +597,19 @@
     <!-- STEP 4: Revenue Question (Qualifying) -->
     <div id="step5" class="step">
       <div class="step-inner">
-        <h2>5. Is your company's annual revenue above $300K?</h2>
+        <h2>5. Is your total annual tax burden above $300K?</h2>
+        <p style="font-style: italic; font-size: 0.9rem; margin-top: -1rem; margin-bottom: 1.5rem;">(personal, corporate, and other applicable taxes)
+        </p>
         <div class="options-grid">
           <label>
-            <input type="radio" name="revenue" value="Yes, my companies annual revenue is above $300K">
+            <input type="radio" name="revenue" value="Yes, my total annual tax burden is above $300K">
             <span class="custom-radio"></span>
-            <p>Yes, my companies annual revenue is above $300K</p>
+            <p>Yes, my total annual tax burden is above $300K</p>
           </label>
           <label>
-            <input type="radio" name="revenue" value="No, my companies annual revenue is below $300K">
+            <input type="radio" name="revenue" value="No, my total annual tax burden is below $300K">
             <span class="custom-radio"></span>
-            <p>No, my companies annual revenue is below $300K</p>
+            <p>No, my total annual tax burden is below $300K</p>
           </label>
         </div>
       </div>
@@ -623,8 +625,7 @@
         <h2 style="color: #ff6b6b;">Unfortunately, You Don't Qualify</h2>
         <div class="disqualified-message">
           <p style="font-size: 1.1rem; line-height: 1.6;">We appreciate your interest in our services. However, our
-            specialized strategies are designed specifically for established business owners and entrepreneurs with
-            companies generating <strong>at least $300K in annual revenue.</strong></p>
+            specialized strategies are designed specifically for established business owners and entrepreneurs with <strong>at least $300K in annual tax burden.</strong></p>
 
           <p style="font-size: 1rem; margin-top: 1.5rem;">These advanced financial structures and strategies require a
             certain business scale to be both effective and cost-efficient. We encourage you to revisit our services
@@ -1649,7 +1650,7 @@
       console.log("Revenue:", formData.revenue);
 
       // Check if disqualified
-      if (formData.revenue === "No, my companies annual revenue is below $300K") {
+      if (formData.revenue === "No, my total annual tax burden is below $300K") {
         // User is disqualified
         setCookie('nuvetra_disqualified', 'true', 30);
 
