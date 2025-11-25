@@ -525,75 +525,82 @@
     </footer>
 
     <script>
-        // Replace this with your actual Zapier webhook URL
-        const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24204039/uzjr9ug/';
+    // Replace this with your actual Zapier webhook URL
+    const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24204039/uzjr9ug/';
+    
+    const form = document.getElementById('subscriptionForm');
+    const emailInput = document.getElementById('emailInput');
+    const formMessage = document.getElementById('formMessage');
+    const submitButton = form.querySelector('.subscribe-btn');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        const form = document.getElementById('subscriptionForm');
-        const emailInput = document.getElementById('emailInput');
-        const formMessage = document.getElementById('formMessage');
-        const submitButton = form.querySelector('.subscribe-btn');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = emailInput.value.trim();
-            
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Show loading state
-            submitButton.classList.add('loading');
-            submitButton.disabled = true;
-            formMessage.style.display = 'none';
-
-            try {
-                // Send to Zapier webhook
-                const response = await fetch(ZAPIER_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        timestamp: new Date().toISOString(),
-                        source: 'subscription-page'
-                    })
-                });
-
-                if (response.ok || response.status === 200) {
-                    showMessage('Success! Welcome to our community. Check your email for confirmation.', 'success');
-                    emailInput.value = '';
-                } else {
-                    throw new Error('Subscription failed');
-                }
-            } catch (error) {
-                console.error('Subscription error:', error);
-                showMessage('Something went wrong. Please try again later.', 'error');
-            } finally {
-                submitButton.classList.remove('loading');
-                submitButton.disabled = false;
-            }
-        });
-
-        function showMessage(text, type) {
-            formMessage.textContent = text;
-            formMessage.className = `form-message ${type}`;
-            formMessage.style.display = 'block';
-            
-            // Auto-hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
+        const email = emailInput.value.trim();
+        
+        // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Please enter a valid email address.', 'error');
+            return;
         }
 
-        // Clear message when user starts typing
-        emailInput.addEventListener('input', () => {
+        // Show loading state
+        submitButton.classList.add('loading');
+        submitButton.disabled = true;
+        formMessage.style.display = 'none';
+
+        try {
+            // === CHANGE START ===
+            // We use FormData instead of JSON. 
+            // This creates a "Simple Request" and bypasses the CORS Preflight check.
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source', 'subscription-page');
+
+            // Send to Zapier webhook
+            // Note: We REMOVED the 'headers' object. fetch handles FormData headers automatically.
+            const response = await fetch(ZAPIER_WEBHOOK_URL, {
+                method: 'POST',
+                body: formData 
+            });
+            // === CHANGE END ===
+
+            // Zapier returns 200 OK if the hook caught the data
+            if (response.ok || response.status === 200) {
+                showMessage('Success! Welcome to our community. Check your email for confirmation.', 'success');
+                emailInput.value = '';
+            } else {
+                throw new Error('Subscription failed');
+            }
+        } catch (error) {
+            console.error('Subscription error:', error);
+            // Even if the browser blocks reading the response due to CORS, 
+            // Zapier usually still receives the data. 
+            // However, this error catch is good for network failures.
+            showMessage('Something went wrong. Please try again later.', 'error');
+        } finally {
+            submitButton.classList.remove('loading');
+            submitButton.disabled = false;
+        }
+    });
+
+    function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+        
+        // Auto-hide message after 5 seconds
+        setTimeout(() => {
             formMessage.style.display = 'none';
-        });
-    </script>
+        }, 5000);
+    }
+
+    // Clear message when user starts typing
+    emailInput.addEventListener('input', () => {
+        formMessage.style.display = 'none';
+    });
+</script>
 </body>
 </html>
