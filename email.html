@@ -551,55 +551,71 @@
         formMessage.style.display = 'none';
 
         try {
-            // === CHANGE START ===
-            // We use FormData instead of JSON. 
-            // This creates a "Simple Request" and bypasses the CORS Preflight check.
+            // Use FormData to avoid CORS Preflight (Simple Request)
             const formData = new FormData();
             formData.append('email', email);
             formData.append('timestamp', new Date().toISOString());
             formData.append('source', 'subscription-page');
 
-            // Send to Zapier webhook
-            // Note: We REMOVED the 'headers' object. fetch handles FormData headers automatically.
             const response = await fetch(ZAPIER_WEBHOOK_URL, {
                 method: 'POST',
-                body: formData 
+                body: formData
             });
-            // === CHANGE END ===
 
-            // Zapier returns 200 OK if the hook caught the data
             if (response.ok || response.status === 200) {
-                showMessage('Success! Welcome to our community. Check your email for confirmation.', 'success');
-                emailInput.value = '';
+                // === SUCCESS STATE CHANGES ===
+                
+                // 1. Hide the form completely
+                form.style.display = 'none';
+
+                // 2. Show the success message permanently (no timer)
+                formMessage.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <svg style="width: 50px; height: 50px; color: #28a745; margin-bottom: 15px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 style="color: #fff; margin-bottom: 10px; font-size: 24px;">Thank You!</h3>
+                        <p style="color: #ccc;">Welcome to the community. Check your email for confirmation.</p>
+                    </div>
+                `;
+                // Remove the default styling classes to use the custom HTML above cleanly
+                formMessage.className = 'form-message'; 
+                formMessage.style.display = 'block';
+                formMessage.style.background = 'transparent';
+                formMessage.style.border = 'none';
+
             } else {
                 throw new Error('Subscription failed');
             }
         } catch (error) {
             console.error('Subscription error:', error);
-            // Even if the browser blocks reading the response due to CORS, 
-            // Zapier usually still receives the data. 
-            // However, this error catch is good for network failures.
-            showMessage('Something went wrong. Please try again later.', 'error');
-        } finally {
+            // Re-enable button on error so they can try again
             submitButton.classList.remove('loading');
             submitButton.disabled = false;
+            showMessage('Something went wrong. Please try again later.', 'error');
         }
     });
 
+    // Helper for error messages (keeps the auto-hide functionality)
     function showMessage(text, type) {
         formMessage.textContent = text;
         formMessage.className = `form-message ${type}`;
         formMessage.style.display = 'block';
         
-        // Auto-hide message after 5 seconds
+        // Auto-hide error messages after 5 seconds
         setTimeout(() => {
-            formMessage.style.display = 'none';
+            // Only hide if the form is still visible (meaning we aren't in the success state)
+            if (form.style.display !== 'none') {
+                formMessage.style.display = 'none';
+            }
         }, 5000);
     }
 
-    // Clear message when user starts typing
+    // Clear error message when user starts typing
     emailInput.addEventListener('input', () => {
-        formMessage.style.display = 'none';
+        if (form.style.display !== 'none') {
+            formMessage.style.display = 'none';
+        }
     });
 </script>
 </body>
