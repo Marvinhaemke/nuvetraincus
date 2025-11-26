@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Guide - Global Ownership Principles</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: radial-gradient(circle at top left,rgba(0, 0, 0, 1) 0%, rgba(10, 27, 47, 1) 40%, rgba(10, 27, 47, 1) 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 120px;
+            height: auto;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .subscription-card {
+            background: rgba(44, 95, 111, 0.1);
+            border-radius: 25px;
+            border: 2px solid #B89745;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+            padding: 50px 40px;
+            max-width: 700px;
+            width: 100%;
+            text-align: left; /* Changed to left align for better readability of long text */
+            backdrop-filter: blur(10px);
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .subscription-title {
+            font-size: 30px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .subscription-subtitle {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .body-copy {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .checklist {
+            margin: 0 auto 30px auto;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: #e0e0e0;
+        }
+
+        .checklist-icon {
+            color: #28a745; /* Checkmark green */
+            flex-shrink: 0;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .cta-prompt {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: #d4a574;
+        }
+
+        .email-form {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 16px 25px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            border-radius: 12px;
+            color: #fff;
+            transition: all 0.3s ease;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .input-field:focus {
+            border-color: #d4a574;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+        }
+
+        /* Select Styling */
+        select.input-field {
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23d4a574%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px top 50%;
+            background-size: 12px auto;
+        }
+
+        select.input-field option {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .subscribe-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #d4a574 0%, #B89745 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.5);
+        }
+
+        .subscribe-btn:active {
+            transform: translateY(0);
+        }
+
+        .subscribe-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            display: none;
+            text-align: center;
+        }
+
+        .form-message.success {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+            color: #28a745;
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(220, 53, 69, 0.2);
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            display: block;
+        }
+
+        .privacy-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .subscribe-btn.loading .btn-text {
+            display: none;
+        }
+
+        .subscribe-btn.loading .spinner {
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            color: #fff;
+            padding: 2rem 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo-section {
+           display: block;
+        }
+
+        .footer-logo-icon {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            width: 100%;
+            display: block;
+            color: #fff;
+            font-size: 16px !important;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .utility-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .utility-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .utility-links a:hover {
+            color: #d4a574;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 20px 0px;
+            }
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .subscription-card {
+                padding: 40px 20px;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+
+            .subscription-title {
+                font-size: 24px;
+            }
+
+            .subscription-subtitle {
+                font-size: 18px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .footer-logo-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                order: 3;
+                margin: 0;
+            }
+
+            .utility-links {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-section">
+                <img src="/Logo.png" alt="Global Sovereign Logo" class="logo-icon">
+            </div>
+        </header>
+
+        <main class="hero-section">
+            <div class="subscription-card">
+                <h1 class="subscription-title">Global Ownership Principles for UK Business Owners Paying £250K+ in Tax</h1>
+                
+                <p class="subscription-subtitle">
+                    Why most UK entrepreneurs are structured wrong—and what to do about it.
+                </p>
+
+                <p class="body-copy">
+                    If you're paying £250K+ in annual tax, you likely have structural gaps that are costing you significant money and leaving your wealth exposed.
+                </p>
+
+                
+
+                <p class="cta-prompt">
+                    Download the guide and find out whether your current structure is protecting your wealth—or leaving it exposed.
+                </p>
+
+                <form id="subscriptionForm" class="email-form">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="nameInput" 
+                            class="input-field" 
+                            placeholder="First Name" 
+                            required
+                        />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="emailInput" 
+                            class="input-field" 
+                            placeholder="Email Address" 
+                            required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <select id="taxInput" class="input-field">
+                            <option value="" disabled selected>Annual Tax Burden (Optional)</option>
+                            <option value="250k-500k">£250K - £500K</option>
+                            <option value="500k-1m">£500K - £1M</option>
+                            <option value="1m+">£1M+</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="subscribe-btn">
+                        <span class="btn-text">Get the Free Guide</span>
+                        <div class="spinner"></div>
+                    </button>
+                </form>
+
+                <div id="formMessage" class="form-message"></div>
+
+                <p class="privacy-note">
+                    Your information is secure. We'll send you the guide immediately and occasional updates. Unsubscribe anytime.
+                </p>
+              <div class="checklist">
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✅</span>
+                        <span>5 hidden problems with UK-only structures that most advisors won't tell you about</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✅</span>
+                        <span>Why your UK accountant can't help with what is fundamentally a cross-border problem</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✅</span>
+                        <span>How global ownership actually works — the principles behind compliant international structures</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✅</span>
+                        <span>Action checklist to assess your current exposure and identify gaps</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="/Logo.png" alt="Global Sovereign Logo" class="footer-logo-icon">
+                    <div class="footer-bottom" style="font-size: 0.5rem !important;">
+                        <p>NUVETRA Inc. 2025, All Rights Reserved</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="utility-links">
+                    <a href="/imprint">Imprint</a>
+                    <span>-</span>
+                    <a href="/privacy">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Replace this with your actual Zapier webhook URL
+    const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24204039/uzjr9ug/';
+    
+    const form = document.getElementById('subscriptionForm');
+    const emailInput = document.getElementById('emailInput');
+    const nameInput = document.getElementById('nameInput');
+    const taxInput = document.getElementById('taxInput');
+    const formMessage = document.getElementById('formMessage');
+    const submitButton = form.querySelector('.subscribe-btn');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim();
+        const name = nameInput.value.trim();
+        const taxBurden = taxInput.value;
+        
+        // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!name) {
+             showMessage('Please enter your first name.', 'error');
+             return;
+        }
+
+        if (!emailRegex.test(email)) {
+            showMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Show loading state
+        submitButton.classList.add('loading');
+        submitButton.disabled = true;
+        formMessage.style.display = 'none';
+
+        try {
+            // Use FormData to avoid CORS Preflight (Simple Request)
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('first_name', name);
+            if (taxBurden) {
+                formData.append('tax_burden', taxBurden);
+            }
+            formData.append('timestamp', new Date().toISOString());
+            formData.append('source', 'guide-download-page');
+
+            const response = await fetch(ZAPIER_WEBHOOK_URL, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok || response.status === 200) {
+                // === SUCCESS STATE CHANGES ===
+                
+                // 1. Hide the form completely
+                form.style.display = 'none';
+                
+                // Hide CTA prompt and privacy note
+                document.querySelector('.cta-prompt').style.display = 'none';
+                document.querySelector('.privacy-note').style.display = 'none';
+
+                // 2. Show the success message
+                formMessage.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <svg style="width: 50px; height: 50px; color: #28a745; margin-bottom: 15px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 style="color: #fff; margin-bottom: 10px; font-size: 24px;">Success!</h3>
+                        <p style="color: #ccc;">Your guide has been sent to your inbox.</p>
+                    </div>
+                `;
+                
+                formMessage.className = 'form-message'; 
+                formMessage.style.display = 'block';
+                formMessage.style.background = 'transparent';
+                formMessage.style.border = 'none';
+
+            } else {
+                throw new Error('Subscription failed');
+            }
+        } catch (error) {
+            console.error('Subscription error:', error);
+            // Re-enable button on error so they can try again
+            submitButton.classList.remove('loading');
+            submitButton.disabled = false;
+            showMessage('Something went wrong. Please try again later.', 'error');
+        }
+    });
+
+    // Helper for error messages
+    function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+        
+        setTimeout(() => {
+            if (form.style.display !== 'none') {
+                formMessage.style.display = 'none';
+            }
+        }, 5000);
+    }
+
+    // Clear error message when user starts typing/selecting
+    [emailInput, nameInput, taxInput].forEach(input => {
+        input.addEventListener('input', () => {
+            if (form.style.display !== 'none') {
+                formMessage.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
