@@ -1668,6 +1668,8 @@
         submitFormData(true);
         return;
       }
+      
+      fbq('track', 'Lead');
 
       // User qualifies - proceed with submission and show calendly
       submitFormData(false);
@@ -1695,6 +1697,7 @@
       const zapierWebhookUrl1 = "https://hooks.zapier.com/hooks/catch/24204039/u6euqu3/";
       const zapierWebhookUrl2 = "https://hooks.zapier.com/hooks/catch/24204039/u6euqsd/";
 
+     
       // Get Wistia video tracking
       function getWistiaPercentWatched() {
         return new Promise((resolve) => {
@@ -1776,6 +1779,7 @@ getWistiaPercentWatched().then(watchedPercent => {
         zapierData[key] = value;
       });
 
+      
       const submitBtn = document.querySelector("#step5 .btn-primary");
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.innerHTML = "Working...";
