@@ -248,6 +248,81 @@
             }
         }
 
+        /* 10/10 Lead Checkbox */
+        .lead-rating-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .lead-rating-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 28px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .lead-rating-checkbox:hover {
+            border-color: rgba(212, 165, 116, 0.5);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .lead-rating-checkbox input {
+            display: none;
+        }
+
+        .lead-rating-checkbox .checkmark {
+            width: 26px;
+            height: 26px;
+            border: 2px solid rgba(212, 165, 116, 0.5);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .lead-rating-checkbox .checkmark svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0;
+            transition: all 0.2s ease;
+            color: #fff;
+        }
+
+        .lead-rating-checkbox input:checked ~ .checkmark {
+            background: linear-gradient(135deg, #d4a574 0%, #B89745 100%);
+            border-color: #d4a574;
+        }
+
+        .lead-rating-checkbox input:checked ~ .checkmark svg {
+            opacity: 1;
+        }
+
+        .lead-rating-checkbox .rating-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .lead-rating-checkbox input:checked ~ .rating-text {
+            color: #d4a574;
+        }
+
+        .lead-rating-checkbox:has(input:checked) {
+            border-color: #d4a574;
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(184, 151, 69, 0.15) 100%);
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+        }
+
         /* Submit Button */
         .submit-btn {
             width: 100%;
@@ -551,6 +626,21 @@
                                 <textarea class="form-textarea" id="nextStepsDiscovery" placeholder="Was passiert als nächstes?"></textarea>
                             </div>
                         </div>
+
+                        <!-- 10/10 Lead Checkbox -->
+                        <div class="form-row single">
+                            <div class="lead-rating-container">
+                                <label class="lead-rating-checkbox">
+                                    <input type="checkbox" id="topLeadDiscovery" name="top_lead_discovery">
+                                    <span class="checkmark">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="rating-text">🔥 10/10 Lead</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -619,6 +709,21 @@
                                     To-dos / Zuständig / Termin
                                 </label>
                                 <textarea class="form-textarea large" id="nextStepsStrategy" placeholder="Was muss als nächstes passieren?"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- 10/10 Lead Checkbox -->
+                        <div class="form-row single">
+                            <div class="lead-rating-container">
+                                <label class="lead-rating-checkbox">
+                                    <input type="checkbox" id="topLeadStrategy" name="top_lead_strategy">
+                                    <span class="checkmark">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="rating-text">🔥 10/10 Lead</span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -747,6 +852,9 @@
                     }
                     
                     formData.append('next_steps', document.getElementById('nextStepsDiscovery').value.trim());
+                    
+                    // 10/10 Lead checkbox
+                    formData.append('top_lead', document.getElementById('topLeadDiscovery').checked ? 'yes' : 'no');
                 } else {
                     // Strategy Call specific fields
                     const offerStrategy = document.querySelector('input[name="offer_strategy"]:checked');
@@ -760,6 +868,9 @@
                     formData.append('entscheidung', document.getElementById('entscheidung').value.trim());
                     formData.append('info_torben', document.getElementById('infoTorben').value.trim());
                     formData.append('next_steps', document.getElementById('nextStepsStrategy').value.trim());
+                    
+                    // 10/10 Lead checkbox
+                    formData.append('top_lead', document.getElementById('topLeadStrategy').checked ? 'yes' : 'no');
                 }
 
                 const response = await fetch(ZAPIER_WEBHOOK_URL, {
