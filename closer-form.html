@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -248,79 +248,107 @@
             }
         }
 
-        /* 10/10 Lead Checkbox */
-        .lead-rating-container {
-            display: flex;
-            justify-content: center;
+        /* Lead Rating Selector (0-10) */
+        .lead-rating-section {
             margin-top: 10px;
         }
 
-        .lead-rating-checkbox {
+        .lead-rating-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            text-align: center;
+            display: block;
+        }
+
+        .lead-rating-scale {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 28px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(212, 165, 116, 0.3);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            user-select: none;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .lead-rating-checkbox:hover {
-            border-color: rgba(212, 165, 116, 0.5);
-            background: rgba(0, 0, 0, 0.4);
+        .rating-option {
+            position: relative;
         }
 
-        .lead-rating-checkbox input {
+        .rating-option input {
             display: none;
         }
 
-        .lead-rating-checkbox .checkmark {
-            width: 26px;
-            height: 26px;
-            border: 2px solid rgba(212, 165, 116, 0.5);
-            border-radius: 6px;
+        .rating-option label {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 44px;
+            height: 44px;
+            font-size: 15px;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(212, 165, 116, 0.3);
+            border-radius: 10px;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
             transition: all 0.3s ease;
-            background: transparent;
         }
 
-        .lead-rating-checkbox .checkmark svg {
-            width: 16px;
-            height: 16px;
-            opacity: 0;
-            transition: all 0.2s ease;
-            color: #fff;
+        .rating-option label:hover {
+            border-color: rgba(212, 165, 116, 0.5);
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        .lead-rating-checkbox input:checked ~ .checkmark {
+        .rating-option input:checked + label {
             background: linear-gradient(135deg, #d4a574 0%, #B89745 100%);
             border-color: #d4a574;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(212, 165, 116, 0.4);
+            transform: scale(1.1);
         }
 
-        .lead-rating-checkbox input:checked ~ .checkmark svg {
-            opacity: 1;
+        /* Color gradient for ratings */
+        .rating-option[data-value="0"] input:checked + label,
+        .rating-option[data-value="1"] input:checked + label,
+        .rating-option[data-value="2"] input:checked + label {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            border-color: #dc3545;
+            box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
         }
 
-        .lead-rating-checkbox .rating-text {
-            font-size: 16px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.7);
-            transition: all 0.3s ease;
+        .rating-option[data-value="3"] input:checked + label,
+        .rating-option[data-value="4"] input:checked + label {
+            background: linear-gradient(135deg, #fd7e14 0%, #e06c00 100%);
+            border-color: #fd7e14;
+            box-shadow: 0 0 15px rgba(253, 126, 20, 0.4);
         }
 
-        .lead-rating-checkbox input:checked ~ .rating-text {
-            color: #d4a574;
+        .rating-option[data-value="5"] input:checked + label,
+        .rating-option[data-value="6"] input:checked + label {
+            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+            border-color: #ffc107;
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
         }
 
-        .lead-rating-checkbox:has(input:checked) {
-            border-color: #d4a574;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(184, 151, 69, 0.15) 100%);
-            box-shadow: 0 0 20px rgba(212, 165, 116, 0.2);
+        .rating-option[data-value="7"] input:checked + label,
+        .rating-option[data-value="8"] input:checked + label {
+            background: linear-gradient(135deg, #90c74a 0%, #7ab436 100%);
+            border-color: #90c74a;
+            box-shadow: 0 0 15px rgba(144, 199, 74, 0.4);
+        }
+
+        .rating-option[data-value="9"] input:checked + label,
+        .rating-option[data-value="10"] input:checked + label {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+            border-color: #28a745;
+            box-shadow: 0 0 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .rating-display {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            min-height: 20px;
         }
 
         /* Submit Button */
@@ -443,6 +471,16 @@
             .offer-option {
                 min-width: auto;
             }
+
+            .lead-rating-scale {
+                gap: 6px;
+            }
+
+            .rating-option label {
+                width: 38px;
+                height: 38px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -453,7 +491,7 @@
         </header>
 
         <div class="form-card">
-            <h1 class="form-title">Sales Call Notizen</h1>
+            <h1 class="form-title">Sales Call Notes</h1>
 
             <form id="salesNotesForm">
                 <!-- Call Type Selector -->
@@ -471,12 +509,12 @@
                     <h2 class="section-title">Lead Information</h2>
                     <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label">Lead E-Mail *</label>
-                            <input type="email" class="form-input" id="leadEmail" placeholder="email@beispiel.de" required>
+                            <label class="form-label">Lead Email *</label>
+                            <input type="email" class="form-input" id="leadEmail" placeholder="email@example.com" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Lead Name</label>
-                            <input type="text" class="form-input" id="leadName" placeholder="Vor- und Nachname">
+                            <input type="text" class="form-input" id="leadName" placeholder="First and last name">
                         </div>
                     </div>
                 </div>
@@ -491,107 +529,107 @@
                             <div class="form-group">
                                 <label class="form-label">
                                     Business Details
-                                    <span class="hint">Branche / Modell / Angebot / Zielgruppe</span>
+                                    <span class="hint">Industry / Model / Offer / Target Audience</span>
                                 </label>
-                                <textarea class="form-textarea" id="business" placeholder="z.B. E-Commerce, SaaS, Agentur..."></textarea>
+                                <textarea class="form-textarea" id="business" placeholder="e.g. E-Commerce, SaaS, Agency..."></textarea>
                             </div>
                         </div>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Wichtige Info / Hintergrund
+                                    Important Info / Background
                                 </label>
-                                <textarea class="form-textarea" id="hintergrund" placeholder="Relevante Hintergrundinformationen..."></textarea>
+                                <textarea class="form-textarea" id="background" placeholder="Relevant background information..."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- Structure Section -->
                     <div class="form-section">
-                        <h2 class="section-title">Struktur</h2>
+                        <h2 class="section-title">Structure</h2>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Unternehmensstruktur
-                                    <span class="hint">Teamgröße / Systeme / Rechtsform</span>
+                                    Company Structure
+                                    <span class="hint">Team Size / Systems / Legal Form</span>
                                 </label>
-                                <textarea class="form-textarea" id="struktur" placeholder="z.B. GmbH, 5 Mitarbeiter, Holding..."></textarea>
+                                <textarea class="form-textarea" id="structure" placeholder="e.g. Ltd, 5 employees, Holding..."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- Financials Section -->
                     <div class="form-section">
-                        <h2 class="section-title">Finanzen</h2>
+                        <h2 class="section-title">Financials</h2>
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Umsatz
-                                    <span class="hint">monatlich / jährlich / geschätzt</span>
+                                    Revenue
+                                    <span class="hint">monthly / yearly / estimated</span>
                                 </label>
-                                <input type="text" class="form-input" id="umsatz" placeholder="z.B. 500k/Jahr">
+                                <input type="text" class="form-input" id="revenue" placeholder="e.g. £500k/year">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">
                                     Profit
-                                    <span class="hint">jährlich</span>
+                                    <span class="hint">yearly</span>
                                 </label>
-                                <input type="text" class="form-input" id="profit" placeholder="z.B. 150k/Jahr">
+                                <input type="text" class="form-input" id="profit" placeholder="e.g. £150k/year">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Steuern
-                                    <span class="hint">gezahlt / offen / zu hoch / unklar</span>
+                                    Taxes
+                                    <span class="hint">paid / outstanding / too high / unclear</span>
                                 </label>
-                                <input type="text" class="form-input" id="steuern" placeholder="z.B. 80k gezahlt, zu hoch">
+                                <input type="text" class="form-input" id="taxes" placeholder="e.g. £80k paid, too high">
                             </div>
                             <div class="form-group">
                                 <label class="form-label">
-                                    Liquidität
-                                    <span class="hint">aktuell / 3 Monate / 6 Monate</span>
+                                    Liquidity
+                                    <span class="hint">current / 3 months / 6 months</span>
                                 </label>
-                                <input type="text" class="form-input" id="liquiditaet" placeholder="z.B. 100k verfügbar">
+                                <input type="text" class="form-input" id="liquidity" placeholder="e.g. £100k available">
                             </div>
                         </div>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
                                     Assets
-                                    <span class="hint">Immobilien / Cash / Aktien / Firmenbeteiligungen</span>
+                                    <span class="hint">Real Estate / Cash / Stocks / Company Holdings</span>
                                 </label>
-                                <textarea class="form-textarea" id="assets" placeholder="Vorhandene Vermögenswerte..."></textarea>
+                                <textarea class="form-textarea" id="assets" placeholder="Existing assets..."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- Goals & Pain Points -->
                     <div class="form-section">
-                        <h2 class="section-title">Ziele & Engpass</h2>
+                        <h2 class="section-title">Goals & Bottleneck</h2>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Ziel / Motivation
-                                    <span class="hint">kurz- & langfristig</span>
+                                    Goal / Motivation
+                                    <span class="hint">short-term & long-term</span>
                                 </label>
-                                <textarea class="form-textarea" id="ziel" placeholder="Was möchte der Lead erreichen?"></textarea>
+                                <textarea class="form-textarea" id="goal" placeholder="What does the lead want to achieve?"></textarea>
                             </div>
                         </div>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Engpass
-                                    <span class="hint">wo hakt's aktuell? – Struktur, Steuern, Cashflow, Prozesse …</span>
+                                    Bottleneck
+                                    <span class="hint">current blockers – Structure, Taxes, Cash Flow, Processes …</span>
                                 </label>
-                                <textarea class="form-textarea" id="engpass" placeholder="Hauptproblem oder Blocker..."></textarea>
+                                <textarea class="form-textarea" id="bottleneck" placeholder="Main problem or blocker..."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- Offer & Next Steps -->
                     <div class="form-section">
-                        <h2 class="section-title">Angebot & Nächste Schritte</h2>
+                        <h2 class="section-title">Offer & Next Steps</h2>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">Offer</label>
@@ -605,40 +643,79 @@
                                         <label for="offer_200k">200k</label>
                                     </div>
                                     <div class="offer-option">
-                                        <input type="radio" name="offer_discovery" id="offer_custom" value="individuell">
-                                        <label for="offer_custom">Individuell</label>
+                                        <input type="radio" name="offer_discovery" id="offer_custom" value="custom">
+                                        <label for="offer_custom">Custom</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row single custom-offer-row" id="customOfferDiscoveryRow" style="display: none;">
                             <div class="form-group">
-                                <label class="form-label">Individuelles Angebot beschreiben</label>
-                                <textarea class="form-textarea" id="customOfferDiscovery" placeholder="Details zum individuellen Angebot..."></textarea>
+                                <label class="form-label">Describe Custom Offer</label>
+                                <textarea class="form-textarea" id="customOfferDiscovery" placeholder="Details about the custom offer..."></textarea>
                             </div>
                         </div>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Nächste Schritte
-                                    <span class="hint">Follow-up / Unterlagen / Termin</span>
+                                    Next Steps
+                                    <span class="hint">Follow-up / Documents / Appointment</span>
                                 </label>
-                                <textarea class="form-textarea" id="nextStepsDiscovery" placeholder="Was passiert als nächstes?"></textarea>
+                                <textarea class="form-textarea" id="nextStepsDiscovery" placeholder="What happens next?"></textarea>
                             </div>
                         </div>
 
-                        <!-- 10/10 Lead Checkbox -->
+                        <!-- Lead Rating 0-10 -->
                         <div class="form-row single">
-                            <div class="lead-rating-container">
-                                <label class="lead-rating-checkbox">
-                                    <input type="checkbox" id="topLeadDiscovery" name="top_lead_discovery">
-                                    <span class="checkmark">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span class="rating-text">🔥 10/10 Lead</span>
-                                </label>
+                            <div class="lead-rating-section">
+                                <label class="lead-rating-label">Lead Rating</label>
+                                <div class="lead-rating-scale" id="ratingScaleDiscovery">
+                                    <div class="rating-option" data-value="0">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_0" value="0">
+                                        <label for="rating_d_0">0</label>
+                                    </div>
+                                    <div class="rating-option" data-value="1">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_1" value="1">
+                                        <label for="rating_d_1">1</label>
+                                    </div>
+                                    <div class="rating-option" data-value="2">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_2" value="2">
+                                        <label for="rating_d_2">2</label>
+                                    </div>
+                                    <div class="rating-option" data-value="3">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_3" value="3">
+                                        <label for="rating_d_3">3</label>
+                                    </div>
+                                    <div class="rating-option" data-value="4">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_4" value="4">
+                                        <label for="rating_d_4">4</label>
+                                    </div>
+                                    <div class="rating-option" data-value="5">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_5" value="5">
+                                        <label for="rating_d_5">5</label>
+                                    </div>
+                                    <div class="rating-option" data-value="6">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_6" value="6">
+                                        <label for="rating_d_6">6</label>
+                                    </div>
+                                    <div class="rating-option" data-value="7">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_7" value="7">
+                                        <label for="rating_d_7">7</label>
+                                    </div>
+                                    <div class="rating-option" data-value="8">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_8" value="8">
+                                        <label for="rating_d_8">8</label>
+                                    </div>
+                                    <div class="rating-option" data-value="9">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_9" value="9">
+                                        <label for="rating_d_9">9</label>
+                                    </div>
+                                    <div class="rating-option" data-value="10">
+                                        <input type="radio" name="lead_rating_discovery" id="rating_d_10" value="10">
+                                        <label for="rating_d_10">10</label>
+                                    </div>
+                                </div>
+                                <div class="rating-display" id="ratingDisplayDiscovery"></div>
                             </div>
                         </div>
                     </div>
@@ -649,10 +726,10 @@
                     
                     <!-- Offer Decision -->
                     <div class="form-section">
-                        <h2 class="section-title">Angebot & Entscheidung</h2>
+                        <h2 class="section-title">Offer & Decision</h2>
                         <div class="form-row single">
                             <div class="form-group">
-                                <label class="form-label">Welches Offer</label>
+                                <label class="form-label">Which Offer</label>
                                 <div class="offer-options">
                                     <div class="offer-option">
                                         <input type="radio" name="offer_strategy" id="strat_offer_60k" value="60k">
@@ -663,67 +740,106 @@
                                         <label for="strat_offer_200k">200k</label>
                                     </div>
                                     <div class="offer-option">
-                                        <input type="radio" name="offer_strategy" id="strat_offer_custom" value="individuell">
-                                        <label for="strat_offer_custom">Individuell</label>
+                                        <input type="radio" name="offer_strategy" id="strat_offer_custom" value="custom">
+                                        <label for="strat_offer_custom">Custom</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row single custom-offer-row" id="customOfferStrategyRow" style="display: none;">
                             <div class="form-group">
-                                <label class="form-label">Individuelles Angebot beschreiben</label>
-                                <textarea class="form-textarea" id="customOfferStrategy" placeholder="Details zum individuellen Angebot..."></textarea>
+                                <label class="form-label">Describe Custom Offer</label>
+                                <textarea class="form-textarea" id="customOfferStrategy" placeholder="Details about the custom offer..."></textarea>
                             </div>
                         </div>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Entscheidung
-                                    <span class="hint">Kaufbereitschaft / Zeitpunkt / Bedenken - Informationen</span>
+                                    Decision
+                                    <span class="hint">Purchase Readiness / Timing / Concerns - Information</span>
                                 </label>
-                                <textarea class="form-textarea large" id="entscheidung" placeholder="Wie steht der Lead zur Kaufentscheidung?"></textarea>
+                                <textarea class="form-textarea large" id="decision" placeholder="Where does the lead stand on the purchase decision?"></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- Internal Info -->
                     <div class="form-section">
-                        <h2 class="section-title">Interne Infos</h2>
+                        <h2 class="section-title">Internal Info</h2>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    Info Torben / Anzahlung möglich
-                                    <span class="hint">spezielle Hinweise / nächste Schritte / Strategieansatz</span>
+                                    Info for Torben / Down Payment Possible
+                                    <span class="hint">special notes / next steps / strategy approach</span>
                                 </label>
-                                <textarea class="form-textarea large" id="infoTorben" placeholder="Wichtige Infos für Torben..."></textarea>
+                                <textarea class="form-textarea large" id="infoTorben" placeholder="Important info for Torben..."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- Next Steps -->
                     <div class="form-section">
-                        <h2 class="section-title">Nächste Schritte</h2>
+                        <h2 class="section-title">Next Steps</h2>
                         <div class="form-row single">
                             <div class="form-group">
                                 <label class="form-label">
-                                    To-dos / Zuständig / Termin
+                                    To-dos / Responsible / Appointment
                                 </label>
-                                <textarea class="form-textarea large" id="nextStepsStrategy" placeholder="Was muss als nächstes passieren?"></textarea>
+                                <textarea class="form-textarea large" id="nextStepsStrategy" placeholder="What needs to happen next?"></textarea>
                             </div>
                         </div>
 
-                        <!-- 10/10 Lead Checkbox -->
+                        <!-- Lead Rating 0-10 -->
                         <div class="form-row single">
-                            <div class="lead-rating-container">
-                                <label class="lead-rating-checkbox">
-                                    <input type="checkbox" id="topLeadStrategy" name="top_lead_strategy">
-                                    <span class="checkmark">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span class="rating-text">🔥 10/10 Lead</span>
-                                </label>
+                            <div class="lead-rating-section">
+                                <label class="lead-rating-label">Lead Rating</label>
+                                <div class="lead-rating-scale" id="ratingScaleStrategy">
+                                    <div class="rating-option" data-value="0">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_0" value="0">
+                                        <label for="rating_s_0">0</label>
+                                    </div>
+                                    <div class="rating-option" data-value="1">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_1" value="1">
+                                        <label for="rating_s_1">1</label>
+                                    </div>
+                                    <div class="rating-option" data-value="2">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_2" value="2">
+                                        <label for="rating_s_2">2</label>
+                                    </div>
+                                    <div class="rating-option" data-value="3">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_3" value="3">
+                                        <label for="rating_s_3">3</label>
+                                    </div>
+                                    <div class="rating-option" data-value="4">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_4" value="4">
+                                        <label for="rating_s_4">4</label>
+                                    </div>
+                                    <div class="rating-option" data-value="5">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_5" value="5">
+                                        <label for="rating_s_5">5</label>
+                                    </div>
+                                    <div class="rating-option" data-value="6">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_6" value="6">
+                                        <label for="rating_s_6">6</label>
+                                    </div>
+                                    <div class="rating-option" data-value="7">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_7" value="7">
+                                        <label for="rating_s_7">7</label>
+                                    </div>
+                                    <div class="rating-option" data-value="8">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_8" value="8">
+                                        <label for="rating_s_8">8</label>
+                                    </div>
+                                    <div class="rating-option" data-value="9">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_9" value="9">
+                                        <label for="rating_s_9">9</label>
+                                    </div>
+                                    <div class="rating-option" data-value="10">
+                                        <input type="radio" name="lead_rating_strategy" id="rating_s_10" value="10">
+                                        <label for="rating_s_10">10</label>
+                                    </div>
+                                </div>
+                                <div class="rating-display" id="ratingDisplayStrategy"></div>
                             </div>
                         </div>
                     </div>
@@ -731,7 +847,7 @@
 
                 <!-- Submit Button -->
                 <button type="submit" class="submit-btn">
-                    <span class="btn-text">Notizen Speichern</span>
+                    <span class="btn-text">Save Notes</span>
                     <div class="spinner"></div>
                 </button>
 
@@ -763,7 +879,7 @@
 
         discoveryOfferRadios.forEach(radio => {
             radio.addEventListener('change', () => {
-                if (radio.value === 'individuell' && radio.checked) {
+                if (radio.value === 'custom' && radio.checked) {
                     customOfferDiscoveryRow.style.display = 'block';
                 } else if (radio.checked) {
                     customOfferDiscoveryRow.style.display = 'none';
@@ -773,11 +889,43 @@
 
         strategyOfferRadios.forEach(radio => {
             radio.addEventListener('change', () => {
-                if (radio.value === 'individuell' && radio.checked) {
+                if (radio.value === 'custom' && radio.checked) {
                     customOfferStrategyRow.style.display = 'block';
                 } else if (radio.checked) {
                     customOfferStrategyRow.style.display = 'none';
                 }
+            });
+        });
+
+        // ========== LEAD RATING DISPLAY ==========
+        const ratingLabels = {
+            0: 'Not a fit',
+            1: 'Very unlikely',
+            2: 'Unlikely',
+            3: 'Low potential',
+            4: 'Below average',
+            5: 'Average',
+            6: 'Above average',
+            7: 'Good potential',
+            8: 'Strong lead',
+            9: 'Excellent lead',
+            10: '🔥 Perfect fit!'
+        };
+
+        const discoveryRatingRadios = document.querySelectorAll('input[name="lead_rating_discovery"]');
+        const strategyRatingRadios = document.querySelectorAll('input[name="lead_rating_strategy"]');
+        const ratingDisplayDiscovery = document.getElementById('ratingDisplayDiscovery');
+        const ratingDisplayStrategy = document.getElementById('ratingDisplayStrategy');
+
+        discoveryRatingRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                ratingDisplayDiscovery.textContent = ratingLabels[radio.value];
+            });
+        });
+
+        strategyRatingRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                ratingDisplayStrategy.textContent = ratingLabels[radio.value];
             });
         });
 
@@ -810,7 +958,7 @@
             // Validate email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(leadEmail)) {
-                showMessage('Bitte gib eine gültige E-Mail-Adresse ein.', 'error');
+                showMessage('Please enter a valid email address.', 'error');
                 return;
             }
 
@@ -833,44 +981,46 @@
                 if (currentCallType === 'discovery') {
                     // Discovery Call specific fields
                     formData.append('business', document.getElementById('business').value.trim());
-                    formData.append('hintergrund', document.getElementById('hintergrund').value.trim());
-                    formData.append('struktur', document.getElementById('struktur').value.trim());
-                    formData.append('umsatz', document.getElementById('umsatz').value.trim());
+                    formData.append('background', document.getElementById('background').value.trim());
+                    formData.append('structure', document.getElementById('structure').value.trim());
+                    formData.append('revenue', document.getElementById('revenue').value.trim());
                     formData.append('profit', document.getElementById('profit').value.trim());
-                    formData.append('steuern', document.getElementById('steuern').value.trim());
-                    formData.append('liquiditaet', document.getElementById('liquiditaet').value.trim());
+                    formData.append('taxes', document.getElementById('taxes').value.trim());
+                    formData.append('liquidity', document.getElementById('liquidity').value.trim());
                     formData.append('assets', document.getElementById('assets').value.trim());
-                    formData.append('ziel', document.getElementById('ziel').value.trim());
-                    formData.append('engpass', document.getElementById('engpass').value.trim());
+                    formData.append('goal', document.getElementById('goal').value.trim());
+                    formData.append('bottleneck', document.getElementById('bottleneck').value.trim());
                     
                     const offerDiscovery = document.querySelector('input[name="offer_discovery"]:checked');
                     formData.append('offer', offerDiscovery ? offerDiscovery.value : '');
                     
-                    // Include custom offer description if "individuell" is selected
-                    if (offerDiscovery && offerDiscovery.value === 'individuell') {
+                    // Include custom offer description if "custom" is selected
+                    if (offerDiscovery && offerDiscovery.value === 'custom') {
                         formData.append('offer_custom_description', document.getElementById('customOfferDiscovery').value.trim());
                     }
                     
                     formData.append('next_steps', document.getElementById('nextStepsDiscovery').value.trim());
                     
-                    // 10/10 Lead checkbox
-                    formData.append('top_lead', document.getElementById('topLeadDiscovery').checked ? 'yes' : 'no');
+                    // Lead rating
+                    const ratingDiscovery = document.querySelector('input[name="lead_rating_discovery"]:checked');
+                    formData.append('lead_rating', ratingDiscovery ? ratingDiscovery.value : '');
                 } else {
                     // Strategy Call specific fields
                     const offerStrategy = document.querySelector('input[name="offer_strategy"]:checked');
                     formData.append('offer', offerStrategy ? offerStrategy.value : '');
                     
-                    // Include custom offer description if "individuell" is selected
-                    if (offerStrategy && offerStrategy.value === 'individuell') {
+                    // Include custom offer description if "custom" is selected
+                    if (offerStrategy && offerStrategy.value === 'custom') {
                         formData.append('offer_custom_description', document.getElementById('customOfferStrategy').value.trim());
                     }
                     
-                    formData.append('entscheidung', document.getElementById('entscheidung').value.trim());
+                    formData.append('decision', document.getElementById('decision').value.trim());
                     formData.append('info_torben', document.getElementById('infoTorben').value.trim());
                     formData.append('next_steps', document.getElementById('nextStepsStrategy').value.trim());
                     
-                    // 10/10 Lead checkbox
-                    formData.append('top_lead', document.getElementById('topLeadStrategy').checked ? 'yes' : 'no');
+                    // Lead rating
+                    const ratingStrategy = document.querySelector('input[name="lead_rating_strategy"]:checked');
+                    formData.append('lead_rating', ratingStrategy ? ratingStrategy.value : '');
                 }
 
                 const response = await fetch(ZAPIER_WEBHOOK_URL, {
@@ -879,7 +1029,7 @@
                 });
 
                 if (response.ok || response.status === 200) {
-                    showMessage('✓ Notizen erfolgreich gespeichert!', 'success');
+                    showMessage('✓ Notes saved successfully!', 'success');
                     
                     // Optional: Reset form after successful submission
                     // form.reset();
@@ -889,7 +1039,7 @@
                 }
             } catch (error) {
                 console.error('Submission error:', error);
-                showMessage('Fehler beim Speichern. Bitte versuche es erneut.', 'error');
+                showMessage('Error saving notes. Please try again.', 'error');
             } finally {
                 submitButton.classList.remove('loading');
                 submitButton.disabled = false;
