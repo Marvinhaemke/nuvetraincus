@@ -1669,7 +1669,8 @@
         return;
       }
 
-      fbq('track', 'Lead');
+      fbq('track', 'Lead');     // The truth (for history/audiences)
+      fbq('track', 'Schedule'); // The fix (for your current Ad Set results)
       
       // User qualifies - proceed with submission and show calendly
       submitFormData(false);
