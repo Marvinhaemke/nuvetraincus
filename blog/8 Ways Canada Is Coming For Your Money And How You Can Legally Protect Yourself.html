@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <title>8 Ways Canada Is Coming For Your Money - Global Sovereign</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: calc(15px + 0.390625vw);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: radial-gradient(circle at top left,rgba(0, 0, 0, 1) 0%, rgba(10, 27, 47, 1) 40%, rgba(10, 27, 47, 1) 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #2c5f6f 0%, #d4a574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+        }
+
+        /* Main Content */
+        .privacy-content {
+            background: rgba(44, 95, 111, 0.1);
+            border-radius: 25px;
+            border: 2px solid #c67742;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .privacy-title {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .privacy-meta {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+
+        .privacy-section h2 {
+            color: #d4a574;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .privacy-section p {
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: rgba(212, 165, 116, 0.15);
+            border-left: 4px solid #d4a574;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .highlight strong {
+            color: #FFD700;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #d4a574;
+            margin-bottom: 15px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            color: #fff;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo-section {
+           display: block;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+            color: #d4a574;
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .utility-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .utility-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .utility-links a:hover {
+            color: #d4a574;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            width: 100%;
+            display: block;
+            color: #fff;
+            font-size: 16px !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .privacy-content {
+                padding: 25px;
+                border-radius: 15px;
+            }
+
+            .privacy-title {
+                font-size: 24px;
+            }
+
+            .privacy-section h2 {
+                font-size: 20px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .footer-logo-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                order: 3;
+                margin: 0;
+            }
+
+            .utility-links {
+                order: 2;
+            }
+            
+            .footer-bottom {
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="/Logo.png" alt="Global Sovereign Logo" class="logo-icon">
+            </div>
+            <a href="#" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                Back to Home
+            </a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="privacy-content">
+            <h1 class="privacy-title">8 Ways Canada Is Coming For Your Money And How You Can Legally Protect Yourself</h1>
+        
+        <div class="privacy-meta">
+            <p><strong>Author:</strong> Dr. Robin (CEO, Global Sovereign)</p>
+            <p><strong>Published:</strong> 11th of December 2025 &nbsp;|&nbsp; <strong>Topic:</strong> Asset Protection, Tax Planning, Offshore Structuring, Wealth Preservation</p>
+        </div>
+
+        <div class="privacy-section">
+            <p>Canada is becoming more aggressive every single year when it comes to taking money from its most successful residents. Entrepreneurs are feeling cornered because the system is designed to extract, restrict and control.</p>
+            <p>In this article you will find the eight biggest financial threats for Canadian entrepreneurs and how international structuring can protect your wealth.</p>
+        </div>
+
+        <!-- Point 1 -->
+        <div class="privacy-section">
+            <h2>1. Double Taxation On US Income</h2>
+            <p>Elena from Ottawa invested in a Florida property held in a US LLC. The investment performed well until she wanted to bring the money back to Canada. The CRA classified the LLC as a corporation and taxed the income again as a dividend. In the end, almost 80 percent of her profits were gone through double taxation.</p>
+            <p>The solution would have been clear from the start: a US Limited Partnership. The income flows through directly for tax purposes, allowing foreign tax credits and avoiding double taxation.</p>
+            <div class="highlight">
+                <p>Anyone earning money in the United States should not use an LLC. Canadian investors need an LP or a cross border structure to avoid CRA double taxation.</p>
+            </div>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="privacy-section">
+            <h2>2. Business Failure Still Destroys Personal Wealth In Canada</h2>
+            <p>Jamal, a café owner from Ottawa, believed his Canadian corporation would protect him. When COVID hit and the business collapsed, he discovered that his personal wealth was not truly separated. Creditors came after him personally. Home, savings, retirement funds, everything gone. And the CRA took its share first.</p>
+            <p>A US offshore trust structure would have separated his personal wealth cleanly from his business risk. In Canada, a normal corporation simply is not enough to shield assets.</p>
+            <div class="highlight">
+                <p>Canadian corporations offer very little real asset protection. International asset protection structures are necessary when you carry risk.</p>
+            </div>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="privacy-section">
+            <h2>3. Probate, Forced Heirship And Endless Paperwork</h2>
+            <p>The Lefebvre family in Quebec experienced the complete opposite of what Jean wanted for his wife and children. A five-million-dollar estate, but instead of security, the family faced 18 months of court delays, one hundred thousand dollars in legal fees and the intervention of forced heirship rules in Quebec. Jean’s own will was practically irrelevant.</p>
+            <p>A US cross border trust would have avoided probate entirely, transferred the assets privately and immediately, and bypassed forced heirship.</p>
+            <div class="highlight">
+                <p>Anyone who does not want courts and provincial laws to decide what happens to their estate needs a cross border trust solution.</p>
+            </div>
+        </div>
+
+        <!-- Point 4 -->
+        <div class="privacy-section">
+            <h2>4. Hidden US Estate Taxes On Canadians</h2>
+            <p>The Thompson father owned American stocks worth 1.2 million dollars. After his death, the family was shocked. The IRS demanded about 500,000 dollars in estate tax because Canadians only receive a tiny exemption of 60,000 dollars.</p>
+            <p>With an international trust structure, they could have transferred the assets in a tax-optimized way and legally reduced the tax burden.</p>
+            <div class="highlight">
+                <p>Every Canadian with US stocks, ETFs or real estate risks paying up to 40 percent US estate tax. Without structuring, it becomes extremely expensive.</p>
+            </div>
+        </div>
+
+        <!-- Point 5 -->
+        <div class="privacy-section">
+            <h2>5. Currency Losses And Bank Fees Quietly Stealing Wealth</h2>
+            <p>Raj from Vancouver exported goods to the United States. When the Canadian dollar dropped six percent in 2023 and the bank charged three percent conversion fees, he lost more than fifty thousand dollars. These silent losses destroyed his margins and peace of mind.</p>
+            <p>He created a US structure, opened a US bank account and held his earnings directly in US dollars. No more fees, no more sleepless nights.</p>
+            <div class="highlight">
+                <p>Anyone earning US dollars should not hold them in Canada. A US structure and a US account stop exchange rate losses and bank fees.</p>
+            </div>
+        </div>
+
+        <!-- Point 6 -->
+        <div class="privacy-section">
+            <h2>6. Government Bank Freezes With No Warning</h2>
+            <p>The events of the Emergencies Act in 2022 hit many people hard. More than two hundred Canadians, including Tamara Lich, suddenly had no access to their bank accounts. No warning, no transparency, no right to use their own money.</p>
+            <p>A US bank account outside of Canadian jurisdiction remains accessible even if Canada freezes accounts.</p>
+            <div class="highlight">
+                <p>Political risks in Canada are real. International banking solutions are a financial safety net for entrepreneurs and families.</p>
+            </div>
+        </div>
+
+        <!-- Point 7 -->
+        <div class="privacy-section">
+            <h2>7. Losing Global Deals Because Of Entity Mismatch</h2>
+            <p>Alex, a tech founder from Toronto, lost a one-million-dollar investment because his Canadian business structure did not fit the requirements of the US private equity investor. The deal collapsed and the opportunity was gone.</p>
+            <p>With a US corporation or an offshore company, he would have received the financing immediately.</p>
+            <div class="highlight">
+                <p>Canadian business structures often do not match global investor requirements. International structuring opens doors to deals, partnerships and capital.</p>
+            </div>
+        </div>
+
+        <!-- Point 8 -->
+        <div class="privacy-section">
+            <h2>8. Geopolitical Shocks Destroying Wealth Overnight</h2>
+            <p>Carlos ran a successful auto supply business. When a new US tariff of 25 percent hit his goods in 2025, more than one million dollars of expected income was at risk. On top of that, new Canadian regulations and discussions about wealth taxes increased the pressure.</p>
+            <p>He used an international structure and moved five million dollars in assets to Mexico. This allowed him to avoid massive financial damage.</p>
+            <div class="highlight">
+                <p>One country alone is not a safe haven. International diversification protects wealth from political and economic shocks.</p>
+            </div>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="privacy-section">
+            <h2>2. Business Failure Still Destroys Personal Wealth In Canada</h2>
+            <p>Jamal, a café owner from Ottawa, believed his Canadian corporation would protect him. When COVID hit and the business collapsed, he discovered that his personal wealth was not truly separated. Creditors came after him personally. Home, savings, retirement funds, everything gone. And the CRA took its share first.</p>
+            <p>A US offshore trust structure would have separated his personal wealth cleanly from his business risk. In Canada, a normal corporation simply is not enough to shield assets.</p>
+            <div class="highlight">
+                <p>Canadian corporations offer very little real asset protection. International asset protection structures are necessary when you carry risk.</p>
+            </div>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="privacy-section">
+            <h2>3. Probate, Forced Heirship And Endless Paperwork</h2>
+            <p>The Lefebvre family in Quebec experienced the complete opposite of what Jean wanted for his wife and children. A five-million-dollar estate, but instead of security, the family faced 18 months of court delays, one hundred thousand dollars in legal fees and the intervention of forced heirship rules in Quebec. Jean’s own will was practically irrelevant.</p>
+            <p>A US cross border trust would have avoided probate entirely, transferred the assets privately and immediately, and bypassed forced heirship.</p>
+            <div class="highlight">
+                <p>Anyone who does not want courts and provincial laws to decide what happens to their estate needs a cross border trust solution.</p>
+            </div>
+        </div>
+
+        <!-- Point 4 -->
+        <div class="privacy-section">
+            <h2>4. Hidden US Estate Taxes On Canadians</h2>
+            <p>The Thompson father owned American stocks worth 1.2 million dollars. After his death, the family was shocked. The IRS demanded about 500,000 dollars in estate tax because Canadians only receive a tiny exemption of 60,000 dollars.</p>
+            <p>With an international trust structure, they could have transferred the assets in a tax-optimized way and legally reduced the tax burden.</p>
+            <div class="highlight">
+                <p>Every Canadian with US stocks, ETFs or real estate risks paying up to 40 percent US estate tax. Without structuring, it becomes extremely expensive.</p>
+            </div>
+        </div>
+
+        <!-- Point 5 -->
+        <div class="privacy-section">
+            <h2>5. Currency Losses And Bank Fees Quietly Stealing Wealth</h2>
+            <p>Raj from Vancouver exported goods to the United States. When the Canadian dollar dropped six percent in 2023 and the bank charged three percent conversion fees, he lost more than fifty thousand dollars. These silent losses destroyed his margins and peace of mind.</p>
+            <p>He created a US structure, opened a US bank account and held his earnings directly in US dollars. No more fees, no more sleepless nights.</p>
+            <div class="highlight">
+                <p>Anyone earning US dollars should not hold them in Canada. A US structure and a US account stop exchange rate losses and bank fees.</p>
+            </div>
+        </div>
+
+        <!-- Point 6 -->
+        <div class="privacy-section">
+            <h2>6. Government Bank Freezes With No Warning</h2>
+            <p>The events of the Emergencies Act in 2022 hit many people hard. More than two hundred Canadians, including Tamara Lich, suddenly had no access to their bank accounts. No warning, no transparency, no right to use their own money.</p>
+            <p>A US bank account outside of Canadian jurisdiction remains accessible even if Canada freezes accounts.</p>
+            <div class="highlight">
+                <p>Political risks in Canada are real. International banking solutions are a financial safety net for entrepreneurs and families.</p>
+            </div>
+        </div>
+
+        <!-- Point 7 -->
+        <div class="privacy-section">
+            <h2>7. Losing Global Deals Because Of Entity Mismatch</h2>
+            <p>Alex, a tech founder from Toronto, lost a one-million-dollar investment because his Canadian business structure did not fit the requirements of the US private equity investor. The deal collapsed and the opportunity was gone.</p>
+            <p>With a US corporation or an offshore company, he would have received the financing immediately.</p>
+            <div class="highlight">
+                <p>Canadian business structures often do not match global investor requirements. International structuring opens doors to deals, partnerships and capital.</p>
+            </div>
+        </div>
+
+        <!-- Point 8 -->
+        <div class="privacy-section">
+            <h2>8. Geopolitical Shocks Destroying Wealth Overnight</h2>
+            <p>Carlos ran a successful auto supply business. When a new US tariff of 25 percent hit his goods in 2025, more than one million dollars of expected income was at risk. On top of that, new Canadian regulations and discussions about wealth taxes increased the pressure.</p>
+            <p>He used an international structure and moved five million dollars in assets to Mexico. This allowed him to avoid massive financial damage.</p>
+            <div class="highlight">
+                <p>One country alone is not a safe haven. International diversification protects wealth from political and economic shocks.</p>
+            </div>
+        </div>
+
+        <div class="privacy-section">
+            <h2>The Bigger Picture</h2>
+            <p>Canada’s financial system is strict, controlling and aggressive. Every single case shows that the goal is not the protection of your wealth but access to it. Anyone who keeps their money exclusively in Canada is extremely vulnerable to tax, political and economic risk.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Ready To Protect Your Wealth?</h3>
+            <p>When you see these eight reasons, it becomes clear why global structuring is no longer a luxury. It is necessary if you want to keep your wealth, protect your family and access international opportunities.</p>
+            <p style="margin-top: 20px;">If you are ready to learn how to legally pay less tax and protect wealth internationally without having to relocate, the next step is simple. Look at how entrepreneurs avoid the Canadian traps and build real security.</p>
+            <a href="#" class="cta-button">Learn More About Structuring</a>
+        </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="/Logo.png" alt="Global Sovereign Logo" class="footer-logo-icon">
+                    <div class="footer-bottom" style="font-size: 0.5rem !important;">
+                        <p>NUVETRA Inc. 2025, All Rights Reserved</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" aria-label="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="#" aria-label="TikTok">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="utility-links">
+                    <a href="#">Imprint</a>
+                    <span>-</span>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
