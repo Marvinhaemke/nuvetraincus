@@ -135,7 +135,6 @@
             width: auto;
             height: 150px;
             margin: -30px;
-            /*background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));*/
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -322,77 +321,77 @@
         }
 
         .hero-features {
-    list-style: none;
-    margin: 50px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 900px;
-}
+            list-style: none;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+        }
 
-.hero-features li {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 25px 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+        .hero-features li {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero-features li::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
+        .hero-features li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
 
-.hero-features li:hover::before {
-    transform: scaleX(1);
-}
+        .hero-features li:hover::before {
+            transform: scaleX(1);
+        }
 
-.hero-features li:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-gold);
-    box-shadow: 0 10px 30px rgba(184, 151, 69, 0.2);
-}
+        .hero-features li:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 10px 30px rgba(184, 151, 69, 0.2);
+        }
 
-.hero-features li:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
-}
+        .hero-features li:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
 
-.feature-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 15px;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.4s ease;
-}
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
 
-.feature-icon i {
-    width: 24px;
-    height: 24px;
-    color: white;
-    stroke-width: 2.5;
-}
+        .feature-icon i {
+            width: 24px;
+            height: 24px;
+            color: white;
+            stroke-width: 2.5;
+        }
 
-.hero-features li span {
-    color: var(--text-light);
-    font-size: 16px;
-    font-weight: 500;
-    display: block;
-}
+        .hero-features li span {
+            color: var(--text-light);
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+        }
 
         .hero-bottom-text {
             font-size: 18px;
@@ -641,6 +640,31 @@
             left: 15px;
         }
 
+        .phase-outcome {
+            background: linear-gradient(135deg, rgba(184, 151, 69, 0.1) 0%, rgba(44, 95, 111, 0.1) 100%);
+            border: 1px solid var(--primary-gold);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .phase-outcome-label {
+            color: var(--primary-gold);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .phase-outcome p {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
         /* Who This Is For Section */
         .target-audience {
             padding: 120px 40px;
@@ -710,116 +734,116 @@
         }
 
         .cost-timeline {
-    position: relative;
-    padding: 40px 0;
-}
+            position: relative;
+            padding: 40px 0;
+        }
 
-.cost-timeline::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
-    transform: translateY(-50%);
-    z-index: 0;
-}
+        .cost-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
 
-.cost-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    position: relative;
-    z-index: 1;
-}
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
 
-.cost-item {
-    background: var(--dark-primary);
-    backdrop-filter: blur(20px);
-    border: 2px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+        .cost-item {
+            background: var(--dark-primary);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.cost-item::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, rgba(184, 151, 69, 0.1) 0%, transparent 60%);
-    transition: all 0.5s ease;
-    opacity: 0;
-}
+        .cost-item::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(184, 151, 69, 0.1) 0%, transparent 60%);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
 
-.cost-item:hover::before {
-    opacity: 1;
-}
+        .cost-item:hover::before {
+            opacity: 1;
+        }
 
-.cost-item:hover {
-    transform: translateY(-10px) scale(1.05);
-    border-color: var(--primary-gold);
-    box-shadow: 0 20px 60px rgba(184, 151, 69, 0.3);
-}
+        .cost-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--primary-gold);
+            box-shadow: 0 20px 60px rgba(184, 151, 69, 0.3);
+        }
 
-.cost-item:hover .cost-icon {
-    transform: scale(1.15) rotate(-5deg);
-}
+        .cost-item:hover .cost-icon {
+            transform: scale(1.15) rotate(-5deg);
+        }
 
-.cost-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, rgba(184, 151, 69, 0.2) 0%, rgba(44, 95, 111, 0.2) 100%);
-    border: 2px solid var(--primary-gold);
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.4s ease;
-}
+        .cost-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(184, 151, 69, 0.2) 0%, rgba(44, 95, 111, 0.2) 100%);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
 
-.cost-icon i {
-    width: 28px;
-    height: 28px;
-    color: var(--primary-gold);
-    stroke-width: 2;
-}
+        .cost-icon i {
+            width: 28px;
+            height: 28px;
+            color: var(--primary-gold);
+            stroke-width: 2;
+        }
 
-.cost-item strong {
-    color: var(--primary-gold);
-    font-size: 20px;
-    display: block;
-    margin-bottom: 15px;
-}
+        .cost-item strong {
+            color: var(--primary-gold);
+            font-size: 20px;
+            display: block;
+            margin-bottom: 15px;
+        }
 
-.cost-item p {
-    color: var(--text-muted);
-    line-height: 1.6;
-    font-size: 15px;
-}
+        .cost-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 15px;
+        }
 
-.cost-item em {
-    color: var(--text-light);
-    font-style: italic;
-}
+        .cost-item em {
+            color: var(--text-light);
+            font-style: italic;
+        }
 
-@media (max-width: 1024px) {
-    .cost-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+        @media (max-width: 1024px) {
+            .cost-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
 
-    .cost-timeline::before {
-        display: none;
-    }
-}
+            .cost-timeline::before {
+                display: none;
+            }
+        }
 
         .cost-conclusion {
             text-align: center;
@@ -990,404 +1014,358 @@
         }
 
         /* REDESIGNED OUR CLIENTS SECTION */
-.clients-section {
-    padding: 120px 40px;
-    background: linear-gradient(180deg, rgba(10, 27, 47, 0.3) 0%, transparent 100%);
-    position: relative;
-    overflow: hidden;
-}
+        .clients-section {
+            padding: 120px 40px;
+            background: linear-gradient(180deg, rgba(10, 27, 47, 0.3) 0%, transparent 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-.clients-hero {
-    text-align: center;
-    max-width: 1000px;
-    margin: 0 auto 80px;
-    position: relative;
-    z-index: 1;
-}
+        .clients-hero {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            position: relative;
+            z-index: 1;
+        }
 
-.clients-hero h2 {
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 800;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, var(--text-light) 0%, var(--primary-gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .clients-hero h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.clients-subtitle {
-    font-size: 24px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
+        .clients-subtitle {
+            font-size: 24px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
 
-.clients-divider {
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
-    margin: 40px auto;
-}
+        .clients-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            margin: 40px auto;
+        }
 
-.trust-indicators {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 80px auto;
-}
+        .trust-indicators {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 80px auto;
+        }
 
-.trust-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
+        .trust-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.trust-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(184, 151, 69, 0.1), transparent);
-    transition: left 0.6s ease;
-}
+        .trust-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(184, 151, 69, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
 
-.trust-card:hover::before {
-    left: 100%;
-}
+        .trust-card:hover::before {
+            left: 100%;
+        }
 
-.trust-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-gold);
-    box-shadow: 0 20px 60px rgba(184, 151, 69, 0.3);
-}
+        .trust-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 20px 60px rgba(184, 151, 69, 0.3);
+        }
 
-.trust-card:hover .trust-icon {
-    transform: scale(1.1) rotate(5deg);
-}
+        .trust-card:hover .trust-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
 
-.trust-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, rgba(184, 151, 69, 0.2), rgba(44, 95, 111, 0.2));
-    border: 2px solid var(--primary-gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-}
+        .trust-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(184, 151, 69, 0.2), rgba(44, 95, 111, 0.2));
+            border: 2px solid var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
 
-.trust-icon svg {
-    width: 28px;
-    height: 28px;
-    color: var(--primary-gold);
-    stroke-width: 2;
-}
+        .trust-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--primary-gold);
+            stroke-width: 2;
+        }
 
-.trust-number {
-    font-size: 56px;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 15px;
-    line-height: 1;
-}
+        .trust-number {
+            font-size: 56px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
 
-.trust-label {
-    color: var(--text-light);
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
+        .trust-label {
+            color: var(--text-light);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
 
-.trust-description {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.6;
-}
+        .trust-description {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
 
-.client-profiles {
-    max-width: 1200px;
-    margin: 80px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
+        .client-profiles {
+            max-width: 1200px;
+            margin: 80px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
 
-.client-profile {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
+        .client-profile {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
 
-.client-profile:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-gold);
-    box-shadow: 0 20px 60px rgba(184, 151, 69, 0.2);
-}
+        .client-profile:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 20px 60px rgba(184, 151, 69, 0.2);
+        }
 
-.client-profile:hover .client-avatar svg {
-    transform: scale(1.15);
-}
+        .client-profile:hover .client-avatar svg {
+            transform: scale(1.15);
+        }
 
-.client-avatar {
-    width: 100%;
-    height: 280px;
-    background: linear-gradient(135deg, rgba(184, 151, 69, 0.3) 0%, rgba(44, 95, 111, 0.3) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
+        .client-avatar {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, rgba(184, 151, 69, 0.3) 0%, rgba(44, 95, 111, 0.3) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.client-avatar::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(184, 151, 69, 0.2) 0%, transparent 60%);
-    animation: rotate 15s linear infinite;
-}
+        .client-avatar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(184, 151, 69, 0.2) 0%, transparent 60%);
+            animation: rotate 15s linear infinite;
+        }
 
-.client-avatar svg {
-    width: 80px;
-    height: 80px;
-    color: var(--primary-gold);
-    stroke-width: 1.5;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.4s ease;
-    filter: drop-shadow(0 4px 20px rgba(184, 151, 69, 0.4));
-}
+        .client-avatar svg {
+            width: 80px;
+            height: 80px;
+            color: var(--primary-gold);
+            stroke-width: 1.5;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(0 4px 20px rgba(184, 151, 69, 0.4));
+        }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        .client-info {
+            padding: 30px;
+        }
 
-.client-info {
-    padding: 30px;
-}
+        .client-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
 
-.client-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 10px;
-}
+        .client-description {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
 
-.client-description {
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
+        .client-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-.client-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
+        .client-tag {
+            background: rgba(184, 151, 69, 0.1);
+            color: var(--primary-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(184, 151, 69, 0.3);
+        }
 
-.client-tag {
-    background: rgba(184, 151, 69, 0.1);
-    color: var(--primary-gold);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    border: 1px solid rgba(184, 151, 69, 0.3);
-}
+        .privacy-promise {
+            max-width: 900px;
+            margin: 80px auto 0;
+            background: linear-gradient(135deg, rgba(184, 151, 69, 0.05) 0%, rgba(44, 95, 111, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--primary-gold);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
+        .privacy-promise::before {
+            content: '';
+            position: absolute;
+            top: -500px;
+            left: -500px;
+            right: -500px;
+            bottom: -500px;
+            background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold), var(--accent-teal), var(--primary-gold));
+            border-radius: 30px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            animation: borderRotate 4s linear infinite;
+        }
 
-.stat-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
+        @keyframes borderRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-.stat-icon i {
-    width: 24px;
-    height: 24px;
-    color: white;
-    stroke-width: 2;
-}
+        .privacy-promise:hover::before {
+            opacity: 0.5;
+        }
 
-.stat-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
+        .privacy-promise:hover .privacy-icon {
+            transform: scale(1.1);
+        }
 
-.stat-info strong {
-    color: var(--text-light);
-    font-size: 16px;
-    font-weight: 600;
-}
+        .privacy-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 40px rgba(184, 151, 69, 0.4);
+            transition: transform 0.4s ease;
+        }
 
-.stat-info span {
-    color: var(--text-muted);
-    font-size: 14px;
-}
+        .privacy-icon svg {
+            width: 50px;
+            height: 50px;
+            color: white;
+            stroke-width: 2;
+        }
 
+        .privacy-promise h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
 
-.privacy-promise {
-    max-width: 900px;
-    margin: 80px auto 0;
-    background: linear-gradient(135deg, rgba(184, 151, 69, 0.05) 0%, rgba(44, 95, 111, 0.05) 100%);
-    backdrop-filter: blur(20px);
-    border: 2px solid var(--primary-gold);
-    border-radius: 30px;
-    padding: 60px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
+        .privacy-promise p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
 
-.privacy-promise::before {
-    content: '';
-    position: absolute;
-    top: -500px;
-    left: -500px;
-    right: -500px;
-    bottom: -500px;
-    background: linear-gradient(45deg, var(--primary-gold), var(--secondary-gold), var(--accent-teal), var(--primary-gold));
-    border-radius: 30px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-    animation: borderRotate 4s linear infinite;
-}
+        .privacy-promise strong {
+            color: var(--primary-gold);
+            font-weight: 700;
+        }
 
-@keyframes borderRotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        .privacy-highlight {
+            background: rgba(184, 151, 69, 0.1);
+            border-left: 3px solid var(--primary-gold);
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 12px;
+            text-align: left;
+        }
 
-.privacy-promise:hover::before {
-    opacity: 0.5;
-}
+        .privacy-highlight p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 17px;
+        }
 
-.privacy-promise:hover .privacy-icon {
-    transform: scale(1.1);
-}
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .trust-indicators {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-.privacy-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 30px;
-    box-shadow: 0 10px 40px rgba(184, 151, 69, 0.4);
-    transition: transform 0.4s ease;
-}
+            .client-profiles {
+                grid-template-columns: 1fr;
+            }
+        }
 
-.privacy-icon svg {
-    width: 50px;
-    height: 50px;
-    color: white;
-    stroke-width: 2;
-}
+        @media (max-width: 768px) {
+            .logo-icon {
+                height: 120px;
+            }
+            .clients-section {
+                padding: 80px 20px;
+            }
 
-.privacy-promise h3 {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--text-light);
-    margin-bottom: 20px;
-}
+            .trust-indicators {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
 
-.privacy-promise p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
+            .client-profiles {
+                gap: 30px;
+            }
 
-.privacy-promise strong {
-    color: var(--primary-gold);
-    font-weight: 700;
-}
-
-.privacy-highlight {
-    background: rgba(184, 151, 69, 0.1);
-    border-left: 3px solid var(--primary-gold);
-    padding: 20px 25px;
-    margin: 30px 0;
-    border-radius: 12px;
-    text-align: left;
-}
-
-.privacy-highlight p {
-    margin: 0;
-    color: var(--text-light);
-    font-size: 17px;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .trust-indicators {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .client-profiles {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .logo-icon {
-        height: 120px;
-    }
-    .clients-section {
-        padding: 80px 20px;
-    }
-
-    .trust-indicators {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .client-profiles {
-        gap: 30px;
-    }
-
-    .privacy-promise {
-        padding: 40px 25px;
-    }
-}
+            .privacy-promise {
+                padding: 40px 25px;
+            }
+        }
 
         /* FAQ Section */
         .faq-section {
@@ -1601,11 +1579,6 @@
                 gap: 30px;
             }
 
-            .privacy-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
             .founder-intro {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1614,78 +1587,65 @@
 
         @media (max-width: 768px) {
             .nav-links {
+                position: fixed;
+                top: 90px;
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - 90px);
+                background: rgba(10, 27, 47, 0.98);
+                backdrop-filter: blur(30px);
+                border-left: 1px solid var(--glass-border);
+                display: flex;
+                flex-direction: column;
+                padding: 40px 30px;
+                gap: 30px;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+                overflow-y: auto;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-link {
+                font-size: 18px;
+                padding: 10px 0;
+                text-align: left;
+            }
+
+            .nav-link::after {
                 display: none;
+            }
+
+            .nav-cta {
+                margin-top: 20px;
+                text-align: center;
+                width: 100%;
+                display: block;
             }
 
             .menu-toggle {
                 display: flex;
+                z-index: 1000;
             }
 
-            /* Mobile Menu Styles */
-    .nav-links {
-        position: fixed;
-        top: 90px;
-        right: -100%;
-        width: 280px;
-        height: calc(100vh - 90px);
-        background: rgba(10, 27, 47, 0.98);
-        backdrop-filter: blur(30px);
-        border-left: 1px solid var(--glass-border);
-        display: flex; /* Changed from display: none */
-        flex-direction: column;
-        padding: 40px 30px;
-        gap: 30px;
-        transition: right 0.4s ease;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-        overflow-y: auto;
-        z-index: 999;
-    }
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
 
-    .nav-links.active {
-        right: 0;
-    }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
 
-    .nav-link {
-        font-size: 18px;
-        padding: 10px 0;
-        text-align: left;
-    }
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
 
-    .nav-link::after {
-        display: none; /* Hide the underline animation on mobile */
-    }
-
-    .nav-cta {
-        margin-top: 20px;
-        text-align: center;
-        width: 100%;
-        display: block;
-    }
-
-    .menu-toggle {
-        display: flex;
-        z-index: 1000;
-    }
-
-    /* Hamburger Animation */
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-        overflow: hidden;
-    }
-
-
+            body.menu-open {
+                overflow: hidden;
+            }
 
             .hero {
                 padding: 170px 20px 60px;
@@ -1711,7 +1671,6 @@
             .phase-system,
             .why-choose,
             .about-section,
-            .privacy-section,
             .faq-section,
             .cta-section {
                 padding: 80px 20px;
@@ -1727,18 +1686,6 @@
 
             .phase-content {
                 padding: 25px;
-            }
-
-            .privacy-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .privacy-statement {
-                padding: 30px 20px;
-            }
-
-            .privacy-header h2 {
-                font-size: 32px;
             }
 
             .cta-container {
@@ -1811,8 +1758,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <img src="Logo.png" class="logo-icon"></img>
-               <!-- <span class="logo-text">GLOBAL SOVEREIGN</span>-->
+                <img src="Logo.png" class="logo-icon">
             </a>
             <div class="nav-links">
                 <a href="#home" class="nav-link">Home</a>
@@ -1842,11 +1788,9 @@
             </h1>
             
             <div class="hero-intro">
-                
-                    <p>
-                        Most entrepreneurs operate within a single system and as long as you stay inside one system, you play by its rules. High taxes, restricted banking access, limited leverage. It's not a lack of ambition holding people back, it's the framework they're operating in.
-                    </p>
-                
+                <p>
+                    Most entrepreneurs operate within a single system and as long as you stay inside one system, you play by its rules. High taxes, restricted banking access, limited leverage. It's not a lack of ambition holding people back, it's the framework they're operating in.
+                </p>
                 <div class="hero-statement">
                     <p>
                         <strong>Global Sovereign Structures exists for founders who refuse to be boxed in by their passport or domestic tax code.</strong>
@@ -1915,116 +1859,126 @@
             <div class="section-label">What We Offer</div>
             <h2 class="section-title">Our Proven 4-Phase System</h2>
             <p class="section-content">
-                Most entrepreneurs try to "go international" by opening a company abroad or opening a random bank account, but without a <strong>sequenced system</strong>, nothing connects and nothing scales.
-            </p>
-            <p class="section-content">
-                <strong>Our 4-Phase System is engineered to build a verified second financial identity. ne you can actually use to reduce tax, access capital, and operate globally.</strong>
+                Most entrepreneurs try to "go international" by opening a company abroad or a random bank account. Without a <strong>sequenced system</strong>, nothing connects and nothing scales.
             </p>
         </div>
         
         <div class="phase-grid">
+            <!-- Phase 01 -->
             <div class="phase-card reveal">
                 <div class="phase-sidebar">
                     <div class="phase-number">01</div>
                     <div class="phase-label">Phase</div>
                 </div>
                 <div class="phase-content">
-                    <h3 class="phase-title">Foundation & Strategy</h3>
+                    <h3 class="phase-title">Analysis & Structural Clarity</h3>
                     <p class="phase-description">
-                        Every structure begins with recognition: <strong>your current system was not built for your freedom.</strong>
+                        Every global structure begins with one truth: <strong>your current setup was never designed for scale, protection, or sovereignty.</strong>
                     </p>
                     <div class="phase-highlight">
-                        In this phase, we establish your <strong>U.S. entity</strong>, obtain your <strong>tax identification</strong>, and map out your <strong>cross-border structure,</strong> tailored to your personal and business goals.
+                        We analyze your entire personal and corporate footprint — across jurisdictions, entities, cashflows, and tax exposure.
                     </div>
-                    <p class="phase-description">
-                        This becomes <strong>your verified U.S. identity</strong>, legally recognized and ready for compliant profit alignment.
-                    </p>
+                    <p class="phase-description">We identify:</p>
+                    <ul class="phase-features">
+                        <li>Structural weaknesses</li>
+                        <li>Compliance risks</li>
+                        <li>Missed leverage opportunities</li>
+                        <li>Jurisdictional mismatches</li>
+                    </ul>
+                    <div class="phase-outcome">
+                        <span class="phase-outcome-label">Outcome</span>
+                        <p>A verified structural blueprint aligned with your business model, residency, and long-term objectives — not with a single country.</p>
+                    </div>
                 </div>
             </div>
 
+            <!-- Phase 02 -->
             <div class="phase-card reveal">
                 <div class="phase-sidebar">
                     <div class="phase-number">02</div>
                     <div class="phase-label">Phase</div>
                 </div>
                 <div class="phase-content">
-                    <h3 class="phase-title">Miami Banking Experience</h3>
+                    <h3 class="phase-title">Global Strategy Design</h3>
                     <p class="phase-description">
-                        Rather than guessing which banks accept foreigners, we take you <strong>directly into our network.</strong>
+                        <strong>Strategy is not theory. It's jurisdictional logic.</strong>
                     </p>
                     <div class="phase-highlight">
-                        During our in-person week in Miami, you'll:
+                        We design your custom global structure, combining operating entities, holdings, banking layers, asset protection vehicles, and jurisdictional positioning — all tailored to how you actually earn, move, and retain capital.
                     </div>
+                    <p class="phase-description">This is where we decide:</p>
                     <ul class="phase-features">
-                        <li>Open personal and business U.S. bank accounts</li>
-                        <li>Get credit cards aligned to your new structure</li>
-                        <li>Connect with our trusted financial partners</li>
-                        <li>Attend our exclusive Global Sovereign Networking Event</li>
+                        <li>Which jurisdictions play which role</li>
+                        <li>Where profits should flow</li>
+                        <li>Where risk must be isolated</li>
+                        <li>Where capital must be stored</li>
                     </ul>
-                    <p class="phase-description" style="margin-top: 20px;">
-                        You leave with <strong>access normal citizens never get</strong>, regardless of passport.
-                    </p>
+                    <div class="phase-outcome">
+                        <span class="phase-outcome-label">Outcome</span>
+                        <p>A sovereign, multi-jurisdictional strategy that works regardless of passport — and survives regulatory pressure.</p>
+                    </div>
                 </div>
             </div>
 
+            <!-- Phase 03 -->
             <div class="phase-card reveal">
                 <div class="phase-sidebar">
                     <div class="phase-number">03</div>
                     <div class="phase-label">Phase</div>
                 </div>
                 <div class="phase-content">
-                    <h3 class="phase-title">Implementation & Tax Structuring</h3>
+                    <h3 class="phase-title">Implementation & Execution</h3>
                     <p class="phase-description">
-                        A structure only works if it's executed and taxed correctly. Phase 3 combines <strong>legal implementation and tax positioning</strong>.
+                        <strong>A structure only works if it's implemented correctly.</strong> Phase 3 is where strategy becomes reality.
                     </p>
                     <div class="phase-highlight">
-                        We finalize your entity setup, align profits to the correct jurisdiction, and ensure everything is verified by U.S. accountants and international tax specialists.
+                        We coordinate entity formations across jurisdictions, banking & financial access, legal implementation, and accounting & reporting alignment — executed with local professionals, verified processes, and clean documentation.
                     </div>
-                    <p class="phase-description">
-                        You'll receive clear execution instructions so you know exactly:
-                    </p>
+                    <p class="phase-description">You receive clear execution rules, so you always know:</p>
                     <ul class="phase-features">
-                        <li>Where income should land</li>
-                        <li>Where tax should be declared (or not)</li>
-                        <li>How to move funds compliantly</li>
-                        <li>How to access 0% funding</li>
+                        <li>Where income lands</li>
+                        <li>How funds move</li>
+                        <li>Where tax is declared (or not)</li>
+                        <li>How capital is accessed without friction</li>
                     </ul>
                     <p class="phase-description" style="margin-top: 20px; font-weight: 600; color: var(--primary-gold);">
-                        This is the phase where your structure stops being theoretical and starts working.
+                        This is the phase where the structure stops being theoretical and starts working.
                     </p>
                 </div>
             </div>
 
+            <!-- Phase 04 -->
             <div class="phase-card reveal">
                 <div class="phase-sidebar">
                     <div class="phase-number">04</div>
                     <div class="phase-label">Phase</div>
                 </div>
                 <div class="phase-content">
-                    <h3 class="phase-title">Structural Insurance & Long-Term Protection</h3>
+                    <h3 class="phase-title">Ongoing Structural Support</h3>
                     <p class="phase-description">
-                        Unlike agencies that leave you after setup, we treat your structure like <strong>a living asset that must be protected.</strong>
+                        <strong>Global structures are not "set and forget". They are living systems.</strong>
                     </p>
                     <div class="phase-highlight">
-                        Phase 4 acts as your <strong>insurance policy</strong>:
+                        In Phase 4, we act as your <strong>structural insurance layer</strong>:
                     </div>
                     <ul class="phase-features">
-                        <li>We remain on standby for critical moments</li>
-                        <li>Priority access to our team for updates</li>
-                        <li>Monitoring for regulatory changes</li>
-                        <li>Future jurisdiction additions support</li>
+                        <li>Ongoing advisory access</li>
+                        <li>Regulatory monitoring</li>
+                        <li>Structural adjustments as laws change</li>
+                        <li>Expansion into new jurisdictions when needed</li>
                     </ul>
                     <p class="phase-description" style="margin-top: 20px;">
-                        This is not endless coaching, <strong>it's strategic peace of mind.</strong>
+                        This is not coaching. <strong>This is long-term protection and continuity.</strong>
                     </p>
                     <p class="phase-description" style="font-weight: 600; color: var(--primary-gold);">
-                        One setup. Fully implemented. Fully protected.
+                        One structure. Fully implemented. Continuously protected.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Who This Is For Section -->
     <section class="target-audience" id="who">
         <div class="section-header reveal">
             <h2 class="section-title">Who This Is For</h2>
@@ -2043,8 +1997,8 @@
                 <li>Refuse to keep asking governments for permission to grow</li>
                 <li>Want to operate internationally without waiting for passports, visas or politics</li>
             </ul>
-    
-            <!-- Client Profiles Moved Here -->
+
+            <!-- Client Profiles -->
             <div class="client-profiles reveal" style="margin-top: 60px;">
                 <div class="client-profile">
                     <div class="client-avatar">
@@ -2089,7 +2043,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div class="warning-box" style="margin-top: 60px;">
                 <p>
                     If you're comfortable staying domestic, then stay.<br>
@@ -2153,7 +2107,7 @@
         <div class="about-content">
             <div class="founder-intro reveal">
                 <div class="founder-image">
-                        <img src="DrRobin.jpeg" class="founder-image-placeholder"> </img>
+                    <img src="DrRobin.jpeg" class="founder-image-placeholder">
                 </div>
                 <div class="founder-bio">
                     <h3>Dr. Robin. From Taxed and Trapped Entrepreneur to Global Sovereignty Architect</h3>
@@ -2243,79 +2197,65 @@
         </div>
     </section>
 
-    <!-- REDESIGNED OUR CLIENTS SECTION -->
-<section class="clients-section" id="testimonials">
-    <div class="clients-hero reveal">
-        <h2>Our Clients</h2>
-        <p class="clients-subtitle">Elite entrepreneurs who refuse to play by broken rules</p>
-        <div class="clients-divider"></div>
-        <p style="font-size: 18px; color: var(--text-muted); max-width: 800px; margin: 30px auto; line-height: 1.8;">
-            We don't showcase testimonials. We don't publish case studies. We don't broadcast how much our clients save or which structures they use. That's not discretion—<strong>it's design.</strong>
-        </p>
-    </div>
-
-    
-
-    
-
-    <div class="trust-indicators reveal">
-        <!--
-        <div class="trust-card">
-            <div class="trust-icon">
-                <i data-lucide="trending-up"></i>
-            </div>
-            <div class="trust-number">$500M+</div>
-            <div class="trust-label">Protected Assets</div>
-            <p class="trust-description">Across jurisdictions for clients worldwide</p>
-        </div>
-    -->
-        <div class="trust-card">
-            <div class="trust-icon">
-                <i data-lucide="globe"></i>
-            </div>
-            <div class="trust-number">50+</div>
-            <div class="trust-label">Countries</div>
-            <p class="trust-description">International Advisors from every continent</p>
-        </div>
-        <div class="trust-card">
-            <div class="trust-icon">
-                <i data-lucide="award"></i>
-            </div>
-            <div class="trust-number">100%</div>
-            <div class="trust-label">Compliance Rate</div>
-            <p class="trust-description">Every structure verified by licensed professionals</p>
-        </div>
-        <div class="trust-card">
-            <div class="trust-icon">
-                <i data-lucide="clock"></i>
-            </div>
-            <div class="trust-number">24/7</div>
-            <div class="trust-label">Priority Support</div>
-            <p class="trust-description">For all active client structures</p>
-        </div>
-    </div>
-
-    <div class="privacy-promise reveal">
-        <div class="privacy-icon">
-            <i data-lucide="shield-check"></i>
-        </div>
-        <h3>Our Privacy Promise</h3>
-        <p>
-            Your financial architecture is not a marketing tool. When you work with Global Sovereign, your structure details, tax savings, banking relationships, and personal information remain <strong>completely confidential.</strong>
-        </p>
-        <div class="privacy-highlight">
-            <p>
-                We will never publish your name, company, income figures, or tax optimization results. Your privacy isn't negotiable—it's part of your protection.
+    <!-- Our Clients Section -->
+    <section class="clients-section" id="testimonials">
+        <div class="clients-hero reveal">
+            <h2>Our Clients</h2>
+            <p class="clients-subtitle">Elite entrepreneurs who refuse to play by broken rules</p>
+            <div class="clients-divider"></div>
+            <p style="font-size: 18px; color: var(--text-muted); max-width: 800px; margin: 30px auto; line-height: 1.8;">
+                We don't showcase testimonials. We don't publish case studies. We don't broadcast how much our clients save or which structures they use. That's not discretion—<strong>it's design.</strong>
             </p>
         </div>
-        <p>
-            Would you want your tax strategy, banking locations, and wealth details broadcast online?
-        </p>
-        <p>
-            <strong>Neither do our clients. And that's exactly why they trust us.</strong>
-        </p>
-    </div>
-</section>
+
+        <div class="trust-indicators reveal">
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <i data-lucide="globe"></i>
+                </div>
+                <div class="trust-number">50+</div>
+                <div class="trust-label">Countries</div>
+                <p class="trust-description">International Advisors from every continent</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <i data-lucide="award"></i>
+                </div>
+                <div class="trust-number">100%</div>
+                <div class="trust-label">Compliance Rate</div>
+                <p class="trust-description">Every structure verified by licensed professionals</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <i data-lucide="clock"></i>
+                </div>
+                <div class="trust-number">24/7</div>
+                <div class="trust-label">Priority Support</div>
+                <p class="trust-description">For all active client structures</p>
+            </div>
+        </div>
+
+        <div class="privacy-promise reveal">
+            <div class="privacy-icon">
+                <i data-lucide="shield-check"></i>
+            </div>
+            <h3>Our Privacy Promise</h3>
+            <p>
+                Your financial architecture is not a marketing tool. When you work with Global Sovereign, your structure details, tax savings, banking relationships, and personal information remain <strong>completely confidential.</strong>
+            </p>
+            <div class="privacy-highlight">
+                <p>
+                    We will never publish your name, company, income figures, or tax optimization results. Your privacy isn't negotiable—it's part of your protection.
+                </p>
+            </div>
+            <p>
+                Would you want your tax strategy, banking locations, and wealth details broadcast online?
+            </p>
+            <p>
+                <strong>Neither do our clients. And that's exactly why they trust us.</strong>
+            </p>
+        </div>
+    </section>
 
     <!-- FAQ Section -->
     <section class="faq-section" id="faq">
@@ -2365,11 +2305,11 @@
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <h3>5. Do I really have to come to Miami?</h3>
+                    <h3>5. How long does the entire process take?</h3>
                     <div class="faq-toggle"></div>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes, for one week. In Miami you'll open your personal and business bank accounts, get credit cards, and build relationships with our network. Everything is organized for you, so you leave fully set up.</p>
+                    <p>Timeline varies based on complexity, but most clients complete all four phases within 8-12 weeks. Phase 1 (Analysis) typically takes 1-2 weeks, Phase 2 (Strategy) another 1-2 weeks, Phase 3 (Implementation) 4-6 weeks, and Phase 4 (Ongoing Support) begins immediately after setup.</p>
                 </div>
             </div>
 
@@ -2437,8 +2377,7 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <a href="#home" class="logo">
-                    <img src="Logo.png" class="logo-icon"></img>
-                   <!-- <span class="logo-text">GLOBAL SOVEREIGN</span>-->
+                    <img src="Logo.png" class="logo-icon">
                 </a>
             </div>
             <p class="footer-description">
@@ -2450,6 +2389,7 @@
             <p class="footer-copyright">© 2025 Global Sovereign Structures. All rights reserved.</p>
         </div>
     </footer>
+
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
@@ -2479,44 +2419,37 @@
             });
         });
 
-        // Add this to your existing JavaScript section at the bottom of the page
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
 
-menuToggle.addEventListener('click', function() {
-    // Toggle active class on menu toggle for animation
-    this.classList.toggle('active');
-    
-    // Toggle active class on nav links to show/hide
-    navLinks.classList.toggle('active');
-    
-    // Prevent body scroll when menu is open
-    document.body.classList.toggle('menu-open');
-});
+        // Close menu when clicking on a nav link
+        document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
 
-// Close menu when clicking on a nav link
-document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-    link.addEventListener('click', function() {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    });
-});
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target) || menuToggle.contains(event.target);
+            
+            if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
 
-// Close menu when clicking outside
-document.addEventListener('click', function(event) {
-    const isClickInsideNav = navLinks.contains(event.target) || menuToggle.contains(event.target);
-    
-    if (!isClickInsideNav && navLinks.classList.contains('active')) {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
-    }
-});
-
-        // FAQ Toggle - Fixed version
+        // FAQ Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const faqQuestions = document.querySelectorAll('.faq-question');
             
@@ -2541,7 +2474,7 @@ document.addEventListener('click', function(event) {
             });
         });
 
-        // Reveal on scroll animation - Modified to exclude FAQ items
+        // Reveal on scroll animation
         const revealElements = document.querySelectorAll('.reveal:not(.faq-item)');
         const faqItems = document.querySelectorAll('.faq-item');
         
@@ -2558,7 +2491,7 @@ document.addEventListener('click', function(event) {
                 }
             });
             
-            // Handle FAQ items separately - only add reveal class, don't add active
+            // Handle FAQ items separately
             faqItems.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const revealPoint = windowHeight - 100;
