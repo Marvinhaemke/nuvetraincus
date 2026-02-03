@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <title>3 Fatal Tax Structure Mistakes That Cost a Canadian Founder $30,000 - Global Sovereign</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: calc(15px + 0.390625vw);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: radial-gradient(circle at top left,rgba(0, 0, 0, 1) 0%, rgba(10, 27, 47, 1) 40%, rgba(10, 27, 47, 1) 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #2c5f6f 0%, #d4a574 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-back {
+            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+        }
+
+        /* Main Content */
+        .privacy-content {
+            background: rgba(44, 95, 111, 0.1);
+            border-radius: 25px;
+            border: 2px solid #c67742;
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .privacy-title {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d4a574 0%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .privacy-meta {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+
+        .privacy-section h2 {
+            color: #d4a574;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.3);
+        }
+
+        .privacy-section h3 {
+            color: #d4a574;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            margin-top: 20px;
+        }
+
+        .privacy-section p {
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        .privacy-section ul {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        .privacy-section ul li {
+            margin-bottom: 8px;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background: rgba(212, 165, 116, 0.15);
+            border-left: 4px solid #d4a574;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight strong {
+            color: #FFD700;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.05em;
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+        }
+
+        .blog-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #d4a574;
+            margin-bottom: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4a574 0%, #c67742 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            color: #fff;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo-section {
+           display: block;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+            color: #d4a574;
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .utility-links {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .utility-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .utility-links a:hover {
+            color: #d4a574;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            width: 100%;
+            display: block;
+            color: #fff;
+            font-size: 16px !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .privacy-content {
+                padding: 25px;
+                border-radius: 15px;
+            }
+
+            .privacy-title {
+                font-size: 24px;
+            }
+
+            .privacy-section h2 {
+                font-size: 20px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .footer-logo-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-links {
+                order: 3;
+                margin: 0;
+            }
+
+            .utility-links {
+                order: 2;
+            }
+
+            .footer-bottom {
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="/Logo.png" alt="Global Sovereign Logo" class="logo-icon">
+            </div>
+            <a href="https://global-sovereign.com" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                Back to Home
+            </a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="privacy-content">
+            <h1 class="privacy-title">3 Fatal Tax Structure Mistakes That Cost a Canadian Founder $30,000 (And Nearly His Freedom)</h1>
+
+            <div class="privacy-meta">
+                <p><strong>Author:</strong> Dr. Robin (CEO, Global Sovereign)</p>
+                <p><strong>Topic:</strong> International Tax Compliance, Tax Structure, Asset Protection</p>
+            </div>
+
+            <img src="3 fatal/1.png" alt="Tax Structure Mistakes" class="blog-image">
+
+            <div class="privacy-section">
+                <h2>The $30,000 "Bulletproof" Structure That Collapsed Overnight</h2>
+                <p>After reviewing over 200 international tax structures, I've seen the same three mistakes appear in almost every failed case. Each one costs clients an average of $10,000 in additional taxes - but the real cost is often much higher.</p>
+                <p>Take John (name changed for confidentiality), a Canadian founder with a seven-figure business. He paid $30,000 to a reputable Canadian tax lawyer for what he believed was a bulletproof global setup. The structure looked legitimate on paper: a Canadian family trust at the top, owning a US Corporation, which controlled a US LLC. Everything documented. Everything signed off.</p>
+                <p>Then the CRA (Canada Revenue Agency) came knocking.</p>
+                <p>Within weeks, John faced frozen bank accounts, back taxes, penalties, and a potential tax evasion charge. His "bulletproof" structure had collapsed completely.</p>
+                <div class="highlight">
+                    <p>And if you're thinking, "I'm not Canadian, this doesn't apply to me" - think again. The UK, EU, Australia, and most Western countries have identical rules. The mistakes that destroyed John's structure are universal.</p>
+                </div>
+            </div>
+
+            <img src="3 fatal/2.png" alt="Trust Structure Problems" class="blog-image">
+
+            <div class="privacy-section">
+                <h2>Mistake #1: Treating a Trust Like a Family Group Chat</h2>
+                <h3>The Problem: No Real Independence</h3>
+                <p>John's trust had four trustees. All family members. In practice? One person - John - was making every decision. No independent oversight. No protector. No separation between who owned the trust and who controlled it.</p>
+                <p>It was less of a trust and more like a family group chat with legal paperwork.</p>
+                <p>When the CRA reviewed the structure, they didn't see a trust. They saw John. One person pulling all the strings, with family members rubber-stamping whatever he wanted.</p>
+
+                <h3>What Tax Authorities Actually Look For: The De Facto Control Test</h3>
+                <p>Here's what most people miss: It doesn't matter what your trust documents say.</p>
+                <p>Tax authorities apply something called the de facto control test. They don't care how many trustees you list on paper. What matters is who actually makes the decisions.</p>
+                <p>If one person or one family unit controls the trustees, the assets, and the decisions, tax authorities deem the trust "controlled."</p>
+                <p>And when a trust is deemed controlled by a resident of that country:</p>
+                <ul>
+                    <li>The trust collapses for tax purposes</li>
+                    <li>Income flows back to you personally</li>
+                    <li>You're taxed at full personal rates (up to 53.5% in Canada)</li>
+                    <li>In serious cases: penalties, interest, and even criminal referral</li>
+                </ul>
+
+                <h3>What a Real Trust Needs</h3>
+                <p>A legitimate trust requires:</p>
+                <ul>
+                    <li>Independent trustees who don't answer to you</li>
+                    <li>A protector with actual authority</li>
+                    <li>Documented arms-length decisions</li>
+                    <li>Governance that can survive tax authority scrutiny</li>
+                </ul>
+                <div class="highlight">
+                    <strong>Bottom Line</strong>
+                    <p>If the same people who benefit from the trust also control it, it's not a trust. It's just you with extra paperwork.</p>
+                </div>
+            </div>
+
+            <img src="3 fatal/3.png" alt="Foreign Corporation Substance" class="blog-image">
+
+            <div class="privacy-section">
+                <h2>Mistake #2: Building a Foreign Company With No Foreign Substance</h2>
+                <h3>The US Corporation That Wasn't Actually American</h3>
+                <p>John had a US Corporation sitting in the middle of his structure. On paper, it was supposed to be the operational hub - receiving income, managing assets, doing business.</p>
+                <p>In reality:</p>
+                <ul>
+                    <li>No office</li>
+                    <li>No independent directors</li>
+                    <li>Just a registered agent and a PDF</li>
+                    <li>The entire corporation only existed on paper</li>
+                </ul>
+                <p>Here's where it gets painful: John was actually filing US taxes on this entity. Paying US accountants. Doing everything by the book in the US.</p>
+                <p>But when the CRA looked at it, they considered his US corporation to be a Canadian company.</p>
+                <p>He had paid US taxes completely unnecessarily on an entity that Canada didn't even recognize as foreign.</p>
+
+                <h3>The Mind and Management Test</h3>
+                <p>Tax authorities ask a simple question: Where is a company actually resident?</p>
+                <p>Not where it's registered. Not where it has a mailing address. Where the real decisions are made.</p>
+                <p>If your US corporation's board meetings happen on Zoom from your kitchen in Toronto... if every strategic decision is made by someone sitting in Canada... if there's no actual presence, no real operations, no substance in the US...</p>
+                <p>Then the CRA says: "This is not a US company. This is a Canadian company pretending to be American."</p>
+
+                <h3>The Dual Exposure Problem</h3>
+                <p>Once they make that determination:</p>
+                <ul>
+                    <li>Your foreign income becomes domestic income (fully taxable in Canada)</li>
+                    <li>You've been filing in the US incorrectly</li>
+                    <li>The IRS might come knocking too</li>
+                </ul>
+                <p>That's dual exposure. Two tax authorities both looking at the same structure from different angles.</p>
+
+                <h3>What Real Foreign Substance Means</h3>
+                <p>A legitimate foreign company requires:</p>
+                <ul>
+                    <li>Real office presence</li>
+                    <li>Independent local directors</li>
+                    <li>Board meetings that happen in that jurisdiction</li>
+                    <li>Decisions documented and made outside your home country</li>
+                    <li>Actual operations (not just a registered agent)</li>
+                </ul>
+                <div class="highlight">
+                    <strong>Bottom Line</strong>
+                    <p>If your international structure is just paperwork filed from your laptop in Canada, it's not international. It's domestic with extra steps.</p>
+                </div>
+            </div>
+
+            <img src="3 fatal/4.png" alt="Loan vs Income" class="blog-image">
+
+            <div class="privacy-section">
+                <h2>Mistake #3: The "Loan" That Was Actually Income</h2>
+                <h3>The Transaction That Triggered Everything</h3>
+                <p>This is what actually put John on the CRA's radar.</p>
+                <p>John had set up a loan from his US entity back to his Canadian company. On paper, it looked like a legitimate cross-border lending arrangement. Foreign entity loans money to Canadian business.</p>
+                <p>But remember:</p>
+                <ul>
+                    <li>John controlled the trust</li>
+                    <li>John controlled the US Corp</li>
+                    <li>John controlled the LLC</li>
+                    <li>John controlled the Canadian company receiving the money</li>
+                </ul>
+                <p>When tax authorities looked at this "loan," they didn't see a foreign lending arrangement. They saw John giving money to John.</p>
+                <p>And that's exactly how they taxed it. Not as a loan. As income.</p>
+
+                <h3>The Realization That Changed Everything</h3>
+                <p>Here's what really shocked John: When he came to us, he genuinely believed, "I guess all foreign loans are taxable in Canada."</p>
+                <p>Wrong.</p>
+                <p>Only foreign loans done through illegitimate structures get taxed like this.</p>
+                <p>He wasn't confused about Canadian tax law. He was already being flagged and didn't know why. The tax authorities could see the loan was coming from entities he controlled. They knew from day one this was cross-border ownership with no real separation.</p>
+
+                <h3>Cross-Border Loan Rules: What Actually Works</h3>
+                <p>For a loan to be respected as a loan, you need:</p>
+                <ul>
+                    <li><strong>Arms-length terms:</strong> Real interest rate, real repayment schedule</li>
+                    <li><strong>Independent governance:</strong> The lender makes independent decisions</li>
+                    <li><strong>Economic justification:</strong> There's a real business reason for the loan</li>
+                    <li><strong>Genuine separation:</strong> You can't control both sides</li>
+                </ul>
+                <div class="highlight">
+                    <strong>Bottom Line</strong>
+                    <p>If you control both sides of the transaction, it's not a loan. It's you moving money between your own pockets. And tax authorities see right through it.</p>
+                </div>
+            </div>
+
+            <img src="3 fatal/5.png" alt="Compliant Solution" class="blog-image">
+
+            <div class="privacy-section">
+                <h2>The Three Mistakes That Guarantee You'll Get Flagged</h2>
+                <p>Let's recap the three fatal errors that collapsed John's $30,000 structure:</p>
+                <ul>
+                    <li>A family trust with no real independence</li>
+                    <li>A US corporation with no real substance</li>
+                    <li>A foreign loan with no real separation</li>
+                </ul>
+                <p>Each one on its own is a problem. Together? They guarantee you'll get flagged.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>How We Fixed It (The Compliant Solution)</h2>
+                <p>Here's what we did to rebuild John's structure:</p>
+
+                <h3>1. Real No-Control Architecture</h3>
+                <ul>
+                    <li>Independent trustees</li>
+                    <li>Real fiduciaries</li>
+                    <li>Documented arms-length decisions</li>
+                    <li>No obvious family control</li>
+                </ul>
+
+                <h3>2. Real Jurisdictional Separation</h3>
+                <ul>
+                    <li>Separate management</li>
+                    <li>Separate control</li>
+                    <li>Actual substance in the correct places</li>
+                    <li>Entities that function and look foreign because they actually are</li>
+                </ul>
+
+                <h3>3. Rebuilt Lending Properly</h3>
+                <ul>
+                    <li>Arms-length terms</li>
+                    <li>Defensible structure</li>
+                    <li>Supported by genuine governance</li>
+                    <li>Not reclassifiable as income</li>
+                </ul>
+
+                <h3>The Result</h3>
+                <p>A compliant, multi-jurisdictional structure that tax authorities can look at and say:</p>
+                <p>"This is real. This is legitimate. This is a genuine international business."</p>
+                <p>Not: "This is just you with extra paperwork."</p>
+                <p>The outcome:</p>
+                <ul>
+                    <li>Far less tax (legally)</li>
+                    <li>Much more asset protection</li>
+                    <li>Zero risk of criminal charges</li>
+                    <li>Complete peace of mind</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h2>Is Your Structure at Risk?</h2>
+                <p>If you're reading this and realizing your structure might have some of the same problems - or you're not sure if it does - here's what to do:</p>
+
+                <h3>Red Flags Your Structure May Be Non-Compliant</h3>
+                <ul>
+                    <li>Family members as trustees with no independent oversight</li>
+                    <li>Offshore companies with no real employees or office</li>
+                    <li>"Loans" between entities you control</li>
+                    <li>All decisions made from your home country</li>
+                    <li>No documented board meetings in foreign jurisdictions</li>
+                    <li>Nominee directors who never actually decide anything</li>
+                </ul>
+
+                <h3>The Cost of Waiting</h3>
+                <p>Remember: John thought his structure was bulletproof. He paid $30,000 to a licensed tax lawyer. Everything looked legitimate on paper.</p>
+                <p>But it collapsed the moment tax authorities applied the real tests:</p>
+                <ul>
+                    <li>De facto control</li>
+                    <li>Mind and management</li>
+                    <li>Arms-length transaction analysis</li>
+                </ul>
+                <p>By the time you know you're being investigated, it's often too late for a simple fix.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>Next Steps: Get Your Structure Reviewed</h2>
+                <p>The difference between tax planning and tax evasion often comes down to these three elements:</p>
+                <ul>
+                    <li>Real independence</li>
+                    <li>Real substance</li>
+                    <li>Real separation</li>
+                </ul>
+                <p>Most people have no idea they're on the wrong side of this line until it's too late.</p>
+                <p>If you have an international structure - or you're considering building one - the smartest move you can make is getting a professional structure review before tax authorities come knocking.</p>
+                <p>A compliant structure isn't just about paying less tax. It's about sleeping at night knowing your wealth is protected legally, your business is structured properly, and you're not one audit away from losing everything.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>About International Tax Compliance</h2>
+                <p>Modern tax authorities have unprecedented tools for detecting non-compliant structures:</p>
+                <ul>
+                    <li>Automatic information exchange (CRS)</li>
+                    <li>Beneficial ownership registries</li>
+                    <li>Cross-border data sharing (FATCA)</li>
+                    <li>AI-powered pattern detection</li>
+                </ul>
+                <p>The era of "offshore secrecy" is over. What works now is legitimate, compliant international structuring with real substance, real governance, and real separation.</p>
+                <p>Done right, international tax planning is completely legal and can dramatically reduce your effective tax rate - from 50%+ to single digits - while providing asset protection and operational flexibility.</p>
+                <p>Done wrong, it's a ticking time bomb.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Ready To Protect Your Wealth?</h3>
+                <p>If you have an international structure or you're considering building one, the smartest move you can make is getting a professional structure review before tax authorities come knocking.</p>
+                <p style="margin-top: 20px;">Learn how entrepreneurs avoid the common traps and build real security with compliant, multi-jurisdictional structures.</p>
+                <a href="#" class="cta-button">Get Your Structure Reviewed</a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <img src="/Logo.png" alt="Global Sovereign Logo" class="footer-logo-icon">
+                    <div class="footer-bottom" style="font-size: 0.5em !important;">
+                        <p style="font-size: 1em !important;">NUVETRA Inc. 2025, All Rights Reserved</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <!-- Facebook -->
+                    <a href="#" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="#" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="#" aria-label="YouTube">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" aria-label="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+
+                </div>
+
+                <div class="utility-links">
+                    <a href="#">Imprint</a>
+                    <span>-</span>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
